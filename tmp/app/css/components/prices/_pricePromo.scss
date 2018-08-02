@@ -1,0 +1,43 @@
+.price-promo-large {
+  min-height: 380px;
+  text-align: center;
+  color: $color_white;
+  font-size: rem(18px);
+  font-weight: 700;
+  @include mobile-all() {
+    height: 500px;
+  }
+  .card-img-overlay {
+    @include mobile-all() {
+      flex-direction: column;
+    }
+  }
+  &:after {
+    background-color: $color-red_c9;
+  }
+  &-icon {
+    height: 121px;
+    width: 121px;
+    background-size: contain;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    @include mobile-all() {
+      width: 80px;
+      height: 80px;
+    }
+    &-1 {
+      background-image: url('../img/sale.png');
+    }
+    &-2 {
+      background-image: url('../img/delivery.png');
+    }
+  }
+  &-description {
+    padding-top: 20px;
+    height: 120px;
+    max-width: 402px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+}

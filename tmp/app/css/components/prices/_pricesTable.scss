@@ -1,0 +1,80 @@
+.prices {
+  .black-header {
+    //padding-top: 32px;
+    //padding-bottom: 32px;
+    margin-bottom: 6.5vh;
+  }
+  margin-bottom: 20vh;
+  @include mobile-all() {
+    margin-bottom: 6.5vh;
+  }
+  .prices-table {
+    &-th {
+      font-size: rem(28px);
+      font-weight: 700;
+      border-bottom: 0;
+      padding-top: 8vh;
+      padding-bottom: 5vh;
+      &-left {
+        padding-left: 40px ;
+        @include mobile-all() {
+          padding-left: 15px;
+        }
+      }
+    }
+    th, td {
+      border-top: 0;
+      border-bottom: 1px solid $color_gray_light95;
+      @include mobile-all() {
+        font-size: rem(14px);
+      }
+    }
+    &-header {
+      position: relative;
+      width: 100%;
+      text-align: left;
+      padding: 10px 36px;
+      font-size: rem(20px);
+      overflow: hidden;
+      background: $color_black;
+      &:hover {
+        &:after {
+          top: 300px;
+        }
+      }
+      &:after {
+        @include glare(#6c6c6c, 24%, 100%, 17deg, -55%);
+        left: -45px;
+      }
+      &-text {
+        &:after {
+          margin-left: 8px;
+          width: 16px;
+          height: 16px;
+          -webkit-background-size: cover;
+          background-size: cover;
+          transform: rotate(90deg) translateX(3px);
+        }
+      }
+    }
+    &-footer {
+      padding: 3% 3.33% 4%;
+      &-first-p {
+        padding-bottom: 10px;
+        @include mobile-all() {
+          padding-bottom: 0;
+        }
+      }
+      p {
+        @include mobile-all() {
+          font-size: rem(14px);
+          line-height: 1.5rem;
+        }
+      }
+    }
+  }
+}
+.table-border {
+  box-shadow: $main-box-shadow;
+}
+

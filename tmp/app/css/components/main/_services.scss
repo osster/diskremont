@@ -1,0 +1,54 @@
+.main-services {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  @media screen and (max-width: $md) {
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+  &-img {
+    display: flex;
+    width: 170px;
+    height: 111px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    @media screen and (max-width: $sm) {
+      width: 131px;
+    }
+  }
+  &-link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    &:hover {
+      color: $color_red_c9;
+      .main-services-label {
+        color: $color_red_c9;
+      }
+    }
+  }
+  .ms-image {
+    margin: auto;
+  }
+  &-img1 {
+    width: 40%;
+  }
+  &-img2 {
+    height: 85%;
+  }
+  &-img3 {
+
+  }
+  &-img4 {
+  }
+  &-img5 {
+  }
+  &-img6 {
+  }
+  &-block {
+    text-align: center;
+  }
+  &-label {
+    font-size: rem(14px);
+    color: $color_black;
+  }
+}

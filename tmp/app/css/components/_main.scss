@@ -1,0 +1,22 @@
+@import "./main/slider";
+@import "./main/menu";
+@import "./main/services";
+@import "./main/cardCarousel";
+@import "./main/mainGallery";
+@import "./main/promoBlock";
+@import "./main/info";
+@import "./main/description";
+@import "./main/servicesLinks";
+@import "./main/promoLarge";
+@import "./main/photoalbum";
+@import "./main/reviews";
+@import "main/destination";
+.second-block,
+.main-info,
+.main-description,
+.main-services-links,
+.main-photoalbum,
+.main-reviews {
+  margin-top: 6.4%;
+  margin-bottom: 5%;
+}

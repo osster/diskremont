@@ -1,0 +1,21 @@
+.main-photoalbum {
+  padding-top: 4%;
+  .thumb {
+    padding: 10px;
+  }
+  h1 {
+    margin-bottom: 2.8%;
+  }
+  .main-photoalbum-row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .btn-red {
+    margin-top: 3%;
+    min-width: 267px;
+    border: none;
+    .btn-text:after {
+      display: none;
+    }
+  }
+}

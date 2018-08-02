@@ -1,0 +1,65 @@
+#mainSlider {
+  position: relative;
+  margin-bottom: 5rem;
+  overflow: hidden;
+  @media screen and (max-width: $md) {
+    margin-bottom: 2rem;
+  }
+  .swiper-slide {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 380px;
+    @media screen and (max-width: $md) {
+      height: calc(60vh - 103px);
+    }
+    &-text {
+      position: absolute;
+      top: 33%;
+      left: 50%;
+      right: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: $white-e9;
+      font-size: 2.5rem;
+      font-weight: 700;
+      z-index: 1;
+      @media screen and (max-width: $md) {
+        top: 50%;
+        transform: translate(-50%, -50%) ;
+      }
+      p {
+        padding: 0 15%;
+      }
+    }
+
+    &::after {
+      @include black-img;
+    }
+  }
+  .swiper-pagination{
+    bottom: 36px;
+      &-bullet {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        margin-left: 8px;
+        border: 1px solid $color_gray_light95;
+        border-radius: 0;
+        background-color: $color_white_c4;
+        opacity: 0.3;
+      }
+  }
+}
+
+

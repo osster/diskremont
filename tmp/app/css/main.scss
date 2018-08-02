@@ -1,0 +1,14 @@
+@import "template_vars";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+@import "template_mixins";
+@import "template_webfonts";
+@import "template_styles";
+
+@import "components/styles";
+
+@import "libs/swiper.min";
+@import "libs/lightbox.min";
+

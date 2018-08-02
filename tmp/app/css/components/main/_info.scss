@@ -1,0 +1,68 @@
+.main-info {
+  position: relative;
+  padding-top: 63px;
+  padding-bottom: 56px;
+  background: $color_black;
+  color: $white-e9;
+  font-size: rem(16px);
+  overflow: hidden;
+  &:after {
+    @include glare(#6c6c6c, 31%, 100%, 14deg, -80%);
+    left: -17%;
+  }
+  &-phone {
+    &-nowrap {
+      white-space: nowrap;
+    }
+  }
+  .form-inline {
+    .form-group {
+      margin-right: 14px;
+      @include max-w(218px);
+      @media screen and (max-width: $sm){
+        max-width: 100%;
+      }
+      &.form-group-tel {
+        @include max-w(249px);
+        @media screen and (max-width: $sm){
+          max-width: 100%;
+        }
+      }
+    }
+    .form-control {
+      width: 100%;
+      border-radius: 0;
+      height: 40px;
+      font-size: rem(16px);
+      padding: 10px 17px;
+    }
+    .btn {
+      width: 235px;
+      height: 40px;
+      .btn-text {
+        padding-left: 48px;
+      }
+    }
+  }
+  &-col {
+    position: relative;
+    z-index: 1;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  &-cost {
+    margin-bottom: 10px;
+    color: $white-e9;
+    font-size: rem(24px);
+    @media screen and (max-width: $sm){
+      font-size: rem(20px);
+    }
+    &-val {
+      padding-left: 62px;
+      white-space: nowrap;
+    }
+  }
+
+}
+
+

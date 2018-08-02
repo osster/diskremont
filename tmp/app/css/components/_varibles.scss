@@ -1,0 +1,128 @@
+$font-family: SegoeUI, Arial;
+$grey-6a: #6a6a6a;
+$grey-6e: #6e6e6e;
+$white-e9: #e9e9e9;
+$reb-btn-color: #b21f1f;
+$color_gray_light95: #95989a;
+$color_white_c4: #c4c4c4;
+$color_red_c9: #c92727;
+$color_gray_8b: #8b8b8b;
+$main-font: 18px;
+$fw600: 600;
+$main-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+$big-box-shadow-block: 6px 6px 6px rgba(0, 0, 0, 0.16);
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+
+@function rem($pixels, $context: $main-font) {
+  @return #{$pixels / $context}rem
+}
+
+
+@mixin max-w($mw) {
+  max-width: $mw;
+  width: 100%;
+}
+@mixin max-h($mh) {
+  max-height: $mh;
+  height: 100%;
+}
+@mixin pseudo-el-address {
+  content: "";
+  display: inline-block;
+  width: 55px;
+  height: 50px;
+  margin-right: 10px;
+  background-repeat: no-repeat;
+  background-position-y: 10px;
+  background-position-x: center;
+}
+
+@mixin glare($color, $grad1, $grad2, $degT, $glareTop) {
+  content: "";
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: -moz-linear-gradient(to right, $color $grad1, rgba(108, 108, 108, 0) $grad2); /* FF3.6-15 */
+  background: -webkit-linear-gradient(to right, $color $grad1, rgba(108, 108, 108, 0) $grad2); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, $color $grad1, rgba(108, 108, 108, 0) $grad2); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color', endColorstr='$color',GradientType=1 ); /* IE6-9 */
+  top: $glareTop;
+  //-webkit-clip-path: polygon(0 0, $polygx 72%, $polygx 0);
+  //clip-path: polygon(0 0, $polygx 72%, $polygx 0);
+  transform: rotate($degT);
+  @include transition();
+}
+
+@mixin black-img{
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  display: block;
+  @include max-w(1200px);
+  height: 99%;
+  background: $color_black;
+  opacity: 0.7;
+  -webkit-transform: skew(-20deg) translateX(-50%);
+  -moz-transform: skew(-20deg) translateX(-50%);
+  -o-transform: skew(-20deg) translateX(-50%);
+  transform: skew(-20deg) translateX(-50%);
+}
+@mixin text {
+  position: relative;
+  z-index: 1;
+}
+@mixin for-black-header {
+  background: $color_black;
+  position: relative;
+  overflow: hidden;
+  color: $color_white;
+  &-span {
+    display: flex;
+    align-items: center;
+    @include text;
+  }
+  &:after {
+    @include glare(#6c6c6c, 24%, 100%, 17deg, -55%);
+    left: 15px;
+  }
+  &:hover:after {
+    left: -200%;
+  }
+}
+
+@mixin btn-text-icon {
+  content: "";
+  display: inline-block;
+  width: 27px;
+  height: 24px;
+  margin-left: 42px;
+  background: transparent url('../img/arrow.svg') center center no-repeat;
+}
+
+@mixin controls {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  background: $color_black;
+  width: 27px;
+  height: 44px;
+  z-index: 10;
+  cursor: pointer;
+}
+@mixin control-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: transparent url('../img/arrow.svg') no-repeat center center;
+  background-size: contain;
+  transform: rotate(180deg);
+}
+
+
