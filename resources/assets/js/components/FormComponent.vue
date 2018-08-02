@@ -1,10 +1,10 @@
 <template>
     <div class="form">
-        <div class="row bg-light py-3 px-4 border">
+        <div class="row">
             <div class="col-12 col-lg-4">
-                <label>Цвет автомобиля:</label><br>
-                <div class="btn-group">
-                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                <label class="car-menu-label">Цвет автомобиля:</label><br>
+                <div class="btn-group btn-car-group">
+                    <button type="button" class="btn dropdown-toggle car-menu-btn" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                         <span v-if="carColor !== null" class="color-preview"
                               :style="'background-color: #' + carColor.hash + ';'"></span>
@@ -20,17 +20,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 offset-lg-4 text-right">
+            <div class="col-12 col-lg-4 offset-lg-4 text-right car-form-cost">
                 Стоимость за комплект:<br>
                 {{ totalPrice }} руб
             </div>
         </div>
         <stage-component></stage-component>
-        <div class="row bg-light py-3 px-4 border">
+        <div class="row">
             <div class="col-12 col-lg-3">
-                <label>Цвет дисков:</label><br>
-                <div class="btn-group">
-                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                <label class="car-menu-label">Цвет дисков:</label><br>
+                <div class="btn-group btn-car-group">
+                    <button type="button" class="btn dropdown-toggle car-menu-btn" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                         <span v-if="diskColor !== null" class="color-preview"
                               :style="'background-color: #' + diskColor.hash + ';'"></span>
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="col-12 col-lg-4 b-slider">
-                <label>Размер дисков:</label><br>
+                <label class="car-menu-label">Размер дисков:</label><br>
                 <b-form-slider
                     v-if="diskSize !== null"
                     :min="diskSizeValues.min"

@@ -69,9 +69,7 @@
         </header>
 
         <main>
-            <div class="container">
-                @yield("PAGE_CONTENT")
-            </div>
+            @yield("PAGE_CONTENT")
         </main>
 
     </div>

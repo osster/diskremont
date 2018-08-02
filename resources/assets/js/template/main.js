@@ -37,6 +37,7 @@ $(document).ready(function () {
     var swiper3 = new Swiper('.main-reviews-slider.swiper-container', {
         slidesPerView: 3,
         spaceBetween: 20,
+        loop: true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',

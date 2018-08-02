@@ -1,0 +1,36 @@
+.car-menu-label {
+  color: #232323;
+  font-size: rem(20px);
+  font-weight: 700;
+}
+.form .btn-car-group .car-menu-btn {
+  text-align: left;
+  min-width: 240px;
+  height: 41px;
+  border: 2px solid #232323;
+  background: #fff;
+  color: $color_black;
+  font-size: rem(16px);
+  margin: 0 20px;
+}
+.btn-car-group {
+  align-items: center;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 21px;
+    background-image: url('../../../../img/arrow_black.svg');
+  }
+  &:after {
+    @extend .btn-car-group:before;
+    margin-right: 0;
+    transform: rotate(180deg);
+  }
+}
+.car-form-cost {
+  color: $black;
+  font-size: rem(24px);
+  font-weight: $fw600;
+}
