@@ -1,0 +1,322 @@
+body {
+  font-size: #{$font_size}px;
+  line-height: #{$font_size * 1.5}px;
+  font-family: $font_family_base;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+textarea, select, input[type="date"],
+input[type="datetime"], input[type="datetime-local"],
+input[type="email"], input[type="month"],
+input[type="number"], input[type="password"],
+input[type="search"], input[type="tel"],
+input[type="text"], input[type="time"],
+input[type="url"], input[type="week"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-background-clip: padding;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
+  background-color: $color_white;
+  color: $color_black;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 1em;
+  height: 1em;
+  vertical-align: middle;
+  border: 1px solid;
+}
+
+%hx {
+  font-family: $font_family_title;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+%h1 {
+  @extend %hx;
+  font-size: #{$font_size_h1}px;
+  line-height: #{$line_height_h1}px;
+  padding: 2rem 0 0;
+
+  @include mobile-all() {
+    font-size: #{$font_size_h1 * 0.65}px;
+    line-height: #{$line_height_h1 * 0.65}px;
+    padding: 1rem 0 0;
+  }
+}
+
+%h2 {
+  @extend %hx;
+  font-size: #{$font_size_h2}px;
+  line-height: #{$line_height_h2}px;
+  padding: 1.5rem 0 0;
+
+  @include mobile-all() {
+    font-size: #{$font_size_h2 * 0.65}px;
+    line-height: #{$line_height_h2 * 0.65}px;
+    padding: 0.75rem 0 0;
+  }
+}
+
+%h3 {
+  @extend %hx;
+  font-size: #{$font_size_h3}px;
+  line-height: #{$line_height_h3}px;
+  padding: 1rem 0 0;
+
+  @include mobile-all() {
+    font-size: #{$font_size_h3 * 0.65}px;
+    line-height: #{$line_height_h3 * 0.65}px;
+    padding: 0.5rem 0 0;
+  }
+}
+
+%h4 {
+  @extend %hx;
+  font-size: #{$font_size_h4}px;
+  line-height: #{$line_height_h4}px;
+  padding: 0.5rem 0 0;
+
+  @include mobile-all() {
+    font-size: #{$font_size_h4 * 0.65}px;
+    line-height: #{$line_height_h4 * 0.65}px;
+    padding: 0.25rem 0 0;
+  }
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  @extend %hx;
+}
+
+h1, .h1 {
+  @extend %h1;
+}
+
+h2, .h2 {
+  @extend %h2;
+}
+
+h3, .h3 {
+  @extend %h3;
+}
+
+h4, .h4 {
+  @extend %h4;
+}
+
+p {
+  @include mobile-all() {
+    font-size: #{$font_size_sm}px;
+    line-height: #{$line_height_sm}px;
+  }
+}
+
+.preloader {
+  opacity: 0;
+}
+
+a {
+  color: $color_gray_light;
+
+  &:hover {
+    color: $color_gray_ligten;
+  }
+}
+
+.btn {
+  background-color: $color_red_middle;
+  color: $color_white;
+  text-align: center;
+  padding: 15px 35px;
+  cursor: pointer;
+  font-size: #{$font_size}px;
+
+  &:hover {
+    background-color: $color_gray_darkest;
+    color: $color_white;
+  }
+
+  &-hover_white{
+
+    &:hover {
+      background-color: $color_white;
+      color: $color_red_middle!important;
+    }
+  }
+
+  &-hover_black{
+
+    &:hover {
+      background-color: $color_black;
+      color: $color_white!important;
+    }
+  }
+
+  &-hover_red{
+    background-color: $color_white_dirty;
+    color: $color_gray_light;
+
+    &:hover {
+      background-color: $color_black;
+      color: $color_white_dirty!important;
+    }
+  }
+}
+
+
+.more-btn {
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: $color_white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  @include transition(all, 0.3s, ease);
+
+  span {
+    margin-right: 15px;
+    @include transition(all, 0.3s, ease);
+  }
+
+  &:hover {
+    color: $color_gray_lighter;
+    text-decoration: none;
+
+    span {
+      margin-right: 25px;
+    }
+  }
+
+  &_down {
+    color: $color_white;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 30px;
+
+    span {
+      margin-bottom: 10px;
+    }
+    svg {
+      margin: 0;
+      transform: rotate(90deg);
+      @include transition(all, 0.3s, ease);
+    }
+    &:hover {
+      svg {
+        -webkit-transform: rotate(90deg) translateX(7px);
+        transform: rotate(90deg) translateX(7px);
+      }
+    }
+  }
+  &_gray {
+    color: $color_gray_ligten;
+  }
+}
+
+// @import "components/header";
+// @import "components/footer";
+// @import "components/top-slider";
+// @import "components/main-sections-nav";
+// @import "components/card-item";
+//
+//.bg-dark {
+//  background-color: $color_gray_darkest;
+//  color: $color_white_dirty;
+//}
+//.bg-light {
+//  background-color: $color_white;
+//  color: $color_gray_middle;
+//}
+
+.main {
+  &__promo {
+    background-color: $color_white;
+    color: $color_gray_middle;
+    padding: 100px 0 50px;
+
+    @include mobile-all(){
+      padding: 20px 0;
+    }
+
+    .container {
+      max-width: #{map_get($container-max-widths, xl)};
+    }
+
+    &_heading {
+      text-align: center;
+      margin-bottom: 50px;
+
+      &_title {
+        color: $color_gray_middle;
+        font-family: $font_family_title;
+        font-size: 36px;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 0.72px;
+        margin-bottom: 30px;
+
+        @include mobile-all() {
+          font-size: #{$font_size_md}px;
+        }
+      }
+      &_desc {
+        width: 670px;
+        margin: auto;
+        text-align: left;
+        @include mobile-all() {
+          width: 100%;
+          text-align: center;
+        }
+        &_center{
+          text-align: center;
+        }
+      }
+    }
+
+    &_dark {
+      background-color: $color_gray_darkest;
+      .main__promo {
+        color: $color_white_dirty;
+      }
+
+      .main__promo_heading_title{
+        color: $color_white_dirty;
+      }
+    }
+  }
+  &_dark {
+    background-color: $color_gray_darkest;
+    color: $color_white_dirty;
+  }
+
+  &_header.container {
+    max-width: #{map-get($container-max-widths, xl)};
+
+    h1 {
+      padding: 0;
+      margin-bottom: 40px;
+    }
+  }
+  &_padding {
+    padding: 100px 0;
+  }
+}

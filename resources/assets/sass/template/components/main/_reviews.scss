@@ -1,0 +1,69 @@
+.main-reviews {
+  .card {
+    height: 508px;
+    box-shadow: $main-box-shadow;
+    overflow: hidden;
+    margin-right: 20px;
+    padding: 15px;
+    color: $color_gray_darker;
+    .card-img-top {
+      height: 300px;
+    }
+    .card-body {
+      padding: 7% 2%;
+    }
+    .card-title {
+      font-size: rem(22px);
+      font-weight: 600;
+    }
+    .card-text {
+      font-size: rem(16px);
+      margin-bottom: 2%;
+    }
+    .card-link {
+      color: $color-red_c9;
+      font-size: rem(16px);
+      font-weight: 700;
+      cursor: pointer;
+      &:after {
+        content: "";
+        margin-left: 7px;
+        display: inline-block;
+        width: 15px;
+        height: 9px;
+        background-image: url('../img/down.png');
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  .control {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+    background: $color_black;
+  }
+  .main-reviews-wrapper {
+    position: relative;
+  }
+}
+
+.main-reviews-slider {
+  max-width: 92.6%;
+  .swiper-button-next {
+    left: 0;
+  }
+  .swiper-button-prev {
+    right: 0;
+  }
+}
+.carousel-control-prev-icon {
+  background-image: url('../img/after.png');
+  transform: rotate(180deg);
+}
+.carousel-control-next-icon {
+  @extend .carousel-control-prev-icon;
+  transform: rotate(360deg);
+}

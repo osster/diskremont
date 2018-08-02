@@ -1,0 +1,108 @@
+@import "../varibles";
+.navbar-brand {
+  @include max-w(214px);
+  max-height: 89px;
+  height: 100%;
+  opacity: 0.8;
+  @media screen and (max-width: $lg){
+    max-width: 28%;
+  }
+  @media screen and (max-width: $sm) {
+    margin: 0 auto;
+  }
+}
+.nav-item {
+  margin-left: 1.1vw;
+  margin-right: 0.8vw;
+  @media screen and (max-width: $md){
+    text-align: right;
+  }
+}
+.nav-link {
+  color: $grey-6a;
+  font-size: 1.11em;
+  font-weight: $fw600;
+  @media screen and (max-width: $md) {
+    display: inline-block;
+    padding-bottom: 7px;
+  }
+  &.navbar-insta {
+    display: none;
+    @media screen and (max-width: $md) {
+      display: none;
+    }
+  }
+}
+.navbar {
+  align-items: flex-end;
+  padding: 3.7rem 1rem 1.2rem;
+  @media screen and (max-width: $lg) {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  &-collapse {
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+  &-insta {
+    width: 40px;
+    height: 40px;
+    opacity: 0.6;
+    background: transparent url("../img/instagram.png") center bottom no-repeat;
+    margin: 0 auto;
+  }
+  &-toggler {
+    border-color: #3e3e3e;
+    border-radius: 0;
+    margin-top: 10px;
+  }
+}
+
+.header-info {
+  font-size: 0.88em;
+  @media screen and (max-width: $sm) {
+    width: 80%;
+  }
+  & {
+    color: inherit;
+  }
+  &-phones {
+    font-size: 1.25rem;
+    font-weight: $fw600;
+    line-height: 2.18rem;
+    @media screen and (max-width: $sm) {
+      font-size: 1rem;
+    }
+  }
+  &-phone {
+    padding-left: 13px;
+    white-space: nowrap;
+    @media screen and (max-width: $sm) {
+      padding: 0 6px;
+    }
+  }
+  &-address {
+    padding-bottom: 10px;
+    @media screen and (max-width: $md) {
+      display: none;
+    }
+  }
+  &-call {
+    @media screen and (max-width: $md) {
+      display: none;
+    }
+  }
+}
+
+
+.navbar-nav {
+  margin-right: 1.7vw;
+  @media screen and (max-width: $lg) {
+    justify-content: space-between;
+  }
+  @media screen and (max-width: $md) {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-right: 0;
+  }
+}

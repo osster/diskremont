@@ -1,0 +1,83 @@
+$color_white: #ffffff;
+$color_white_dirty: #f0f0f0;
+$color_black: #000000;
+$color_gray: #888888;
+$color_gray_ligten: #aaaaaa;
+$color_gray_lighter: #cdcbcb;
+$color_gray_light: #858585;
+$color_gray_middle: #606060;
+$color_gray_darken: #494949;
+$color_gray_darker: #232323;
+$color_gray_darkest: #1d1d1d;
+$color_red_middle: #bf000c;
+$color_white_dirty_opacity80: rgba(240, 240, 240, 0.8);
+$color_white_dirty_opacity50: rgba(247, 247, 247, 0.5);
+$color_white_dirty_opacity75: rgba(247, 247, 247, 0.75);
+$color_white_opacity80: rgba(255, 255, 255, 0.8);
+$color_gray_opacity60: rgba(107,101,101,0.6);
+$color_gray_opacity40: rgba(107,101,101,0.4);
+$color_gray_darken_opacity45: rgba(73, 73, 73, 0.45);
+
+
+// FONTS
+$font_family_base: 'Open Sans', sans-serif;
+$font_family_title: "Segoe UI", sans-serif;
+
+$font_size: 18;
+
+$font_size_xl: $font_size * 1.375;
+$font_size_lg: $font_size * 1.25;
+$font_size_md: $font_size * 1.125;
+$font_size_sm: $font_size * 0.875;
+$font_size_xs: $font_size * 0.8125;
+$font_size_xxs: $font_size * 0.6875;
+$font_size_h1: $font_size * 2.3;
+$font_size_h2_max: $font_size * 1.75;
+$font_size_h2: $font_size * 1.6;
+$font_size_h3: $font_size * 1.25;
+$font_size_h4: $font_size * 1.125;
+
+$line_height_lg: $font_size_lg * 2;
+$line_height_sm: $font_size_sm * 2;
+$line_height_h1: $font_size_h1 * 1.75;
+$line_height_h2: $font_size_h2 * 1.75;
+$line_height_h3: $font_size_h3 * 1.75;
+$line_height_h4: $font_size_h4 * 1.75;
+
+
+
+/**
+* BOOTSTRAP THEME
+*/
+
+$border-radius:               0rem;
+$border-radius-lg:            0rem;
+$border-radius-sm:            0rem;
+
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 812px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1560px
+);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+$container-max-widths: (
+        sm: 540px,
+        md: 720px,
+        lg: 960px,
+        xl: 1140px,
+        xxl: 1500px
+);
+
+$primary: $color_red_middle;

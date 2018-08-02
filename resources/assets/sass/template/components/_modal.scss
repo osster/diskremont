@@ -1,0 +1,46 @@
+.modal-dialog {
+  max-width: 540px;
+  max-height: 440px;
+  height: 100%;
+}
+.modal-label {
+  color: $color_gray_darker;
+  font-size: rem(30px);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 40px;
+}
+.modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  text-transform: uppercase;
+  max-height: 440px;
+  font-size: rem(16px);
+  .popup-input {
+    display: block;
+    max-width: 280px;
+    width: 100%;
+    padding: 5px;
+    text-align: center;
+    height: 40px;
+    border: 2px solid $color_gray_darker;
+    margin: 0 auto 20px;
+  }
+  .btn-red {
+    margin-top: 20px;
+    max-width: 280px;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    .btn-text:after {
+      display: none;
+    }
+  }
+}
+.modal-content {
+  max-height: 440px;
+  height: 100%;
+}

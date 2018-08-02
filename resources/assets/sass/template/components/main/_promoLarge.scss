@@ -1,0 +1,42 @@
+.main-promo-large {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+  @include mobile-all() {
+    height: 500px;
+  }
+  &:after {
+    @include black-img;
+  }
+  .card {
+    height: 100%;
+  }
+  .card-img {
+    height: 100%;
+    &-overlay {
+      @include max-w(978px);
+      padding: 5% 15px 1%;
+      color: $white-e9;
+      z-index: 1;
+      @include mobile-all() {
+        padding-top: 14%;
+      }
+      .card-title {
+        font-size: rem(24px);
+        margin-bottom: 3%;
+        @include mobile-all() {
+          margin-bottom: 6%;
+        }
+      }
+    }
+  }
+  .l-promo-link {
+    text-align: right;
+    .main-promo-large-link {
+      color: $white-e9;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

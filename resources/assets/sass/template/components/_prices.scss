@@ -1,0 +1,13 @@
+@import "./prices/pricesTable";
+@import "./prices/pricePromo";
+@import "./prices/pricesKinds";
+
+.main-promo-large,
+.prices-kinds {
+  margin-top: 17vh;
+  margin-bottom: 6.5%;
+  @include mobile-all() {
+    margin-top: 6.5vh;
+    margin-bottom: 6.5vh;
+  }
+}

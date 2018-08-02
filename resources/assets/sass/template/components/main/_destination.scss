@@ -1,0 +1,133 @@
+.main-destination {
+  position: relative;
+  background: url("../img/bg-addresses.jpg");
+  padding-top: 100px;
+  padding-bottom: 100px;
+  border-bottom: 8px solid $grey-6e;
+  @include mobile-all() {
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+  }
+  .main-destination-block {
+    position: relative;
+    padding: 20px 0 42px 25px;
+    background: $color_white;
+    z-index: 1;
+    &-map {
+      @media screen and (max-width: 815px) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    @media screen and (max-width: 815px) {
+      flex-direction: column;
+      padding: 20px 0 0 ;
+    }
+    .col {
+      @media screen and (max-width: 815px){
+        flex-basis: auto;
+      }
+    }
+  }
+  .map {
+    width: 100%;
+    height: 416px;
+    background: blue;
+  }
+  .main-destination-info {
+    font-size: rem(24px);
+    margin-top: 8.6%;
+    @include mobile-all() {
+      font-size: rem(20px);
+    }
+    .btn-red {
+      width: 100%;
+      &:after {
+        display: none;
+      }
+    }
+    .destination-info-li {
+      padding-left: 52px;
+      padding-right: 47px;
+      display: flex;
+      .dest-info-span {
+        width: calc(100% - 55px);
+      }
+      @include mobile-all() {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    .address {
+      margin-bottom: 5.5%;
+      @include mobile-all() {
+        margin-bottom: 3%;
+      }
+      &:before {
+        @include pseudo-el-address;
+        background-image: url('../img/address.png');
+        @include mobile-all() {
+          background-size: 35%;
+        }
+      }
+    }
+    .phones {
+      margin-bottom: 6%;
+      @include mobile-all() {
+        margin-bottom: 3%;
+      }
+      &:before {
+        @include pseudo-el-address;
+        background-image: url('../img/phone.png');
+        -ms-background-position-y: 15px;
+        background-position-y: 15px;
+        @include mobile-all() {
+          background-size: 45%;
+        }
+      }
+    }
+    .timetable {
+      margin-bottom: 10%;
+      @include mobile-all() {
+        margin-bottom: 3%;
+      }
+      &:before {
+        @include pseudo-el-address;
+        background-image: url('../img/open.png');
+        -ms-background-position-y: 0;
+        background-position-y: 0;
+        @include mobile-all() {
+          background-size: 60%;
+        }
+      }
+      .dest-info-span {
+        padding-top: 10px;
+      }
+    }
+    .btn-red {
+      display: flex;
+      justify-content: center;
+      font-size: rem(20px);
+      border: none;
+      .btn-text {
+        &:after {
+          margin-left: 13px;
+          -webkit-background-size: cover;
+          background-size: cover;
+          width: 11px;
+          height: 13px;
+          transform: translateY(3px);
+        }
+      }
+    }
+  }
+}

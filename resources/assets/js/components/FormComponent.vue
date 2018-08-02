@@ -22,7 +22,7 @@
             </div>
             <div class="col-12 col-lg-4 offset-lg-4 text-right">
                 Стоимость за комплект:<br>
-                6 500 руб
+                {{ totalPrice }} руб
             </div>
         </div>
         <stage-component></stage-component>
@@ -48,18 +48,18 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-3">
+            <div class="col-12 col-lg-4 b-slider">
                 <label>Размер дисков:</label><br>
                 <b-form-slider
-                        v-if="diskSize !== null"
-                        :min="diskSizeValues.min"
-                        :max="diskSizeValues.max"
-                        :step="2"
-                        :ticks="diskSizeValues.ticks"
-                        :ticks-labels="diskSizeValues.ticksLabels"
-                        :value="diskSizeValue"
-                        :trigger-change-event="true"
-                        @change="setDiskSize"
+                    v-if="diskSize !== null"
+                    :min="diskSizeValues.min"
+                    :max="diskSizeValues.max"
+                    :step="1"
+                    :ticks="diskSizeValues.ticks"
+                    :ticks-labels="diskSizeValues.ticksLabels"
+                    :value="diskSizeValue"
+                    :trigger-change-event="true"
+                    @change="setDiskSize"
                 ></b-form-slider>
             </div>
             <div class="col-12 col-lg-3">
@@ -69,7 +69,7 @@
                     <label class="form-check-label" for="polish">Алмазная полировка</label>
                 </div>
             </div>
-            <div class="col-12 col-lg-3">
+            <div class="col-12 col-lg-2">
                 <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="mount" v-model="isDiskMountedValue"
                            :checked="isDiskMounted">
@@ -96,7 +96,8 @@
                     max: 0,
                     ticks: [],
                     ticksLabels: []
-                }
+                },
+                totalPrice: 0
             }
         },
         mounted: function () {
@@ -132,12 +133,38 @@
                 that.diskSizeValues.min = _.min(that.diskSizeValues.ticks);
                 that.diskSizeValues.max = _.max(that.diskSizeValues.ticks);
                 that.diskSizeValue = val.size;
+
+                that.flashLights();
+                that.totalPrice = (typeof that.$store.getters.calcFunction === 'function')
+                    ? that.$store.getters.calcFunction(that.diskSize, that.diskColor, that.isDiskPolished, that.isDiskMounted)
+                    : 0;
+            },
+            diskColor: function (val) {
+                var that = this;
+                that.flashLights();
+                that.totalPrice = (typeof that.$store.getters.calcFunction === 'function')
+                    ? that.$store.getters.calcFunction(that.diskSize, that.diskColor, that.isDiskPolished, that.isDiskMounted)
+                    : 0;
+            },
+            carColor: function (val) {
+                var that = this;
+                that.flashLights();
             },
             isDiskPolishedValue: function (val) {
-                this.$store.commit('setDiskPolished', val);
+                var that = this;
+                that.$store.commit('setDiskPolished', val);
+                that.flashLights();
+                that.totalPrice = (typeof that.$store.getters.calcFunction === 'function')
+                    ? that.$store.getters.calcFunction(that.diskSize, that.diskColor, that.isDiskPolished, that.isDiskMounted)
+                    : 0;
             },
             isDiskMountedValue: function (val) {
-                this.$store.commit('setDiskMounted', val);
+                var that = this;
+                that.$store.commit('setDiskMounted', val);
+                that.flashLights();
+                that.totalPrice = (typeof that.$store.getters.calcFunction === 'function')
+                    ? that.$store.getters.calcFunction(that.diskSize, that.diskColor, that.isDiskPolished, that.isDiskMounted)
+                    : 0;
             }
         },
         methods: {
@@ -170,6 +197,19 @@
                 if (typeof newSize === 'object') {
                     this.$store.commit('setDiskSize', newSize);
                 }
+            },
+            flashLights: function () {
+                var that = this;
+                that.$store.commit('switchOnLigt');
+                setTimeout(function () {
+                    that.$store.commit('switchOffLigt');
+                    setTimeout(function () {
+                        that.$store.commit('switchOnLigt');
+                        setTimeout(function () {
+                            that.$store.commit('switchOffLigt');
+                        }, 100);
+                    }, 100);
+                }, 200);
             }
         }
     }

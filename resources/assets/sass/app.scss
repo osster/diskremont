@@ -3,12 +3,22 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
-@import "variables";
+@import "template/template_vars";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-@import "~bootstrap-slider/src/sass/bootstrap-slider";
+@import "template/template_mixins";
+@import "template/template_webfonts";
+@import "template/template_styles";
+
+@import "template/components/styles";
+
+@import "template/libs/swiper.min";
+@import "template/libs/lightbox.min";
+
+@import "bootstrap-slider/bootstrap-slider";
+
 
 #calc-app-body {
   .color-preview {
@@ -19,12 +29,5 @@
     border: 1px solid #aaa;
     position: relative;
     bottom: -2px;
-  }
-
-  #allcar {
-    -moz-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    -webkit-transition: all 1s ease;
-    transition: all 1s ease;
   }
 }

@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
 
@@ -12,7 +11,15 @@ try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-} catch (e) {}
+
+    require('../../../node_modules/jquery-mask-plugin/dist/jquery.mask.js');
+    require('../../../node_modules/jquery-validation/dist/jquery.validate.js');
+    require('../../../node_modules/jquery-datetimepicker/build/jquery.datetimepicker.full.min.js');
+    require('../../../node_modules/swiper/dist/js/swiper.js');
+    require('../../../node_modules/lightbox2/dist/js/lightbox.js');
+
+} catch (e) {
+}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
