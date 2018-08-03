@@ -1,7 +1,7 @@
 <template>
-    <div class="form">
-        <div class="row">
-            <div class="col-12 col-lg-4">
+    <div class="form mt-3 mt-md-0">
+        <div class="row mb-5">
+            <div class="col-12 col-md-6 mb-3 text-center text-md-left">
                 <label class="car-menu-label">Цвет автомобиля:</label><br>
                 <div class="btn-group btn-car-group">
                     <button type="button" class="btn dropdown-toggle car-menu-btn" data-toggle="dropdown" aria-haspopup="true"
@@ -10,7 +10,7 @@
                               :style="'background-color: #' + carColor.hash + ';'"></span>
                         {{ carColor !== null ? carColor.name : 'Выбрать цвет' }}
                     </button>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu car-dropdown-menu">
                         <a v-for="color in $store.getters.values.carColorList"
                            class="dropdown-item"
                            :class="(carColor.hash == color.hash ? 'active' : '')"
@@ -20,14 +20,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 offset-lg-4 text-right car-form-cost">
+            <div class="col-12 col-md-6 mb-3 text-center text-md-right car-form-cost">
                 Стоимость за комплект:<br>
                 {{ totalPrice }} руб
             </div>
         </div>
         <stage-component></stage-component>
-        <div class="row">
-            <div class="col-12 col-lg-3">
+        <div class="row mt-5">
+            <div class="col-12 col-md-6 mb-3 col-xl-4 text-center text-md-left">
                 <label class="car-menu-label">Цвет дисков:</label><br>
                 <div class="btn-group btn-car-group">
                     <button type="button" class="btn dropdown-toggle car-menu-btn" data-toggle="dropdown" aria-haspopup="true"
@@ -36,7 +36,7 @@
                               :style="'background-color: #' + diskColor.hash + ';'"></span>
                         {{ diskColor !== null ? diskColor.name : 'Выбрать цвет' }}
                     </button>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu car-dropdown-menu">
                         <a v-for="color in $store.getters.values.diskColorList"
                            class="dropdown-item"
                            :class="(diskColor.hash == color.hash ? 'active' : '')"
@@ -48,7 +48,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 b-slider">
+            <div class="col-12 col-md-6 mb-3 col-xl-3 b-slider text-center text-md-right text-xl-center">
                 <label class="car-menu-label">Размер дисков:</label><br>
                 <b-form-slider
                     v-if="diskSize !== null"
@@ -62,18 +62,18 @@
                     @change="setDiskSize"
                 ></b-form-slider>
             </div>
-            <div class="col-12 col-lg-3">
+            <div class="col-12 col-md-6 mb-3 col-xl-3 d-flex align-items-center justify-content-center justify-content-md-start justify-content-xl-end">
                 <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="polish" v-model="isDiskPolishedValue"
+                    <input type="checkbox" class="car-form-checkbox form-check-input" id="polish" v-model="isDiskPolishedValue"
                            :checked="isDiskPolished">
-                    <label class="form-check-label" for="polish">Алмазная полировка</label>
+                    <label class="form-check-label car-form-label" for="polish">Алмазная полировка</label>
                 </div>
             </div>
-            <div class="col-12 col-lg-2">
+            <div class="col-12 col-md-6 mb-3 justify-content-center justify-content-md-end col-xl-2 d-flex align-items-center">
                 <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="mount" v-model="isDiskMountedValue"
+                    <input type="checkbox" class="car-form-checkbox form-check-input" id="mount" v-model="isDiskMountedValue"
                            :checked="isDiskMounted">
-                    <label class="form-check-label" for="mount">Шиномонтаж</label>
+                    <label class="form-check-label car-form-label" for="mount">Шиномонтаж</label>
                 </div>
             </div>
         </div>

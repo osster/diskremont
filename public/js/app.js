@@ -68809,77 +68809,84 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "form" },
+    { staticClass: "form mt-3 mt-md-0" },
     [
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12 col-lg-4" }, [
-          _c("label", { staticClass: "car-menu-label" }, [
-            _vm._v("Цвет автомобиля:")
-          ]),
-          _c("br"),
-          _vm._v(" "),
-          _c("div", { staticClass: "btn-group btn-car-group" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn dropdown-toggle car-menu-btn",
-                attrs: {
-                  type: "button",
-                  "data-toggle": "dropdown",
-                  "aria-haspopup": "true",
-                  "aria-expanded": "false"
-                }
-              },
-              [
-                _vm.carColor !== null
-                  ? _c("span", {
-                      staticClass: "color-preview",
-                      style: "background-color: #" + _vm.carColor.hash + ";"
-                    })
-                  : _vm._e(),
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(
-                      _vm.carColor !== null ? _vm.carColor.name : "Выбрать цвет"
-                    ) +
-                    "\n                "
-                )
-              ]
-            ),
+      _c("div", { staticClass: "row mb-5" }, [
+        _c(
+          "div",
+          { staticClass: "col-12 col-md-6 mb-3 text-center text-md-left" },
+          [
+            _c("label", { staticClass: "car-menu-label" }, [
+              _vm._v("Цвет автомобиля:")
+            ]),
+            _c("br"),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "dropdown-menu" },
-              _vm._l(_vm.$store.getters.values.carColorList, function(color) {
-                return _c(
-                  "a",
-                  {
-                    staticClass: "dropdown-item",
-                    class: _vm.carColor.hash == color.hash ? "active" : "",
-                    attrs: { href: "javascript:void(0)" },
-                    on: {
-                      click: function($event) {
-                        _vm.setCarColor(color)
+            _c("div", { staticClass: "btn-group btn-car-group" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn dropdown-toggle car-menu-btn",
+                  attrs: {
+                    type: "button",
+                    "data-toggle": "dropdown",
+                    "aria-haspopup": "true",
+                    "aria-expanded": "false"
+                  }
+                },
+                [
+                  _vm.carColor !== null
+                    ? _c("span", {
+                        staticClass: "color-preview",
+                        style: "background-color: #" + _vm.carColor.hash + ";"
+                      })
+                    : _vm._e(),
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(
+                        _vm.carColor !== null
+                          ? _vm.carColor.name
+                          : "Выбрать цвет"
+                      ) +
+                      "\n                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "dropdown-menu car-dropdown-menu" },
+                _vm._l(_vm.$store.getters.values.carColorList, function(color) {
+                  return _c(
+                    "a",
+                    {
+                      staticClass: "dropdown-item",
+                      class: _vm.carColor.hash == color.hash ? "active" : "",
+                      attrs: { href: "javascript:void(0)" },
+                      on: {
+                        click: function($event) {
+                          _vm.setCarColor(color)
+                        }
                       }
-                    }
-                  },
-                  [
-                    _c("span", {
-                      staticClass: "color-preview",
-                      style: "background-color: #" + color.hash + ";"
-                    }),
-                    _vm._v(_vm._s(color.name))
-                  ]
-                )
-              })
-            )
-          ])
-        ]),
+                    },
+                    [
+                      _c("span", {
+                        staticClass: "color-preview",
+                        style: "background-color: #" + color.hash + ";"
+                      }),
+                      _vm._v(_vm._s(color.name))
+                    ]
+                  )
+                })
+              )
+            ])
+          ]
+        ),
         _vm._v(" "),
         _c(
           "div",
           {
-            staticClass: "col-12 col-lg-4 offset-lg-4 text-right car-form-cost"
+            staticClass:
+              "col-12 col-md-6 mb-3 text-center text-md-right car-form-cost"
           },
           [
             _vm._v("\n            Стоимость за комплект:"),
@@ -68891,80 +68898,92 @@ var render = function() {
       _vm._v(" "),
       _c("stage-component"),
       _vm._v(" "),
-      _c("div", { staticClass: "row" }, [
-        _c("div", { staticClass: "col-12 col-lg-3" }, [
-          _c("label", { staticClass: "car-menu-label" }, [
-            _vm._v("Цвет дисков:")
-          ]),
-          _c("br"),
-          _vm._v(" "),
-          _c("div", { staticClass: "btn-group btn-car-group" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn dropdown-toggle car-menu-btn",
-                attrs: {
-                  type: "button",
-                  "data-toggle": "dropdown",
-                  "aria-haspopup": "true",
-                  "aria-expanded": "false"
-                }
-              },
-              [
-                _vm.diskColor !== null
-                  ? _c("span", {
-                      staticClass: "color-preview",
-                      style: "background-color: #" + _vm.diskColor.hash + ";"
-                    })
-                  : _vm._e(),
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(
-                      _vm.diskColor !== null
-                        ? _vm.diskColor.name
-                        : "Выбрать цвет"
-                    ) +
-                    "\n                "
-                )
-              ]
-            ),
+      _c("div", { staticClass: "row mt-5" }, [
+        _c(
+          "div",
+          {
+            staticClass:
+              "col-12 col-md-6 mb-3 col-xl-4 text-center text-md-left"
+          },
+          [
+            _c("label", { staticClass: "car-menu-label" }, [
+              _vm._v("Цвет дисков:")
+            ]),
+            _c("br"),
             _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "dropdown-menu" },
-              _vm._l(_vm.$store.getters.values.diskColorList, function(color) {
-                return _c(
-                  "a",
-                  {
-                    staticClass: "dropdown-item",
-                    class: _vm.diskColor.hash == color.hash ? "active" : "",
-                    attrs: { href: "javascript:void(0)" },
-                    on: {
-                      click: function($event) {
-                        _vm.setDiskColor(color)
+            _c("div", { staticClass: "btn-group btn-car-group" }, [
+              _c(
+                "button",
+                {
+                  staticClass: "btn dropdown-toggle car-menu-btn",
+                  attrs: {
+                    type: "button",
+                    "data-toggle": "dropdown",
+                    "aria-haspopup": "true",
+                    "aria-expanded": "false"
+                  }
+                },
+                [
+                  _vm.diskColor !== null
+                    ? _c("span", {
+                        staticClass: "color-preview",
+                        style: "background-color: #" + _vm.diskColor.hash + ";"
+                      })
+                    : _vm._e(),
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(
+                        _vm.diskColor !== null
+                          ? _vm.diskColor.name
+                          : "Выбрать цвет"
+                      ) +
+                      "\n                "
+                  )
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "dropdown-menu car-dropdown-menu" },
+                _vm._l(_vm.$store.getters.values.diskColorList, function(
+                  color
+                ) {
+                  return _c(
+                    "a",
+                    {
+                      staticClass: "dropdown-item",
+                      class: _vm.diskColor.hash == color.hash ? "active" : "",
+                      attrs: { href: "javascript:void(0)" },
+                      on: {
+                        click: function($event) {
+                          _vm.setDiskColor(color)
+                        }
                       }
-                    }
-                  },
-                  [
-                    _c("span", {
-                      staticClass: "color-preview",
-                      style: "background-color: #" + color.hash + ";"
-                    }),
-                    _vm._v(
-                      "\n                        " +
-                        _vm._s(color.name) +
-                        "\n                    "
-                    )
-                  ]
-                )
-              })
-            )
-          ])
-        ]),
+                    },
+                    [
+                      _c("span", {
+                        staticClass: "color-preview",
+                        style: "background-color: #" + color.hash + ";"
+                      }),
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(color.name) +
+                          "\n                    "
+                      )
+                    ]
+                  )
+                })
+              )
+            ])
+          ]
+        ),
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "col-12 col-lg-4 b-slider" },
+          {
+            staticClass:
+              "col-12 col-md-6 mb-3 col-xl-3 b-slider text-center text-md-right text-xl-center"
+          },
           [
             _c("label", { staticClass: "car-menu-label" }, [
               _vm._v("Размер дисков:")
@@ -68989,105 +69008,125 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _c("div", { staticClass: "col-12 col-lg-3" }, [
-          _c("div", { staticClass: "form-group form-check" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.isDiskPolishedValue,
-                  expression: "isDiskPolishedValue"
-                }
-              ],
-              staticClass: "form-check-input",
-              attrs: { type: "checkbox", id: "polish" },
-              domProps: {
-                checked: _vm.isDiskPolished,
-                checked: Array.isArray(_vm.isDiskPolishedValue)
-                  ? _vm._i(_vm.isDiskPolishedValue, null) > -1
-                  : _vm.isDiskPolishedValue
-              },
-              on: {
-                change: function($event) {
-                  var $$a = _vm.isDiskPolishedValue,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = null,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 && (_vm.isDiskPolishedValue = $$a.concat([$$v]))
+        _c(
+          "div",
+          {
+            staticClass:
+              "col-12 col-md-6 mb-3 col-xl-3 d-flex align-items-center justify-content-center justify-content-md-start justify-content-xl-end"
+          },
+          [
+            _c("div", { staticClass: "form-group form-check" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.isDiskPolishedValue,
+                    expression: "isDiskPolishedValue"
+                  }
+                ],
+                staticClass: "car-form-checkbox form-check-input",
+                attrs: { type: "checkbox", id: "polish" },
+                domProps: {
+                  checked: _vm.isDiskPolished,
+                  checked: Array.isArray(_vm.isDiskPolishedValue)
+                    ? _vm._i(_vm.isDiskPolishedValue, null) > -1
+                    : _vm.isDiskPolishedValue
+                },
+                on: {
+                  change: function($event) {
+                    var $$a = _vm.isDiskPolishedValue,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = null,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && (_vm.isDiskPolishedValue = $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          (_vm.isDiskPolishedValue = $$a
+                            .slice(0, $$i)
+                            .concat($$a.slice($$i + 1)))
+                      }
                     } else {
-                      $$i > -1 &&
-                        (_vm.isDiskPolishedValue = $$a
-                          .slice(0, $$i)
-                          .concat($$a.slice($$i + 1)))
+                      _vm.isDiskPolishedValue = $$c
                     }
-                  } else {
-                    _vm.isDiskPolishedValue = $$c
                   }
                 }
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              { staticClass: "form-check-label", attrs: { for: "polish" } },
-              [_vm._v("Алмазная полировка")]
-            )
-          ])
-        ]),
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "form-check-label car-form-label",
+                  attrs: { for: "polish" }
+                },
+                [_vm._v("Алмазная полировка")]
+              )
+            ])
+          ]
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "col-12 col-lg-2" }, [
-          _c("div", { staticClass: "form-group form-check" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.isDiskMountedValue,
-                  expression: "isDiskMountedValue"
-                }
-              ],
-              staticClass: "form-check-input",
-              attrs: { type: "checkbox", id: "mount" },
-              domProps: {
-                checked: _vm.isDiskMounted,
-                checked: Array.isArray(_vm.isDiskMountedValue)
-                  ? _vm._i(_vm.isDiskMountedValue, null) > -1
-                  : _vm.isDiskMountedValue
-              },
-              on: {
-                change: function($event) {
-                  var $$a = _vm.isDiskMountedValue,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = null,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 && (_vm.isDiskMountedValue = $$a.concat([$$v]))
+        _c(
+          "div",
+          {
+            staticClass:
+              "col-12 col-md-6 mb-3 justify-content-center justify-content-md-end col-xl-2 d-flex align-items-center"
+          },
+          [
+            _c("div", { staticClass: "form-group form-check" }, [
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.isDiskMountedValue,
+                    expression: "isDiskMountedValue"
+                  }
+                ],
+                staticClass: "car-form-checkbox form-check-input",
+                attrs: { type: "checkbox", id: "mount" },
+                domProps: {
+                  checked: _vm.isDiskMounted,
+                  checked: Array.isArray(_vm.isDiskMountedValue)
+                    ? _vm._i(_vm.isDiskMountedValue, null) > -1
+                    : _vm.isDiskMountedValue
+                },
+                on: {
+                  change: function($event) {
+                    var $$a = _vm.isDiskMountedValue,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = null,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && (_vm.isDiskMountedValue = $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          (_vm.isDiskMountedValue = $$a
+                            .slice(0, $$i)
+                            .concat($$a.slice($$i + 1)))
+                      }
                     } else {
-                      $$i > -1 &&
-                        (_vm.isDiskMountedValue = $$a
-                          .slice(0, $$i)
-                          .concat($$a.slice($$i + 1)))
+                      _vm.isDiskMountedValue = $$c
                     }
-                  } else {
-                    _vm.isDiskMountedValue = $$c
                   }
                 }
-              }
-            }),
-            _vm._v(" "),
-            _c(
-              "label",
-              { staticClass: "form-check-label", attrs: { for: "mount" } },
-              [_vm._v("Шиномонтаж")]
-            )
-          ])
-        ])
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "form-check-label car-form-label",
+                  attrs: { for: "mount" }
+                },
+                [_vm._v("Шиномонтаж")]
+              )
+            ])
+          ]
+        )
       ])
     ],
     1

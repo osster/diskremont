@@ -50,7 +50,7 @@ $lg-kind: 1200px;
       height: 65px;
       background-repeat: no-repeat;
       background-position: center center;
-      background-image: url('../img/arrow-big-black.png');
+      background-image: url('../../../img/arrow-big-black.png');
       top: 50%;
       right: 50%;
       transform: translate(50%, -50%);
@@ -151,7 +151,7 @@ $lg-kind: 1200px;
       display: none;
     }
     &:after {
-      background-image: url('../img/arrow-big-white.png');
+      background-image: $main-arrow;
       transform: translate(50%, 0);
       bottom: 8%;
       top: auto;
