@@ -1,16 +1,16 @@
 <template>
-    <div class="form">
-        <div class="row bg-light py-3 px-4 border">
-            <div class="col-12 col-lg-4">
-                <label>Цвет автомобиля:</label><br>
-                <div class="btn-group">
-                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+    <div class="form mt-3 mt-md-0">
+        <div class="row mb-5">
+            <div class="col-12 col-md-6 mb-3 text-center text-md-left">
+                <label class="car-menu-label">Цвет автомобиля:</label><br>
+                <div class="btn-group btn-car-group">
+                    <button type="button" class="btn dropdown-toggle car-menu-btn" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                         <span v-if="carColor !== null" class="color-preview"
                               :style="'background-color: #' + carColor.hash + ';'"></span>
                         {{ carColor !== null ? carColor.name : 'Выбрать цвет' }}
                     </button>
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu car-dropdown-menu">
                         <a v-for="color in $store.getters.values.carColorList"
                            class="dropdown-item"
                            :class="(carColor.hash == color.hash ? 'active' : '')"
@@ -20,17 +20,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 offset-lg-4 text-right">
+            <div class="col-12 col-md-6 mb-3 text-center text-md-right car-form-cost">
                 Стоимость за комплект:<br>
                 {{ totalPrice }} руб
             </div>
         </div>
         <car-component></car-component>
-        <div class="row bg-light py-3 px-4 border">
-            <div class="col-12 col-lg-3">
-                <label>Цвет дисков:</label><br>
-                <div class="btn-group">
-                    <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+        <div class="row mt-5">
+            <div class="col-12 col-md-6 mb-3 col-xl-4 text-center text-md-left">
+                <label class="car-menu-label">Цвет дисков:</label><br>
+                <div class="btn-group btn-car-group">
+                    <button type="button" class="btn dropdown-toggle car-menu-btn" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
                         <!--
                             <span v-if="diskColor !== null" class="color-preview"
@@ -38,21 +38,20 @@
                         -->
                         {{ diskColorSection != null ? diskColorSection.name : 'Выбрать цвет' }}
                     </button>
-                    <div class="dropdown-menu">
-                        <a v-for="(section) in diskColorSections"
-                           v-if="diskSectionHasColors(section)"
+                    <div class="dropdown-menu car-dropdown-menu">
+                        <a v-for="color in $store.getters.values.diskColorList"
                            class="dropdown-item"
-                           :class="(diskColor.section == section.key ? 'active' : '')"
+                           :class="(diskColor.hash == color.hash ? 'active' : '')"
                            href="javascript:void(0)"
-                           @click="diskColorSection = section">
-                            <!--<span class="color-preview" :style="'background-color: #' + color.hash + ';'"></span>-->
-                            {{section.name}}
+                           @click="setDiskColor(color)">
+                            <span class="color-preview" :style="'background-color: #' + color.hash + ';'"></span>
+                            {{color.name}}
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-4 b-slider">
-                <label>Размер дисков:</label><br>
+            <div class="col-12 col-md-6 mb-3 col-xl-3 b-slider text-center text-md-right text-xl-center">
+                <label class="car-menu-label">Размер дисков:</label><br>
                 <b-form-slider
                     v-if="diskSize !== null"
                     :min="diskSizeValues.min"
@@ -65,18 +64,18 @@
                     @change="setDiskSize"
                 ></b-form-slider>
             </div>
-            <div class="col-12 col-lg-3">
+            <div class="col-12 col-md-6 mb-3 col-xl-3 d-flex align-items-center justify-content-center justify-content-md-start justify-content-xl-end">
                 <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="polish" v-model="isDiskPolishedValue"
+                    <input type="checkbox" class="car-form-checkbox form-check-input" id="polish" v-model="isDiskPolishedValue"
                            :checked="isDiskPolished">
-                    <label class="form-check-label" for="polish">Алмазная полировка</label>
+                    <label class="form-check-label car-form-label" for="polish">Алмазная полировка</label>
                 </div>
             </div>
-            <div class="col-12 col-lg-2">
+            <div class="col-12 col-md-6 mb-3 justify-content-center justify-content-md-end col-xl-2 d-flex align-items-center">
                 <div class="form-group form-check">
-                    <input type="checkbox" class="form-check-input" id="mount" v-model="isDiskMountedValue"
+                    <input type="checkbox" class="car-form-checkbox form-check-input" id="mount" v-model="isDiskMountedValue"
                            :checked="isDiskMounted">
-                    <label class="form-check-label" for="mount">Шиномонтаж</label>
+                    <label class="form-check-label car-form-label" for="mount">Шиномонтаж</label>
                 </div>
             </div>
         </div>

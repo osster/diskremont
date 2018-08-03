@@ -65,7 +65,7 @@
     &-btn {
       width: 42px;
       height: 100%;
-      background: transparent url('../img/after.png') center center no-repeat;
+      background: transparent $main-arrow center center no-repeat;
       background-size: 15px 17px;
       margin-left: 0;
       transform: rotate(90deg);
@@ -151,7 +151,7 @@
   .page-item:first-child,
   .page-item:last-child {
     .page-link {
-      background: transparent url('../img/after.png') center center no-repeat;
+      background: transparent $main-arrow center center no-repeat;
       width: 21px;
       height: 19px;
       -webkit-background-size: contain;

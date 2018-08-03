@@ -2,9 +2,13 @@
   .swiper-slide {
     height: 150px;
     padding: 5px;
+    &.active {
+      border: 2px solid $color_red_c9;
+    }
   }
   &.swiper-container {
     max-width: 630px;
+    min-width: 100%;
   }
   .main-gallery-img {
     display: block;

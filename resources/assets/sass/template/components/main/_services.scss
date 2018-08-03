@@ -1,6 +1,12 @@
+.ms-image {
+  margin: auto;
+  height: 100%;
+}
 .main-services {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid #575757;
   @media screen and (max-width: $md) {
     margin-top: 2%;
     margin-bottom: 2%;
@@ -26,19 +32,8 @@
       }
     }
   }
-  .ms-image {
-    margin: auto;
-  }
-  &-img1 {
-    width: 40%;
-  }
-  &-img2 {
-    height: 85%;
-  }
-  &-img3 {
-
-  }
   &-img4 {
+    height: 76%;
   }
   &-img5 {
   }

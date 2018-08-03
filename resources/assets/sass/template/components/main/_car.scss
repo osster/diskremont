@@ -1,0 +1,97 @@
+$arrow-width: 12px;
+$margin-btn-group: 20px;
+$car-border-btn: 2px;
+$car-padding-dropdown: 8px;
+.car-menu-label {
+  color: #232323;
+  font-size: rem(20px);
+  font-weight: 700;
+  padding-left: $margin-btn-group + $arrow-width;
+}
+.form .btn-car-group .car-menu-btn {
+  text-align: left;
+  min-width: 240px;
+  height: 41px;
+  border: $car-border-btn solid #232323;
+  background: #fff;
+  color: $color_black;
+  font-size: rem(16px);
+  margin: 0 $margin-btn-group;
+  padding: $car-padding-dropdown;
+  &:focus {
+    box-shadow: none;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -2px;
+    display: inline-block;
+    width: 40px;
+    height: 100%;
+    background: $color_black $main-arrow no-repeat center center;
+    background-size: 34%;
+    transform: rotate(90deg);
+    border: none;
+  }
+}
+.btn-car-group {
+  align-items: center;
+  &:before {
+    content: '';
+    display: inline-block;
+    width: $arrow-width;
+    height: 21px;
+    background-image: url('../../../../img/arrow_black.svg');
+  }
+  &:after {
+    @extend .btn-car-group:before;
+    margin-right: 0;
+    transform: rotate(180deg);
+  }
+}
+.car-dropdown-menu {
+  width: calc(100% - 63px);
+  border: 2px solid $color_black;
+  .dropdown-item {
+    padding: $car-padding-dropdown;
+    &.active {
+      background-color: $reb-btn-color;
+    }
+  }
+}
+.car-form-cost {
+  color: $color_black;
+  font-size: rem(24px);
+  font-weight: $fw600;
+}
+
+.car-form-checkbox {
+  display: none;
+}
+.car-form-label {
+  color: $color_black;
+  font-size: rem(16px);
+  &:before {
+    content: "\2713";
+    color: transparent;
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    border: 2px solid #232323;
+    font-size: 17px;
+    line-height: 18px;
+    font-weight: bold;
+    margin: -5px 5px 0 0;
+    text-align: center;
+    vertical-align: middle;
+    transition: color ease .3s;
+    cursor: pointer;
+  }
+}
+.car-form-checkbox:checked + label:before {
+  color: #000;
+}
+
+
+

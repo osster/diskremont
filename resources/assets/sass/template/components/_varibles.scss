@@ -14,6 +14,7 @@ $big-box-shadow-block: 6px 6px 6px rgba(0, 0, 0, 0.16);
 $lg: 992px;
 $md: 768px;
 $sm: 576px;
+$main-arrow: url('../img/arrow.svg');
 
 @function rem($pixels, $context: $main-font) {
   @return #{$pixels / $context}rem
@@ -100,7 +101,7 @@ $sm: 576px;
   width: 27px;
   height: 24px;
   margin-left: 42px;
-  background: transparent url('../img/arrow.svg') center center no-repeat;
+  background: transparent $main-arrow center center no-repeat;
 }
 
 @mixin controls {
@@ -120,7 +121,9 @@ $sm: 576px;
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: transparent url('../img/after.png') no-repeat center center;
+  background-image: $main-arrow;
+  background-repeat:no-repeat;
+  background-position: center center;
   background-size: contain;
   transform: rotate(180deg);
 }
