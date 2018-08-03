@@ -50,7 +50,9 @@
                                 $dataTypeRows = $dataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
                             @endphp
 
-                            <div id="car-to-png"></div>
+                                <div style="max-width: 100%">
+                                    <div id="car-to-png"></div>
+                                </div>
 
                             @foreach($dataTypeRows as $row)
                                 <!-- GET THE DISPLAY OPTIONS -->

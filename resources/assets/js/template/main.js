@@ -13,26 +13,26 @@ $(document).ready(function () {
         },
     });
 
-    var swiper2 = new Swiper('.main-gallery.swiper-container', {
-        slidesPerView: 4,
-        slidesPerColumn: 2,
-        spaceBetween: 10,
-        loopFillGroupWithBlank: true,
-        loop: true,
-        navigation: {
-            nextEl: this.querySelector('.swiper-button-next'),
-            prevEl: this.querySelector('.swiper-button-prev'),
-        },
-        breakpoints: {
-            480: {
-                slidesPerView: 1,
-                slidesPerColumn: 1,
-            },
-            767: {
-                slidesPerView: 3,
-            },
-        }
-    });
+    // var swiper2 = new Swiper('.main-gallery.swiper-container', {
+    //     slidesPerView: 4,
+    //     slidesPerColumn: 2,
+    //     spaceBetween: 10,
+    //     loopFillGroupWithBlank: true,
+    //     loop: true,
+    //     navigation: {
+    //         nextEl: this.querySelector('.swiper-button-next'),
+    //         prevEl: this.querySelector('.swiper-button-prev'),
+    //     },
+    //     breakpoints: {
+    //         480: {
+    //             slidesPerView: 1,
+    //             slidesPerColumn: 1,
+    //         },
+    //         767: {
+    //             slidesPerView: 3,
+    //         },
+    //     }
+    // });
 
     var swiper3 = new Swiper('.main-reviews-slider.swiper-container', {
         slidesPerView: 3,

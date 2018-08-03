@@ -187,46 +187,6 @@
             </div>
         </section>
 
-        <section class="row second-block">
-            <div class="col-lg-7 col-md-12 d-flex main-gallery-wrapper">
-                <div class="swiper-button swiper-button-prev">
-                    <span class="main-gallery-control main-gallery-control-prev"></span>
-                </div>
-                <div id="main-gallery" class="main-gallery swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv1.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv2.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv3.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv4.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv5.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv1.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv2.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv3.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv4.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv5.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv1.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv2.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv3.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv4.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv5.jpg" alt="photo1"></div>
-                        <div class="swiper-slide"><img class="main-gallery-img" src="./img/serv1.jpg" alt="photo1"></div>
-                    </div>
-                </div>
-                <div class="swiper-button swiper-button-next">
-                    <span class="main-gallery-control main-gallery-control-next"></span>
-                </div>
-            </div>
-
-            <div class="col-lg-5 col-md-12 d-flex justify-content-end">
-                <div class="main-promo-block">
-                    <img class="main-promo-img" src="./img/3.jpg" alt="promo">
-                    <div class="main-promo-block-name">Оранжевый Кэнди</div>
-                    <button class="btn btn-black">
-                        <span class="btn-text d-flex align-items-center">Примеры работ</span>
-                    </button>
-                </div>
-            </div>
-        </section>
     </div>
 
     <section class="main-info">
@@ -498,6 +458,7 @@
             values: {
                 carColorList: @json($calcValues->car_colors),
                 diskColorList: @json($calcValues->disk_colors),
+                diskColorSections: @json($calcValues->disk_color_sections),
                 diskSizeList: @json($calcValues->disk_sizes)
             },
             calcFunction: function(size, color, isGrinding, isTireMount) {

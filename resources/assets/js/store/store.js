@@ -11,6 +11,7 @@ export default new Vuex.Store({
         app: {
             car: {
                 bodyColor: null,
+                diskColorSection: null,
                 diskColor: null,
                 diskSize: null,
                 isPolished: false,
@@ -24,7 +25,8 @@ export default new Vuex.Store({
             values: {
                 carColorList: [],
                 diskColorList: [],
-                diskSizeList: []
+                diskSizeList: [],
+                diskColorSections: []
             },
             moveDuration: 4
         },
@@ -46,6 +48,7 @@ export default new Vuex.Store({
             state.data.values = val;
             state.app.car.bodyColor = _.first(state.data.values.carColorList);
             state.app.car.diskColor = _.first(state.data.values.diskColorList);
+            state.app.car.diskColorSection = _.first(state.data.values.diskColorSections);
             state.app.car.diskSize = _.first(state.data.values.diskSizeList);
         },
         setCalcFunction(state, f) {

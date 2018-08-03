@@ -6,6 +6,7 @@ use App\CalcCarColor;
 use App\CalcDiskColor;
 use App\CalcDiskSize;
 use Illuminate\Http\Request;
+use TCG\Voyager\Models\DataType;
 
 class HomeController extends Controller
 {
@@ -17,11 +18,24 @@ class HomeController extends Controller
             $car_color["hash"] = preg_replace('/^#/', '', $car_color["hash"]);
             $car_colors[$k] = $car_color;
         }
-        $disk_colors = CalcDiskColor::select(["name", "value_16 as hash", "rate", "wheel_img", "wheel_polished_img"])->get()->toArray();
+
+        $DT_calc_disk_colors = DataType::where("name", "calc_disk_colors")->with("rows")->first();
+        $sectionRow = $DT_calc_disk_colors->rows->where("field", "section")->first();
+        $sectionOptions = json_decode($sectionRow->details, true);
+        $disk_color_sections_options = isset($sectionOptions["options"]) ? $sectionOptions["options"] : [];
+        $disk_color_sections = [];
+        foreach ($disk_color_sections_options as $key => $name) {
+            $disk_color_sections[] = [
+                "key" => $key,
+                "name" => $name,
+            ];
+        }
+        $disk_colors = CalcDiskColor::select(["section", "name", "picture", "value_16 as hash", "rate", "wheel_img", "wheel_polished_img"])->get()->toArray();
         foreach ($disk_colors as $k=>$disk_color) {
             $disk_color["hash"] = preg_replace('/^#/', '', $disk_color["hash"]);
             $disk_colors[$k] = $disk_color;
         }
+
         $disk_sizes = CalcDiskSize::select(["size", "price", "price_grind", "price_tiremount"])->get()->toArray();
         foreach ($disk_sizes as $k=>$disk_size) {
             $disk_size["label"] = $disk_size["size"] . "\"";
@@ -30,9 +44,11 @@ class HomeController extends Controller
             $disk_size["price_tiremount"] = doubleVal($disk_size["price_tiremount"]);
             $disk_sizes[$k] = $disk_size;
         }
+
         $calcValues = new \stdClass();
         $calcValues->car_colors = $car_colors;
         $calcValues->disk_colors = $disk_colors;
+        $calcValues->disk_color_sections = $disk_color_sections;
         $calcValues->disk_sizes = $disk_sizes;
 
         return view(

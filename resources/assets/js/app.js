@@ -16,9 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('form-component', require('./components/FormComponent.vue'));
-Vue.component('stage-component', require('./components/StageComponent.vue'));
 Vue.component('car-component', require('./components/CarComponent.vue'));
-Vue.component('wheel-component', require('./components/WheelComponent.vue'));
 
 import bFormSlider from 'vue-bootstrap-slider';
 
