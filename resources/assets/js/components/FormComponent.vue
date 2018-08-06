@@ -1,6 +1,6 @@
 <template>
     <div class="form mt-3 mt-md-0">
-        <div class="row mb-0">
+        <div class="row mb-5">
             <div class="col-12 col-md-6 mb-3 text-center text-md-left">
                 <label class="car-menu-label">Цвет автомобиля:</label><br>
                 <div class="btn-group btn-car-group">
@@ -146,12 +146,6 @@
         </section>
     </div>
 </template>
-
-<style>
-    #main-gallery {
-        min-width: 100%;
-    }
-</style>
 
 <script>
     import _ from 'lodash';

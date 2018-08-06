@@ -52792,41 +52792,37 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_bootstrap_slider__["a" /* default */]);
 
 
 
-var appElement = document.querySelector('#calc-app');
-
-if (appElement) {
-    var app = new Vue({
-        el: '#calc-app',
-        store: __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */],
-        template: '    <div id="calc-app-body">\n' + '        <form-component></form-component>\n' + '    </div>',
-        mounted: function mounted() {
+var app = new Vue({
+    el: '#calc-app',
+    store: __WEBPACK_IMPORTED_MODULE_1__store_store__["a" /* default */],
+    template: '    <div id="calc-app-body">\n' + '        <form-component></form-component>\n' + '    </div>',
+    mounted: function mounted() {
+        var that = this;
+        if (__WEBPACK_IMPORTED_MODULE_2_hlp___default.a.isObject(calcConfig) && __WEBPACK_IMPORTED_MODULE_2_hlp___default.a.isObject(calcConfig.values)) {
+            that.$store.commit('setValues', calcConfig.values);
+        }
+        if (__WEBPACK_IMPORTED_MODULE_2_hlp___default.a.isObject(calcConfig) && parseInt(calcConfig.moveDuration) > 0) {
+            that.$store.commit('setMoveDuration', calcConfig.moveDuration);
+        }
+        if (__WEBPACK_IMPORTED_MODULE_2_hlp___default.a.isObject(calcConfig) && typeof calcConfig.calcFunction === 'function') {
+            that.$store.commit('setCalcFunction', calcConfig.calcFunction);
+        }
+    },
+    computed: {
+        isReady: function isReady() {
             var that = this;
-            if (__WEBPACK_IMPORTED_MODULE_2_hlp___default.a.isObject(calcConfig) && __WEBPACK_IMPORTED_MODULE_2_hlp___default.a.isObject(calcConfig.values)) {
-                that.$store.commit('setValues', calcConfig.values);
-            }
-            if (__WEBPACK_IMPORTED_MODULE_2_hlp___default.a.isObject(calcConfig) && parseInt(calcConfig.moveDuration) > 0) {
-                that.$store.commit('setMoveDuration', calcConfig.moveDuration);
-            }
-            if (__WEBPACK_IMPORTED_MODULE_2_hlp___default.a.isObject(calcConfig) && typeof calcConfig.calcFunction === 'function') {
-                that.$store.commit('setCalcFunction', calcConfig.calcFunction);
-            }
-        },
-        computed: {
-            isReady: function isReady() {
-                var that = this;
-                return that.$store.getters.car.bodyColor !== null && that.$store.getters.car.diskColor !== null && that.$store.getters.car.diskSize !== null && that.$store.getters.values.carColorList.length > 0 && that.$store.getters.values.diskColorList.length > 0 && that.$store.getters.values.diskSizeList.length > 0;
-            }
-        },
-        watch: {
-            isReady: function isReady(val) {
-                var that = this;
-                if (val) {
-                    that.$store.commit('setReady');
-                }
+            return that.$store.getters.car.bodyColor !== null && that.$store.getters.car.diskColor !== null && that.$store.getters.car.diskSize !== null && that.$store.getters.values.carColorList.length > 0 && that.$store.getters.values.diskColorList.length > 0 && that.$store.getters.values.diskSizeList.length > 0;
+        }
+    },
+    watch: {
+        isReady: function isReady(val) {
+            var that = this;
+            if (val) {
+                that.$store.commit('setReady');
             }
         }
-    });
-}
+    }
+});
 
 /***/ }),
 /* 108 */
@@ -68543,10 +68539,6 @@ $(window).on('load', function () {});
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(137)
-}
 var normalizeComponent = __webpack_require__(26)
 /* script */
 var __vue_script__ = __webpack_require__(139)
@@ -68555,7 +68547,7 @@ var __vue_template__ = __webpack_require__(140)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = injectStyle
+var __vue_styles__ = null
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -68590,46 +68582,8 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 137 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(138);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(25)("c562c1c4", content, false, {});
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f1d5ab9c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FormComponent.vue", function() {
-     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-f1d5ab9c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./FormComponent.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 138 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(24)(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n#main-gallery {\n    min-width: 100%;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
+/* 137 */,
+/* 138 */,
 /* 139 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -68639,79 +68593,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -68810,29 +68691,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 ticks: [],
                 ticksLabels: []
             },
-            diskColorSection: null,
-            totalPrice: 0,
-            diskColorGallerySwiper: null
+            totalPrice: 0
         };
     },
-    mounted: function mounted() {
-        var that = this;
-    },
+    mounted: function mounted() {},
     computed: {
-        isReady: function isReady() {
-            return this.$store.getters.isReady;
-        },
         carColor: function carColor() {
             return this.$store.getters.car.bodyColor;
         },
         diskColor: function diskColor() {
             return this.$store.getters.car.diskColor;
-        },
-        diskColorSections: function diskColorSections() {
-            return this.$store.getters.values.diskColorSections;
-        },
-        diskColorList: function diskColorList() {
-            return this.$store.getters.values.diskColorList;
         },
         diskSize: function diskSize() {
             return this.$store.getters.car.diskSize;
@@ -68845,16 +68713,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         }
     },
     watch: {
-        isReady: function isReady(val) {
-            var that = this;
-            if (val) {
-                that.diskColorSection = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.first(that.diskColorSections);
-
-                that.$nextTick(function () {
-                    that.initDiskColorGallery();
-                });
-            }
-        },
         diskSize: function diskSize(val) {
             var that = this;
             var diskSizeList = that.$store.getters.values.diskSizeList;
@@ -68876,16 +68734,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             var that = this;
             that.flashLights();
             that.totalPrice = typeof that.$store.getters.calcFunction === 'function' ? that.$store.getters.calcFunction(that.diskSize, that.diskColor, that.isDiskPolished, that.isDiskMounted) : 0;
-        },
-        diskColorSection: function diskColorSection(val) {
-            var that = this;
-            var color = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.find(that.diskColorList, { 'section': val.key });
-            if (typeof color !== 'undefined') {
-                that.setDiskColor(color);
-                that.$nextTick(function () {
-                    that.initDiskColorGallery();
-                });
-            }
         },
         carColor: function carColor(val) {
             var that = this;
@@ -68927,14 +68775,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 }, that.$store.getters.moveDuration);
             }, that.$store.getters.moveDuration);
         },
-        diskSectionHasColors: function diskSectionHasColors(section) {
-            var that = this;
-            var color = __WEBPACK_IMPORTED_MODULE_0_lodash___default.a.find(that.diskColorList, { 'section': section.key });
-            if (typeof color !== 'undefined') {
-                return true;
-            }
-            return false;
-        },
         setDiskSize: function setDiskSize(data) {
             var diskSizeList = this.$store.getters.values.diskSizeList;
             var newSize = diskSizeList[__WEBPACK_IMPORTED_MODULE_0_lodash___default.a.findIndex(diskSizeList, { size: data.newValue })];
@@ -68955,42 +68795,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     }, 100);
                 }, 100);
             }, 200);
-        },
-        initDiskColorGallery: function initDiskColorGallery() {
-            var that = this;
-            var container = document.querySelector('.main-gallery.swiper-container');
-            if (container) {
-                if (that.diskColorGallerySwiper == null) {
-                    //that.diskColorGallerySwiper.destroy();
-                    that.diskColorGallerySwiper = new Swiper(container, {
-                        slidesPerView: 4,
-                        slidesPerColumn: 2,
-                        spaceBetween: 10,
-                        loopFillGroupWithBlank: false,
-                        loop: false,
-                        navigation: {
-                            nextEl: container.parentNode.querySelector('.swiper-button-next'),
-                            prevEl: container.parentNode.querySelector('.swiper-button-prev')
-                        },
-                        breakpoints: {
-                            480: {
-                                slidesPerView: 1,
-                                slidesPerColumn: 1
-                            },
-                            767: {
-                                slidesPerView: 3
-                            }
-                        }
-                    });
-                }
-                if (that.diskColorGallerySwiper) {
-                    //                        var slides = document.querySelector('#swiper-disk-color-slides > *');
-                    //                        that.diskColorGallerySwiper.removeAllSlides();
-                    //                        that.diskColorGallerySwiper.appendSlide(slides);
-                    that.diskColorGallerySwiper.update();
-                    $('[data-toggle="tooltip"]').tooltip();
-                }
-            };
         }
     }
 });
@@ -69007,7 +68811,7 @@ var render = function() {
     "div",
     { staticClass: "form mt-3 mt-md-0" },
     [
-      _c("div", { staticClass: "row mb-0" }, [
+      _c("div", { staticClass: "row mb-5" }, [
         _c(
           "div",
           { staticClass: "col-12 col-md-6 mb-3 text-center text-md-left" },
@@ -69092,9 +68896,9 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c("car-component"),
+      _c("stage-component"),
       _vm._v(" "),
-      _c("div", { staticClass: "row mt-3" }, [
+      _c("div", { staticClass: "row mt-5" }, [
         _c(
           "div",
           {
@@ -69120,11 +68924,17 @@ var render = function() {
                   }
                 },
                 [
+                  _vm.diskColor !== null
+                    ? _c("span", {
+                        staticClass: "color-preview",
+                        style: "background-color: #" + _vm.diskColor.hash + ";"
+                      })
+                    : _vm._e(),
                   _vm._v(
                     "\n                    " +
                       _vm._s(
-                        _vm.diskColorSection != null
-                          ? _vm.diskColorSection.name
+                        _vm.diskColor !== null
+                          ? _vm.diskColor.name
                           : "Выбрать цвет"
                       ) +
                       "\n                "
@@ -69135,32 +68945,33 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "dropdown-menu car-dropdown-menu" },
-                _vm._l(_vm.diskColorSections, function(section) {
-                  return _vm.diskSectionHasColors(section)
-                    ? _c(
-                        "a",
-                        {
-                          staticClass: "dropdown-item",
-                          class:
-                            _vm.diskColor.section == section.key
-                              ? "active"
-                              : "",
-                          attrs: { href: "javascript:void(0)" },
-                          on: {
-                            click: function($event) {
-                              _vm.diskColorSection = section
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        " +
-                              _vm._s(section.name) +
-                              "\n                    "
-                          )
-                        ]
+                _vm._l(_vm.$store.getters.values.diskColorList, function(
+                  color
+                ) {
+                  return _c(
+                    "a",
+                    {
+                      staticClass: "dropdown-item",
+                      class: _vm.diskColor.hash == color.hash ? "active" : "",
+                      attrs: { href: "javascript:void(0)" },
+                      on: {
+                        click: function($event) {
+                          _vm.setDiskColor(color)
+                        }
+                      }
+                    },
+                    [
+                      _c("span", {
+                        staticClass: "color-preview",
+                        style: "background-color: #" + color.hash + ";"
+                      }),
+                      _vm._v(
+                        "\n                        " +
+                          _vm._s(color.name) +
+                          "\n                    "
                       )
-                    : _vm._e()
+                    ]
+                  )
                 })
               )
             ])
@@ -69316,228 +69127,12 @@ var render = function() {
             ])
           ]
         )
-      ]),
-      _vm._v(" "),
-      _vm.diskColorSection != null
-        ? _c("section", { staticClass: "row second-block" }, [
-            _c(
-              "div",
-              {
-                staticClass: "d-none",
-                attrs: { id: "swiper-disk-color-slides" }
-              },
-              _vm._l(_vm.diskColorList, function(color) {
-                return color.section == _vm.diskColorSection.key
-                  ? _c(
-                      "div",
-                      {
-                        staticClass: "swiper-slide",
-                        on: {
-                          click: function($event) {
-                            _vm.setDiskColor(color)
-                          }
-                        }
-                      },
-                      [
-                        _c("img", {
-                          staticClass: "main-gallery-img",
-                          attrs: {
-                            src: "/storage/" + color.picture,
-                            alt: color.name
-                          }
-                        })
-                      ]
-                    )
-                  : _vm._e()
-              })
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-lg-7 col-md-12 d-flex main-gallery-wrapper" },
-              [
-                _vm._m(0),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "main-gallery swiper-container",
-                    attrs: { id: "main-gallery" }
-                  },
-                  [
-                    _c(
-                      "div",
-                      { staticClass: "swiper-wrapper" },
-                      _vm._l(_vm.diskColorList, function(color) {
-                        return color.section == _vm.diskColorSection.key
-                          ? _c(
-                              "div",
-                              {
-                                staticClass: "swiper-slide",
-                                class:
-                                  _vm.diskColor.hash == color.hash
-                                    ? "active"
-                                    : ""
-                              },
-                              [
-                                _c("img", {
-                                  staticClass: "main-gallery-img",
-                                  attrs: {
-                                    src: "/storage/" + color.picture,
-                                    alt: color.name,
-                                    title: color.name,
-                                    "data-original-title": color.name,
-                                    "data-toggle": "tooltip",
-                                    "data-placement": "bottom"
-                                  },
-                                  on: {
-                                    click: function($event) {
-                                      _vm.setDiskColor(color)
-                                    }
-                                  }
-                                })
-                              ]
-                            )
-                          : _vm._e()
-                      })
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._m(1)
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "col-lg-5 col-md-12 d-flex justify-content-end" },
-              [
-                _c("div", { staticClass: "main-promo-block" }, [
-                  _c("img", {
-                    staticClass: "main-promo-img",
-                    attrs: {
-                      src: "/storage/" + _vm.diskColor.picture,
-                      alt: _vm.diskColor.name
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "main-promo-block-name" }, [
-                    _vm._v(_vm._s(_vm.diskColor.name))
-                  ]),
-                  _vm._v(" "),
-                  _vm._m(2)
-                ])
-              ]
-            )
-          ])
-        : _vm._e(),
-      _vm._v(" "),
-      _vm._m(3)
+      ])
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "swiper-button swiper-button-prev" }, [
-      _c("span", {
-        staticClass: "main-gallery-control main-gallery-control-prev"
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "swiper-button swiper-button-next" }, [
-      _c("span", {
-        staticClass: "main-gallery-control main-gallery-control-next"
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("button", { staticClass: "btn btn-black" }, [
-      _c("span", { staticClass: "btn-text d-flex align-items-center" }, [
-        _vm._v("Примеры работ")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "main-info" }, [
-      _c(
-        "div",
-        {
-          staticClass:
-            "container d-flex align-items-center p-0 flex-sm-nowrap flex-wrap"
-        },
-        [
-          _c("div", { staticClass: "main-info-col" }, [
-            _c("p", { staticClass: "main-info-cost" }, [
-              _c("span", [_vm._v("Стоимость за комплект :")]),
-              _c("span", { staticClass: "main-info-cost-val" }, [
-                _vm._v("6 500 Р.")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("p", { staticClass: "main-info-phone" }, [
-              _vm._v("Узнайте точную стоимость по телефону: "),
-              _c("span", { staticClass: "main-info-phone-nowrap" }, [
-                _vm._v("(812) 970-7-958")
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "main-info-col col" }, [
-            _c("form", { staticClass: "form-inline" }, [
-              _c("div", { staticClass: "form-group mb-2" }, [
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "text",
-                    id: "inputName",
-                    placeholder: "Ваше имя"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group form-group-tel mb-2" }, [
-                _c("input", {
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "tel",
-                    id: "inputPhone",
-                    placeholder: "Ваш телефон"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "btn btn-red mb-2 ", attrs: { type: "submit" } },
-                [
-                  _c(
-                    "span",
-                    { staticClass: "btn-text d-flex justify-content-center" },
-                    [_vm._v("Оформить")]
-                  )
-                ]
-              )
-            ])
-          ])
-        ]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -69633,7 +69228,7 @@ exports = module.exports = __webpack_require__(24)(false);
 
 
 // module
-exports.push([module.i, "\n.car {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-align: center;\n        -ms-flex-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n}\n.car > svg {\n    max-height: 380px;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -69647,13 +69242,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__(145);
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //

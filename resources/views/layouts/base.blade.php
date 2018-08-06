@@ -45,7 +45,7 @@
                                 <a class="nav-link pb-0" href="{{ url("/price.html") }}">Цены</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link pb-0" href="/galmenu.html">Галерея</a>
+                                <a class="nav-link pb-0" href="{{ url("/galmenu.html") }}">Галерея</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link pb-0" href="#contacts">Контакты</a>
