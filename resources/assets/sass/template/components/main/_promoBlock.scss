@@ -14,11 +14,13 @@
     position: absolute;
     top: 7px;
     left: 50%;
-    padding: 5px;
+    padding: 5px 15px;
     transform: translateX(-50%);
-    color: $color_gray_darker;
+    color: $color_white;
+    background-color: rgba($color_black, 0.6);
     font-size: rem(22px);
     font-weight: 700;
+    white-space: nowrap;
   }
   .btn {
     position: absolute;

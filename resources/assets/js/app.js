@@ -25,44 +25,48 @@ Vue.use(bFormSlider);
 import store from './store/store';
 import hlp from 'hlp';
 
-const app = new Vue({
-    el: '#calc-app',
-    store,
-    template:
-    '    <div id="calc-app-body">\n' +
-    '        <form-component></form-component>\n' +
-    '    </div>',
-    mounted: function () {
-        var that = this;
-        if (hlp.isObject(calcConfig) && hlp.isObject(calcConfig.values)) {
-            that.$store.commit('setValues', calcConfig.values);
-        }
-        if (hlp.isObject(calcConfig) && parseInt(calcConfig.moveDuration) > 0) {
-            that.$store.commit('setMoveDuration', calcConfig.moveDuration);
-        }
-        if (hlp.isObject(calcConfig) && typeof calcConfig.calcFunction === 'function') {
-            that.$store.commit('setCalcFunction', calcConfig.calcFunction);
-        }
-    },
-    computed: {
-        isReady: function () {
+var appElement = document.querySelector('#calc-app');
+
+if (appElement) {
+    const app = new Vue({
+        el: '#calc-app',
+        store,
+        template:
+        '    <div id="calc-app-body">\n' +
+        '        <form-component></form-component>\n' +
+        '    </div>',
+        mounted: function () {
             var that = this;
-            return (
-                that.$store.getters.car.bodyColor !== null &&
-                that.$store.getters.car.diskColor !== null &&
-                that.$store.getters.car.diskSize !== null &&
-                that.$store.getters.values.carColorList.length > 0 &&
-                that.$store.getters.values.diskColorList.length > 0 &&
-                that.$store.getters.values.diskSizeList.length > 0
-            );
-        }
-    },
-    watch: {
-        isReady: function (val) {
-            var that = this;
-            if (val) {
-                that.$store.commit('setReady');
+            if (hlp.isObject(calcConfig) && hlp.isObject(calcConfig.values)) {
+                that.$store.commit('setValues', calcConfig.values);
+            }
+            if (hlp.isObject(calcConfig) && parseInt(calcConfig.moveDuration) > 0) {
+                that.$store.commit('setMoveDuration', calcConfig.moveDuration);
+            }
+            if (hlp.isObject(calcConfig) && typeof calcConfig.calcFunction === 'function') {
+                that.$store.commit('setCalcFunction', calcConfig.calcFunction);
+            }
+        },
+        computed: {
+            isReady: function () {
+                var that = this;
+                return (
+                    that.$store.getters.car.bodyColor !== null &&
+                    that.$store.getters.car.diskColor !== null &&
+                    that.$store.getters.car.diskSize !== null &&
+                    that.$store.getters.values.carColorList.length > 0 &&
+                    that.$store.getters.values.diskColorList.length > 0 &&
+                    that.$store.getters.values.diskSizeList.length > 0
+                );
+            }
+        },
+        watch: {
+            isReady: function (val) {
+                var that = this;
+                if (val) {
+                    that.$store.commit('setReady');
+                }
             }
         }
-    }
-});
+    });
+}

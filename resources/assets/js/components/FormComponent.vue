@@ -1,6 +1,6 @@
 <template>
     <div class="form mt-3 mt-md-0">
-        <div class="row mb-5">
+        <div class="row mb-0">
             <div class="col-12 col-md-6 mb-3 text-center text-md-left">
                 <label class="car-menu-label">Цвет автомобиля:</label><br>
                 <div class="btn-group btn-car-group">
@@ -26,7 +26,7 @@
             </div>
         </div>
         <car-component></car-component>
-        <div class="row mt-5">
+        <div class="row mt-3">
             <div class="col-12 col-md-6 mb-3 col-xl-4 text-center text-md-left">
                 <label class="car-menu-label">Цвет дисков:</label><br>
                 <div class="btn-group btn-car-group">
@@ -39,13 +39,14 @@
                         {{ diskColorSection != null ? diskColorSection.name : 'Выбрать цвет' }}
                     </button>
                     <div class="dropdown-menu car-dropdown-menu">
-                        <a v-for="color in $store.getters.values.diskColorList"
+                        <a v-for="(section) in diskColorSections"
+                           v-if="diskSectionHasColors(section)"
                            class="dropdown-item"
-                           :class="(diskColor.hash == color.hash ? 'active' : '')"
+                           :class="(diskColor.section == section.key ? 'active' : '')"
                            href="javascript:void(0)"
-                           @click="setDiskColor(color)">
-                            <span class="color-preview" :style="'background-color: #' + color.hash + ';'"></span>
-                            {{color.name}}
+                           @click="diskColorSection = section">
+                            <!--<span class="color-preview" :style="'background-color: #' + color.hash + ';'"></span>-->
+                            {{section.name}}
                         </a>
                     </div>
                 </div>
@@ -92,7 +93,10 @@
                 </div>
                 <div id="main-gallery" class="main-gallery swiper-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" :class="(diskColor.hash == color.hash) ? 'active' : ''" v-for="color in diskColorList" v-if="color.section == diskColorSection.key">
+                        <div class="swiper-slide"
+                             :class="(diskColor.hash == color.hash) ? 'active' : ''"
+                             v-for="color in diskColorList"
+                             v-if="color.section == diskColorSection.key">
                             <img class="main-gallery-img"
                                  @click="setDiskColor(color)"
                                  :src="'/storage/' + color.picture"
@@ -115,6 +119,28 @@
                     <button class="btn btn-black">
                         <span class="btn-text d-flex align-items-center">Примеры работ</span>
                     </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="main-info">
+            <div class="container d-flex align-items-center p-0 flex-sm-nowrap flex-wrap">
+                <div class="main-info-col">
+                    <p class="main-info-cost">
+                        <span>Стоимость за комплект :</span><span class="main-info-cost-val">6 500 Р.</span>
+                    </p>
+                    <p class="main-info-phone">Узнайте точную стоимость по телефону: <span class="main-info-phone-nowrap">(812) 970-7-958</span></p>
+                </div>
+                <div class="main-info-col col">
+                    <form class="form-inline">
+                        <div class="form-group mb-2">
+                            <input type="text" class="form-control" id="inputName" placeholder="Ваше имя">
+                        </div>
+                        <div class="form-group form-group-tel mb-2">
+                            <input type="tel" class="form-control" id="inputPhone" placeholder="Ваш телефон">
+                        </div>
+                        <button type="submit" class="btn btn-red mb-2 "><span class="btn-text d-flex justify-content-center">Оформить</span></button>
+                    </form>
                 </div>
             </div>
         </section>

@@ -183,28 +183,6 @@
 
     </div>
 
-    <section class="main-info">
-        <div class="container d-flex align-items-center p-0 flex-sm-nowrap flex-wrap">
-            <div class="main-info-col">
-                <p class="main-info-cost">
-                    <span>Стоимость за комплект :</span><span class="main-info-cost-val">6 500 Р.</span>
-                </p>
-                <p class="main-info-phone">Узнайте точную стоимость по телефону: <span class="main-info-phone-nowrap">(812) 970-7-958</span></p>
-            </div>
-            <div class="main-info-col col">
-                <form class="form-inline">
-                    <div class="form-group mb-2">
-                        <input type="text" class="form-control" id="inputName" placeholder="Ваше имя">
-                    </div>
-                    <div class="form-group form-group-tel mb-2">
-                        <input type="tel" class="form-control" id="inputPhone" placeholder="Ваш телефон">
-                    </div>
-                    <button type="submit" class="btn btn-red mb-2 "><span class="btn-text d-flex justify-content-center">Оформить</span></button>
-                </form>
-            </div>
-        </div>
-    </section>
-
     <div class="container">
         <section class="main-description">
             <h1>Мастерская "Дискремонт"</h1>
@@ -448,7 +426,7 @@
     <script>
         const calcConfig = {
             apiUrl: '/calc_api.php',
-            moveDuration: 2.5,
+            moveDuration: 1.5,
             values: {
                 carColorList: @json($calcValues->car_colors),
                 diskColorList: @json($calcValues->disk_colors),

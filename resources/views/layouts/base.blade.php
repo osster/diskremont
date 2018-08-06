@@ -38,17 +38,17 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-wrap">
                             <li class="nav-item active">
-                                <a class="nav-link pb-0" href="../services.html">Услуги<span
+                                <a class="nav-link pb-0" href="{{ url("/uslugi.html") }}">Услуги<span
                                             class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link pb-0" href="{{ url("/price.html") }}">Цены</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pb-0" href="/galmenu.html">Галерея</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link pb-0" href="#contacts">Контакты</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pb-0" href="../prices.html">Цены</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pb-0" href="../gallery.html">Галерея</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link pb-0 navbar-insta" href="#"></a>

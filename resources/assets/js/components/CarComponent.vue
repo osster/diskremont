@@ -1322,7 +1322,14 @@
 </template>
 
 <style>
-
+    .car {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .car > svg {
+        max-height: 380px;
+    }
 </style>
 
 <script>
