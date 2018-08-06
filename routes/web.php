@@ -19,20 +19,26 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 Route::get('/', 'HomeController@index');
+Route::get('/contacts.html', 'HomeController@contacts');
+Route::get('/price.html', 'HomeController@price');
+Route::get('/galmenu.html', 'HomeController@gallery');
+Route::get('/uslugi.html', 'HomeController@uslugi');
+Route::get('/pokraska.html', 'HomeController@pokraska');
+Route::get('/{slug}.html', 'HomeController@uslugiDetail');
 
-Route::get('/contacts.html', function () {
-    return view('welcome');
-});
-Route::get('/price.html', function () {
-    return view('welcome');
-});
-Route::get('/galmenu.html', function () {
-    return view('welcome');
-});
-Route::get('/uslugi.html', function () {
-    return view('pages.uslugi');
-});
-Route::get('/pokraska.html', function () {
-    return view('welcome');
-});
+//Route::get('/contacts.html', function () {
+//    return view('welcome');
+//});
+//Route::get('/price.html', function () {
+//    return view('welcome');
+//});
+//Route::get('/galmenu.html', function () {
+//    return view('welcome');
+//});
+//Route::get('/uslugi.html', function () {
+//    return view('pages.uslugi');
+//});
+//Route::get('/pokraska.html', function () {
+//    return view('welcome');
+//});
 

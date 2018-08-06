@@ -16,10 +16,10 @@
     left: 50%;
     padding: 5px;
     transform: translateX(-50%);
-    color: $color_gray_darker;
+    color: $white;
     font-size: rem(22px);
     font-weight: 700;
-  }
+    background: rgba(0,0,0,0.6)}
   .btn {
     position: absolute;
     @include max-w(311px);

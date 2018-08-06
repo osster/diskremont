@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\CalcCarColor;
 use App\CalcDiskColor;
 use App\CalcDiskSize;
+use App\DiskUslugi;
 use Illuminate\Http\Request;
 use TCG\Voyager\Models\DataType;
 
@@ -13,7 +14,7 @@ class HomeController extends Controller
     public function index() {
 
         // Calc Data
-        $car_colors = CalcCarColor::select(["name", "value_16 as hash", "body_render_img"])->get()->toArray();
+        $car_colors = CalcCarColor::select(["name", "value_16 as hash", "body_render_img"])->orderBy("sort", "ASC")->get()->toArray();
         foreach ($car_colors as $k=>$car_color) {
             $car_color["hash"] = preg_replace('/^#/', '', $car_color["hash"]);
             $car_colors[$k] = $car_color;
@@ -30,7 +31,7 @@ class HomeController extends Controller
                 "name" => $name,
             ];
         }
-        $disk_colors = CalcDiskColor::select(["section", "name", "picture", "value_16 as hash", "rate", "wheel_img", "wheel_polished_img"])->get()->toArray();
+        $disk_colors = CalcDiskColor::select(["section", "name", "picture", "value_16 as hash", "rate", "wheel_img", "wheel_polished_img"])->orderBy("sort", "ASC")->get()->toArray();
         foreach ($disk_colors as $k=>$disk_color) {
             $disk_color["hash"] = preg_replace('/^#/', '', $disk_color["hash"]);
             $disk_colors[$k] = $disk_color;
@@ -57,5 +58,30 @@ class HomeController extends Controller
                 "calcValues"
             )
         );
+    }
+
+    public function price() {
+        return view( "pages.price");
+    }
+
+    public function uslugi() {
+        return view( "pages.uslugi");
+    }
+
+    public function gallery() {
+        return view( "pages.gallery");
+    }
+
+    public function contacts() {
+        return view( "pages.contacts");
+    }
+
+    public function uslugiDetail($slug) {
+        if ($slug != "") {
+            $usluga = DiskUslugi::where('slug', $slug)->first();
+            if ($usluga) {
+                return view( "pages.uslugi-detail");
+            }
+        }
     }
 }

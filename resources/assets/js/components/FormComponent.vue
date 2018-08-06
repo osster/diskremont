@@ -25,18 +25,16 @@
                 {{ totalPrice }} руб
             </div>
         </div>
-        <car-component></car-component>
+        <stage-component></stage-component>
         <div class="row mt-5">
             <div class="col-12 col-md-6 mb-3 col-xl-4 text-center text-md-left">
                 <label class="car-menu-label">Цвет дисков:</label><br>
                 <div class="btn-group btn-car-group">
                     <button type="button" class="btn dropdown-toggle car-menu-btn" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="false">
-                        <!--
-                            <span v-if="diskColor !== null" class="color-preview"
+                        <span v-if="diskColor !== null" class="color-preview"
                               :style="'background-color: #' + diskColor.hash + ';'"></span>
-                        -->
-                        {{ diskColorSection != null ? diskColorSection.name : 'Выбрать цвет' }}
+                        {{ diskColor !== null ? diskColor.name : 'Выбрать цвет' }}
                     </button>
                     <div class="dropdown-menu car-dropdown-menu">
                         <a v-for="color in $store.getters.values.diskColorList"
@@ -79,56 +77,12 @@
                 </div>
             </div>
         </div>
-
-        <section class="row second-block" v-if="diskColorSection != null">
-            <div id="swiper-disk-color-slides" class="d-none">
-                <div class="swiper-slide" v-for="color in diskColorList" v-if="color.section == diskColorSection.key" @click="setDiskColor(color)">
-                    <img class="main-gallery-img" :src="'/storage/' + color.picture" :alt="color.name">
-                </div>
-            </div>
-            <div class="col-lg-7 col-md-12 d-flex main-gallery-wrapper">
-                <div class="swiper-button swiper-button-prev">
-                    <span class="main-gallery-control main-gallery-control-prev"></span>
-                </div>
-                <div id="main-gallery" class="main-gallery swiper-container">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide" :class="(diskColor.hash == color.hash) ? 'active' : ''" v-for="color in diskColorList" v-if="color.section == diskColorSection.key">
-                            <img class="main-gallery-img"
-                                 @click="setDiskColor(color)"
-                                 :src="'/storage/' + color.picture"
-                                 :alt="color.name"
-                                 :title="color.name"
-                                 :data-original-title="color.name"
-                                 data-toggle="tooltip" data-placement="bottom">
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-button swiper-button-next">
-                    <span class="main-gallery-control main-gallery-control-next"></span>
-                </div>
-            </div>
-
-            <div class="col-lg-5 col-md-12 d-flex justify-content-end">
-                <div class="main-promo-block">
-                    <img class="main-promo-img" :src="'/storage/' + diskColor.picture" :alt="diskColor.name">
-                    <div class="main-promo-block-name">{{ diskColor.name }}</div>
-                    <button class="btn btn-black">
-                        <span class="btn-text d-flex align-items-center">Примеры работ</span>
-                    </button>
-                </div>
-            </div>
-        </section>
     </div>
 </template>
 
-<style>
-    #main-gallery {
-        min-width: 100%;
-    }
-</style>
-
 <script>
     import _ from 'lodash';
+
 
     export default {
         name: 'form-component',
@@ -143,29 +97,17 @@
                     ticks: [],
                     ticksLabels: []
                 },
-                diskColorSection: null,
-                totalPrice: 0,
-                diskColorGallerySwiper: null
+                totalPrice: 0
             }
         },
         mounted: function () {
-            var that = this;
         },
         computed: {
-            isReady: function () {
-                return this.$store.getters.isReady;
-            },
             carColor: function () {
                 return this.$store.getters.car.bodyColor;
             },
             diskColor: function () {
                 return this.$store.getters.car.diskColor;
-            },
-            diskColorSections: function () {
-                return this.$store.getters.values.diskColorSections;
-            },
-            diskColorList: function () {
-                return this.$store.getters.values.diskColorList;
             },
             diskSize: function () {
                 return this.$store.getters.car.diskSize;
@@ -178,16 +120,6 @@
             },
         },
         watch: {
-            isReady: function (val) {
-                var that = this;
-                if (val) {
-                    that.diskColorSection = _.first(that.diskColorSections);
-
-                    that.$nextTick(function () {
-                        that.initDiskColorGallery();
-                    });
-                }
-            },
             diskSize: function (val) {
                 var that = this;
                 var diskSizeList = that.$store.getters.values.diskSizeList;
@@ -213,16 +145,6 @@
                 that.totalPrice = (typeof that.$store.getters.calcFunction === 'function')
                     ? that.$store.getters.calcFunction(that.diskSize, that.diskColor, that.isDiskPolished, that.isDiskMounted)
                     : 0;
-            },
-            diskColorSection: function (val) {
-                var that = this;
-                var color = _.find(that.diskColorList, {'section': val.key});
-                if (typeof color !== 'undefined') {
-                    that.setDiskColor(color);
-                    that.$nextTick(function () {
-                        that.initDiskColorGallery();
-                    });
-                }
             },
             carColor: function (val) {
                 var that = this;
@@ -268,14 +190,6 @@
                     }, that.$store.getters.moveDuration);
                 }, that.$store.getters.moveDuration);
             },
-            diskSectionHasColors: function (section) {
-                var that = this;
-                var color = _.find(that.diskColorList, {'section': section.key});
-                if (typeof color !== 'undefined') {
-                    return true;
-                }
-                return false;
-            },
             setDiskSize: function (data) {
                 var diskSizeList = this.$store.getters.values.diskSizeList;
                 var newSize = diskSizeList[_.findIndex(diskSizeList, {size: data.newValue})];
@@ -296,42 +210,6 @@
                         }, 100);
                     }, 100);
                 }, 200);
-            },
-            initDiskColorGallery: function () {
-                var that = this;
-                var container = document.querySelector('.main-gallery.swiper-container');
-                if (container) {
-                    if (that.diskColorGallerySwiper == null) {
-                        //that.diskColorGallerySwiper.destroy();
-                        that.diskColorGallerySwiper = new Swiper(container, {
-                            slidesPerView: 4,
-                            slidesPerColumn: 2,
-                            spaceBetween: 10,
-                            loopFillGroupWithBlank: false,
-                            loop: false,
-                            navigation: {
-                                nextEl: container.parentNode.querySelector('.swiper-button-next'),
-                                prevEl: container.parentNode.querySelector('.swiper-button-prev'),
-                            },
-                            breakpoints: {
-                                480: {
-                                    slidesPerView: 1,
-                                    slidesPerColumn: 1,
-                                },
-                                767: {
-                                    slidesPerView: 3,
-                                },
-                            }
-                        });
-                    }
-                    if (that.diskColorGallerySwiper) {
-//                        var slides = document.querySelector('#swiper-disk-color-slides > *');
-//                        that.diskColorGallerySwiper.removeAllSlides();
-//                        that.diskColorGallerySwiper.appendSlide(slides);
-                        that.diskColorGallerySwiper.update();
-                        $('[data-toggle="tooltip"]').tooltip();
-                    }
-                };
             }
         }
     }

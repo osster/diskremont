@@ -21,7 +21,6 @@
       }
       .slider-tick,
       .slider-handle {
-        margin-left: -$slider-line-height/2;
         &.triangle {
           position: relative;
           top: 50%;
@@ -192,7 +191,7 @@
 
     position: absolute;
     top: 0;
-    width:  $slider-width-tick;
+    width:  $slider-width-tick * 3;
     height: $slider-line-height;
     background-color: $slider-primary;
     border: 0px solid transparent;

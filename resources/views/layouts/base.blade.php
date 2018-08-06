@@ -38,17 +38,17 @@
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav flex-wrap">
                             <li class="nav-item active">
-                                <a class="nav-link pb-0" href="../services.html">Услуги<span
+                                <a class="nav-link pb-0" href="{{ url("/uslugi.html") }}">Услуги<span
                                             class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link pb-0" href="{{ url("/price.html") }}">Цены</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link pb-0" href="{{ url("/galmenu.html") }}">Галерея</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link pb-0" href="#contacts">Контакты</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pb-0" href="../prices.html">Цены</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link pb-0" href="../gallery.html">Галерея</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link pb-0 navbar-insta" href="#"></a>
@@ -70,6 +70,25 @@
 
         <main>
             @yield("PAGE_CONTENT")
+            <div class="main-destination" id="contacts">
+                <div class="container">
+                    <div class="main-destination-block d-flex flex-wrap">
+                        <div class="col pr-md-0 main-destination-block-map">
+                            <div class="map">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8005.686175734432!2d30.29522426364603!3d59.89195227961398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469630647ceebc63%3A0x48a3d6033dbe452f!2z0JzQuNGC0YDQvtGE0LDQvdGM0LXQstGB0LrQvtC1INGILiwgMjcsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5NjA4NA!5e0!3m2!1sru!2sby!4v1533115308623" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col p-0 ">
+                            <ul class="main-destination-info">
+                                <li class="address destination-info-li"><span class="dest-info-span">Санкт-Петербург, Митрофаньевское шоссе, д.27</span></li>
+                                <li class="phones destination-info-li"><span class="dest-info-span">(812) 970-7-958 <br> (812) 972-0-666</span></li>
+                                <li class="timetable destination-info-li"><span class="dest-info-span">Ежедневно с 9:00 до 22:00.</span></li>
+                                <li><button class="btn btn-red"><span class="btn-text d-flex align-items-center">Оставить заявку</span></button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
 
     </div>
@@ -77,10 +96,10 @@
     <footer class="footer">
         <div class="container footer-container d-flex flex-wrap align-items-center">
             <nav class="d-flex flex-wrap footer-nav col-lg-6 col-md-12">
-                <li class="footer-nav-li"><a href="../services.html" class="footer-nav-a">Услуги</a></li>
+                <li class="footer-nav-li"><a href="{{ url("/uslugi.html") }}" class="footer-nav-a">Услуги</a></li>
                 <li class="footer-nav-li"><a href="#contacts" class="footer-nav-a">Контакты</a></li>
-                <li class="footer-nav-li"><a href="../prices.html" class="footer-nav-a">Цены</a></li>
-                <li class="footer-nav-li"><a href="../gallery.html" class="footer-nav-a">Галерея</a></li>
+                <li class="footer-nav-li"><a href="{{ url("/price.html") }}" class="footer-nav-a">Цены</a></li>
+                <li class="footer-nav-li"><a href="{{ url("/galmenu.html") }}" class="footer-nav-a">Галерея</a></li>
             </nav>
             <div class="payment-wrapper col-lg-4 col-6">
                 <div class="payment"></div>

@@ -55,6 +55,8 @@ $car-padding-dropdown: 8px;
   border: 2px solid $color_black;
   .dropdown-item {
     padding: $car-padding-dropdown;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &.active {
       background-color: $reb-btn-color;
     }
