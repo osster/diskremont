@@ -108,6 +108,7 @@ $lg-kind: 1200px;
   }
   &-text {
     margin-left: 217px;
+    color: $color_gray_darker;
     @include text;
     @include mobile-all() {
       margin-left: 78px;
@@ -167,7 +168,6 @@ $lg-kind: 1200px;
     }
     &-text {
       @extend .wch-block-head-text;
-
     }
 
   }

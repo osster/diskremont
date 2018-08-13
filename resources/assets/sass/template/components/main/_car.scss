@@ -37,18 +37,18 @@ $car-padding-dropdown: 8px;
 }
 .btn-car-group {
   align-items: center;
-  &:before {
-    content: '';
-    display: inline-block;
-    width: $arrow-width;
-    height: 21px;
-    background-image: url('../../../../img/arrow_black.svg');
-  }
-  &:after {
-    @extend .btn-car-group:before;
-    margin-right: 0;
-    transform: rotate(180deg);
-  }
+  //&:before {
+  //  content: '';
+  //  display: inline-block;
+  //  width: $arrow-width;
+  //  height: 21px;
+  //  background-image: url('../../../../img/arrow_black.svg');
+  //}
+  //&:after {
+  //  @extend .btn-car-group:before;
+  //  margin-right: 0;
+  //  transform: rotate(180deg);
+  //}
 }
 .car-dropdown-menu {
   width: calc(100% - 63px);
@@ -66,6 +66,11 @@ $car-padding-dropdown: 8px;
   color: $color_black;
   font-size: rem(24px);
   font-weight: $fw600;
+  position: absolute;
+  top: 100px;
+}
+.car-form-row {
+  position: relative;
 }
 
 .car-form-checkbox {

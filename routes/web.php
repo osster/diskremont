@@ -14,6 +14,8 @@
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+
+    Route::get('gallery-lists', '\\App\\Http\\Controllers\\Voyager\\Disk\\DiskGalleryController@getData');
 });
 
 
@@ -21,9 +23,9 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/', 'HomeController@index');
 Route::get('/contacts.html', 'HomeController@contacts');
 Route::get('/price.html', 'HomeController@price');
-Route::get('/galmenu.html', 'HomeController@gallery');
+Route::get('/galmenu.html', ["uses" => 'HomeController@gallery', "as" => "gallery"]);
 Route::get('/uslugi.html', 'HomeController@uslugi');
-Route::get('/pokraska.html', 'HomeController@pokraska');
+//Route::get('/pokraska.html', 'HomeController@pokraska');
 Route::get('/{slug}.html', 'HomeController@uslugiDetail');
 
 //Route::get('/contacts.html', function () {

@@ -5,6 +5,7 @@ $lg-kind: 1200px;
   }
 
 }
+
 .kind-promo-large {
    margin-top: 0;
    height: 380px;
@@ -21,14 +22,16 @@ $lg-kind: 1200px;
     }
   }
 }
+
 .why-choose-header {
   padding-top: 2%;
   margin-bottom: 4%;
 }
+
 .wch-block-head {
   display: flex;
   align-items: center;
-  height: 200px;
+  min-height: 200px;
   overflow: hidden;
   @include for-black-header;
   margin-bottom: 10px;
@@ -50,7 +53,7 @@ $lg-kind: 1200px;
       height: 65px;
       background-repeat: no-repeat;
       background-position: center center;
-      background-image: url('../../../img/arrow-big-black.png');
+      background-image: url('../img/arrow-big-black.png');
       top: 50%;
       right: 50%;
       transform: translate(50%, -50%);
@@ -124,10 +127,10 @@ $lg-kind: 1200px;
       }
     }
     .p {
-      height: 83px;
+      min-height: 83px;
       overflow: hidden;
       max-width: 72%;
-      margin-bottom: 0;
+      margin-bottom: 30px;
       font-size: rem(16px);
       @include mobile-all() {
         max-width: 100%;
@@ -137,6 +140,7 @@ $lg-kind: 1200px;
     }
   }
 }
+
 .wch-descr {
   position: relative;
   background-color: rgba(233, 233, 233, 0.6);
@@ -151,8 +155,9 @@ $lg-kind: 1200px;
       display: none;
     }
     &:after {
-      background-image: $main-arrow;
-      transform: translate(50%, 0);
+      background-image: url('../img/arrow-big-white.png');
+      transform: rotate(180deg) translate(-50%, 0) scale(0.85);
+      transform-origin: 50% 50%;
       bottom: 8%;
       top: auto;
     }
@@ -161,7 +166,7 @@ $lg-kind: 1200px;
     @extend .wch-block-head;
     margin-bottom: 2%;
     background: transparent;
-    color: $color_gray_darker
+    color: $color_gray_darker;
     &:after {
       display: none;
     }
@@ -178,6 +183,7 @@ $lg-kind: 1200px;
     }
   }
 }
+
 .wch-descr-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -214,6 +220,7 @@ $lg-kind: 1200px;
     }
   }
 }
+
 .wch-new {
   display: flex;
   align-items: center;
@@ -263,6 +270,7 @@ $lg-kind: 1200px;
     }
   }
 }
+
 .why-choose > .container {
   @include mobile-all() {
     padding: 0;

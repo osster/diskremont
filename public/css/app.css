@@ -11385,7 +11385,7 @@ a.text-dark:focus {
 
 @font-face {
   font-family: 'SegoeUI';
-  src: url(/fonts/SegoeUI.eot?3b1b8cc3b81b5496bb98a1102dbcea2d?#iefix) format("embedded-opentype"), url(/fonts/SegoeUI.woff?37a8424b0f445d4871778a59a6433343) format("woff"), url(/fonts/SegoeUI.ttf?6581cfaeee8057734a3f16d37719bfb2) format("truetype"), url(/fonts/SegoeUI.svg?ce29c33845f7564c3fed96213c8e6408#SegoeUI) format("svg");
+  src: url(/fonts/SegoeUI.eot?3b1b8cc3b81b5496bb98a1102dbcea2d?#iefix) format("embedded-opentype"), url(/fonts/SegoeUI.woff?37a8424b0f445d4871778a59a6433343) format("woff"), url(/fonts/SegoeUI.ttf?6581cfaeee8057734a3f16d37719bfb2) format("truetype"), url(/fonts/SegoeUI.svg?c58c763eef7d9d03a2e0fd6057a3a8ac#SegoeUI) format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -12232,21 +12232,6 @@ h1 {
           align-items: center;
 }
 
-.btn-car-group:before,
-.btn-car-group:after {
-  content: '';
-  display: inline-block;
-  width: 12px;
-  height: 21px;
-  background-image: url(/images/arrow_black.svg?063e92e77b7b1444448b7c68f727a58f);
-}
-
-.btn-car-group:after {
-  margin-right: 0;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
 .car-dropdown-menu {
   width: calc(100% - 63px);
   border: 2px solid #000000;
@@ -12266,6 +12251,12 @@ h1 {
   color: #000000;
   font-size: 1.33333333rem;
   font-weight: 600;
+  position: absolute;
+  top: 100px;
+}
+
+.car-form-row {
+  position: relative;
 }
 
 .car-form-checkbox {
@@ -12533,13 +12524,14 @@ h1 {
   position: absolute;
   top: 7px;
   left: 50%;
-  padding: 5px;
+  padding: 5px 15px;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  color: #fff;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.6);
   font-size: 1.22222222rem;
   font-weight: 700;
-  background: rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
 }
 
 .main-promo-block .btn {
@@ -13307,6 +13299,10 @@ h1 {
   margin-bottom: 5%;
 }
 
+.second-block {
+  margin-top: 2.4%;
+}
+
 .services-blocks .black-header {
   margin-bottom: 5.5%;
 }
@@ -13538,12 +13534,7 @@ h1 {
 }
 
 .prices .prices-table-header-text:after {
-  margin-left: 8px;
-  width: 16px;
-  height: 16px;
-  background-size: cover;
-  -webkit-transform: rotate(90deg) translateX(3px);
-          transform: rotate(90deg) translateX(3px);
+  display: none;
 }
 
 .prices .prices-table-footer {
@@ -13954,7 +13945,7 @@ h1 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 200px;
+  min-height: 200px;
   overflow: hidden;
   background: #000000;
   position: relative;
@@ -14126,10 +14117,10 @@ h1 {
 
 .wch-block-head-text .p,
 .wch-descr-head-text .p {
-  height: 83px;
+  min-height: 83px;
   overflow: hidden;
   max-width: 72%;
-  margin-bottom: 0;
+  margin-bottom: 30px;
   font-size: 0.88888889rem;
 }
 
@@ -14163,9 +14154,11 @@ h1 {
 }
 
 .wch-descr-stripe:after {
-  background-image: url(/images/arrow.svg?010062f313843835e368707ca274b031);
-  -webkit-transform: translate(50%, 0);
-          transform: translate(50%, 0);
+  background-image: url(/images/arrow-big-white.png?ef3d9e3f20f4e12a7fdbdf13474f1a21);
+  -webkit-transform: rotate(180deg) translate(-50%, 0) scale(0.85);
+          transform: rotate(180deg) translate(-50%, 0) scale(0.85);
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
   bottom: 8%;
   top: auto;
 }
@@ -14173,10 +14166,10 @@ h1 {
 .wch-descr-head {
   margin-bottom: 2%;
   background: transparent;
-  color: #232323 .wch-descr-head;
+  color: #232323;
 }
 
-.wch-descr-head :after {
+.wch-descr-head:after {
   display: none;
 }
 
@@ -14343,7 +14336,8 @@ h1 {
   border: none;
 }
 
-.can-select .select-item:hover {
+.can-select .select-item:hover,
+.can-select .select-item.active {
   background: #dc3545;
   color: #ffffff !important;
 }
@@ -15607,8 +15601,9 @@ html.lb-disable-scrolling {
 
 .b-slider .slider.slider-horizontal .slider-tick-label-container .slider-tick-label {
   display: inline-block;
-  padding-top: 24px;
+  padding-top: 12px;
   text-align: center;
+  font-size: 14px;
 }
 
 .b-slider .slider.slider-horizontal.slider-rtl .slider-track {

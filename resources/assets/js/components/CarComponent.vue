@@ -1329,6 +1329,8 @@
     }
     .car > svg {
         max-height: 380px;
+        min-height: 380px;
+        width: 100%;
     }
 </style>
 

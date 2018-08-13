@@ -14,7 +14,7 @@
   border: 2px solid #000000;
   .select-item {
     border: none;
-    &:hover {
+    &:hover, &.active {
       background: $red;
       color: $color_white !important;
     }

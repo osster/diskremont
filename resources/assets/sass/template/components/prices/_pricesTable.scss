@@ -48,12 +48,13 @@
       }
       &-text {
         &:after {
-          margin-left: 8px;
-          width: 16px;
-          height: 16px;
-          -webkit-background-size: cover;
-          background-size: cover;
-          transform: rotate(90deg) translateX(3px);
+          display: none;
+          //margin-left: 8px;
+          //width: 16px;
+          //height: 16px;
+          //-webkit-background-size: cover;
+          //background-size: cover;
+          //transform: rotate(90deg) translateX(3px);
         }
       }
     }

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4753.066 616.42 103.153 103.153">
+  <g id="polirovka" transform="translate(3892.366 -40)">
+    <g fill="#fff" stroke-width="4px" stroke="currentColor" class="cls-1" transform="matrix(0.695, 0.719, -0.719, 0.695, 913.177, 656.42)">
+      <circle stroke="none" class="cls-4" cx="36.476" cy="36.476" r="36.476"/>
+      <circle fill="none" cx="36.476" cy="36.476" r="34.476"/>
+    </g>
+    <g stroke="currentColor" stroke-width="2px" fill="none" transform="matrix(0.695, 0.719, -0.719, 0.695, 912.406, 700.629)">
+      <circle stroke="none" class="cls-4" cx="5.685" cy="5.685" r="5.685"/>
+      <circle fill="none" cx="5.685" cy="5.685" r="4.685"/>
+    </g>
+    <path stroke="currentColor" stroke-width="2px" fill="currentColor" class="cls-3" d="M0,31.3V0H4.629V31.3" transform="matrix(0.695, 0.719, -0.719, 0.695, 935.992, 682.461)"/>
+    <path stroke="currentColor" stroke-width="2px" fill="currentColor" class="cls-3" d="M0,31.3V0H4.629V31.3" transform="translate(943.206 723.866) rotate(121)"/>
+    <path stroke="currentColor" stroke-width="2px" fill="none" d="M0,31.3V0H4.629V31.3" transform="translate(899.629 675.322) rotate(-14)"/>
+    <path stroke="currentColor" stroke-width="2px" fill="none" d="M0,30.538V0H4.629V30.538" transform="translate(904.938 742.5) rotate(-164)"/>
+    <path stroke="currentColor" stroke-width="2px" fill="none" d="M0,30.774V0H4.629V30.774" transform="translate(877.206 710.22) rotate(-89)"/>
+    <path stroke="currentColor" stroke-width="2px" fill="none" d="M0,0,7.926,7.056,0,14.1" transform="translate(960.413 740.337) rotate(159)"/>
+    <path stroke="currentColor" stroke-width="2px" fill="none" d="M0,0,7.926,7.056,0,14.1" transform="translate(864.376 675.708) rotate(-24)"/>
+  </g>
+</svg>

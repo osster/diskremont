@@ -50,7 +50,12 @@
                                 $dataTypeRows = $dataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
                             @endphp
 
-                            <div id="wheel-to-png"></div>
+                                <div class="col-md-6">
+                                    <div id="wheel-to-png"></div>
+                                </div>
+                                <div class="col-md-6">
+                                </div>
+                                <div class="col-md-12"></div>
 
                             @foreach($dataTypeRows as $row)
                                 <!-- GET THE DISPLAY OPTIONS -->

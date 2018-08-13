@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4562 630 75 75">
+  <g id="prokatka" transform="translate(3950.006 -34.573)">
+    <g id="ray">
+      <path fill="none" stroke="currentColor" stroke-width="3px" d="M645.654,677.081l-.66,13.492a11,11,0,0,0-2,1,15.741,15.741,0,0,0-1.717,1.335l-11.8-6.335"/>
+      <path fill="none" stroke="currentColor" stroke-width="3px" d="M634.994,689.573a24.044,24.044,0,0,1,4.729-4,17.685,17.685,0,0,1,5.271-2"/>
+    </g>
+    <g transform="translate(916.83 -215.734) rotate(59)">
+      <path fill="none" stroke="currentColor" stroke-width="3px" d="M645.654,677.081l-.66,13.492a11,11,0,0,0-2,1,15.741,15.741,0,0,0-1.717,1.335l-11.8-6.335"/>
+      <path fill="none" stroke="currentColor" stroke-width="3px" d="M634.994,689.573a24.044,24.044,0,0,1,4.729-4,17.685,17.685,0,0,1,5.271-2"/>
+    </g>
+    <g transform="translate(1578.044 474.948) rotate(119)">
+      <path fill="none" stroke="currentColor" stroke-width="3px" d="M645.654,677.081l-.66,13.492a11,11,0,0,0-2,1,15.741,15.741,0,0,0-1.717,1.335l-11.8-6.335"/>
+      <path fill="none" stroke="currentColor" stroke-width="3px" d="M634.994,689.573a24.044,24.044,0,0,1,4.729-4,17.685,17.685,0,0,1,5.271-2"/>
+    </g>
+    <g transform="translate(1273.907 1426.21) rotate(-178)">
+      <path fill="none" stroke="currentColor" stroke-width="3px" d="M645.654,677.081l-.66,13.492a11,11,0,0,0-2,1,15.741,15.741,0,0,0-1.717,1.335l-11.8-6.335"/>
+      <path fill="none" stroke="currentColor" stroke-width="3px" d="M634.994,689.573a24.044,24.044,0,0,1,4.729-4,17.685,17.685,0,0,1,5.271-2"/>
+    </g>
+    <g transform="translate(-283.115 913.185) rotate(-60)">
+      <path fill="none" stroke="currentColor" stroke-width="3px" d="M645.654,677.081l-.66,13.492a11,11,0,0,0-2,1,15.741,15.741,0,0,0-1.717,1.335l-11.8-6.335"/>
+      <path fill="none" stroke="currentColor" stroke-width="3px" d="M634.994,689.573a24.044,24.044,0,0,1,4.729-4,17.685,17.685,0,0,1,5.271-2"/>
+    </g>
+    <g transform="translate(365.657 1615.18) rotate(-120)">
+      <path fill="none" stroke="currentColor" stroke-width="3px" d="M645.654,677.081l-.66,13.492a11,11,0,0,0-2,1,15.741,15.741,0,0,0-1.717,1.335l-11.8-6.335"/>
+      <path fill="none" stroke="currentColor" stroke-width="3px" d="M634.994,689.573a24.044,24.044,0,0,1,4.729-4,17.685,17.685,0,0,1,5.271-2"/>
+    </g>
+    <g stroke="currentColor" stroke-width="3px" fill="none" transform="translate(642.994 695.573)">
+      <circle stroke="none" cx="6.5" cy="6.5" r="6.5"/>
+      <circle fill="none" cx="6.5" cy="6.5" r="5"/>
+    </g>
+    <g stroke="currentColor" stroke-width="13px" fill="none" transform="translate(611.994 664.573)">
+      <circle stroke="none" cx="37.5" cy="37.5" r="37.5"/>
+      <circle fill="none" cx="37.5" cy="37.5" r="31"/>
+    </g>
+  </g>
+</svg>
