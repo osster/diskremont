@@ -21,9 +21,9 @@ if (typeof ymaps == 'object') {
 
         window.bottomMap.geoObjects.add(myPlacemark01);
 
-        console.log('bottomMap', window.bottomMap);
+        //console.log('bottomMap', window.bottomMap);
     }
 
-    console.log('ymaps', ymaps);
+    //console.log('ymaps', ymaps);
 
 }

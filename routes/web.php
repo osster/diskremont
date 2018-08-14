@@ -21,12 +21,15 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 Route::get('/', 'HomeController@index');
+
+Route::post('/callback.html', 'HomeController@sendMail');
+
 Route::get('/contacts.html', 'HomeController@contacts');
 Route::get('/price.html', 'HomeController@price');
 Route::get('/galmenu.html', ["uses" => 'HomeController@gallery', "as" => "gallery"]);
 Route::get('/uslugi.html', 'HomeController@uslugi');
-//Route::get('/pokraska.html', 'HomeController@pokraska');
 Route::get('/{slug}.html', 'HomeController@uslugiDetail');
+
 
 //Route::get('/contacts.html', function () {
 //    return view('welcome');

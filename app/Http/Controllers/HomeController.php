@@ -7,8 +7,11 @@ use App\CalcDiskColor;
 use App\CalcDiskSize;
 use App\DiskGallery;
 use App\DiskUslugi;
+use App\Mail\CallbackFormSubmitted;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use TCG\Voyager\Models\DataType;
 
 class HomeController extends Controller
@@ -196,5 +199,39 @@ class HomeController extends Controller
     public function contacts()
     {
         return view("pages.contacts");
+    }
+
+    public function sendMail(Request $request) {
+        $inp = $request->all();
+
+        $val = Validator::make($request->all(), [
+            "name" => "required|string",
+            "phone" => [
+                "required",
+                function($attribute, $value, $fail) {
+                    if (!preg_match("/\+\d\(\d{3}\)\d{3}-\d-\d{3}/", $value)) {
+                        return $fail('не верный формат номера.');
+                    }
+                }
+            ]
+        ]);
+
+        if ($val->fails()) {
+            return response()->json(["success" => "FAIL", "data" => $inp, "errors" => $val->errors()]);
+        } else {
+
+            Mail::to(env("MAIL_TO_ADDRESS", "info@diskremont.ru"))
+                ->send(new CallbackFormSubmitted($inp));
+
+            if (count(Mail::failures()) > 0) {
+                $errors = [];
+                foreach (Mail::failures() as $email_address) {
+                    $errors["mail"] = "Письмо не отправлено по адресу " . $email_address;
+                }
+                return response()->json(["success" => "FAIL", "data" => $inp, "errors" => $errors]);
+            }
+
+            return response()->json(["success" => "OK", "data" => $inp]);
+        }
     }
 }

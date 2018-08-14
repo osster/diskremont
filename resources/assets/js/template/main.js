@@ -1,6 +1,6 @@
 //= components/gallery.js
 //= components/map.js
-require('./components/gallery.js');
+require('./components/forms.js');
 require('./components/map.js');
 
 $(document).ready(function () {

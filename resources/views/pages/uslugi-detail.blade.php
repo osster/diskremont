@@ -104,7 +104,8 @@
                 <div class="card-img-overlay mx-auto d-flex flex-wrap">
                     <div class="col">
                         <div class="price-promo-large-icon price-promo-large-icon-1"></div>
-                        <div class="price-promo-large-description">На цвета чёрный/белый глянец и матовое серебро действует
+                        <div class="price-promo-large-description">На цвета чёрный/белый глянец и матовое серебро
+                            действует
                             25% скидка! Цвета покраски Candy рассчитываются с наценкой 50% к базовой
                         </div>
                     </div>
@@ -118,6 +119,25 @@
             </div>
         </section>
 
+        <!--
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-4 offset-md-4">
+                    <div class="price-kind-block block-shaddow m-0">
+                        <div class="price-kind-block-header">
+                                    <span class="price-kind-block-header-span">
+                                        Наши телефоны:
+                                    </span>
+                        </div>
+                        <div class="price-kind-block-text pb-4">
+                            <a href="tel:(812) 970-7-958">(812) 970-7-958</a><br>
+                            <a href="tel:(812) 972-0-666">(812) 972-0-666</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
         @if($gallery->count() > 0)
 
             <div class="container">
@@ -127,7 +147,8 @@
                         <div class="row main-photoalbum-row">
                             @foreach($gallery as $item)
                                 <div class="col-lg-3 col-md-4 col-6 thumb">
-                                    <a rel="example_group" data-lightbox="image" href="{{ Voyager::image($item->picture) }}">
+                                    <a rel="example_group" data-lightbox="image"
+                                       href="{{ Voyager::image($item->picture) }}">
                                         <img class="img-fluid"
                                              src="{{ Voyager::image($item->thumbnail('cropped', 'picture')) }}"
                                              alt="{{ $item->name }}">
@@ -166,3 +187,5 @@
     -->
 
 @endsection
+
+
