@@ -36,35 +36,37 @@
                             </thead>
                             <tbody>
                             @foreach($display_price as $code)
-                                <tr>
-                                    <th class="prices-table-th-left" scope="row">
-                                        @php
-                                            switch ($code) {
-                                                case "pokraska":
-                                                    echo "Порошковая покраска*";
-                                                    break;
-                                                case "prokat":
-                                                    echo "Прокат";
-                                                    break;
-                                                case "tiremount":
-                                                    echo "Шиномонтаж**";
-                                                    break;
-                                                case "akril":
-                                                    echo "Акриловая покраска*";
-                                                    break;
-                                                case "grind":
-                                                    echo "Полировка дисков*";
-                                                    break;
-                                                case "dimond_grind":
-                                                    echo "Алмазная проточка дисков*";
-                                                    break;
-                                            }
-                                        @endphp
-                                    </th>
-                                    @foreach($transp[$code] as $k=>$v)
-                                        <td>{{ $v }}</td>
-                                    @endforeach
-                                </tr>
+                                @if (isset($transp[$code]))
+                                    <tr>
+                                        <th class="prices-table-th-left" scope="row">
+                                            @php
+                                                switch ($code) {
+                                                    case "pokraska":
+                                                        echo "Порошковая покраска*";
+                                                        break;
+                                                    case "prokat":
+                                                        echo "Прокат";
+                                                        break;
+                                                    case "tiremount":
+                                                        echo "Шиномонтаж**";
+                                                        break;
+                                                    case "akril":
+                                                        echo "Акриловая покраска*";
+                                                        break;
+                                                    case "grind":
+                                                        echo "Полировка дисков*";
+                                                        break;
+                                                    case "dimond_grind":
+                                                        echo "Алмазная проточка дисков*";
+                                                        break;
+                                                }
+                                            @endphp
+                                        </th>
+                                        @foreach($transp[$code] as $k=>$v)
+                                            <td>{{ $v }}</td>
+                                        @endforeach
+                                    </tr>
+                                @endif
                             @endforeach
                             </tbody>
                         </table>
@@ -95,6 +97,51 @@
 
             </div>
         </section>
+
+        <section class="main-promo-large price-promo-large">
+            <div class="card bg-dark text-white">
+                <img class="card-img" src="./img/promo-service-bg.jpg" alt="Card image">
+                <div class="card-img-overlay mx-auto d-flex flex-wrap">
+                    <div class="col">
+                        <div class="price-promo-large-icon price-promo-large-icon-1"></div>
+                        <div class="price-promo-large-description">На цвета чёрный/белый глянец и матовое серебро действует
+                            25% скидка! Цвета покраски Candy рассчитываются с наценкой 50% к базовой
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="price-promo-large-icon price-promo-large-icon-2"></div>
+                        <div class="price-promo-large-description">Новая услуга - наш курьер готов в течение дня забрать
+                            Ваши диски и доставить готовые всего за 1000 рублей.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        @if($gallery->count() > 0)
+
+            <div class="container">
+                <section class="main-photoalbum">
+                    <div class="main-photoalbum-wrapper text-center">
+                        <h1 class="text-center">Примеры</h1>
+                        <div class="row main-photoalbum-row">
+                            @foreach($gallery as $item)
+                                <div class="col-lg-3 col-md-4 col-6 thumb">
+                                    <a rel="example_group" data-lightbox="image" href="{{ Voyager::image($item->picture) }}">
+                                        <img class="img-fluid"
+                                             src="{{ Voyager::image($item->thumbnail('cropped', 'picture')) }}"
+                                             alt="{{ $item->name }}">
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                        <a href="{{ url("/galmenu.html") }}" class="btn btn-red">
+                            <span class="btn-text">Вся галерея</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        @endif
 
     </div>
 

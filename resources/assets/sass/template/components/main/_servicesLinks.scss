@@ -56,12 +56,14 @@
     color: $color_white;
     font-size: rem(16px);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:50px 0 30px;
+
     .card-title {
-      padding: 16% 15px 0 15px;
-      margin-bottom: 6%;
-      @include mobile-all() {
-        padding-top: 9%;
-      }
+      padding: 0 15px;
+      margin-bottom: 20px;
     }
     .card-text {
       max-width: 246px;

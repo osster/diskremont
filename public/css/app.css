@@ -11385,7 +11385,7 @@ a.text-dark:focus {
 
 @font-face {
   font-family: 'SegoeUI';
-  src: url(/fonts/SegoeUI.eot?3b1b8cc3b81b5496bb98a1102dbcea2d?#iefix) format("embedded-opentype"), url(/fonts/SegoeUI.woff?37a8424b0f445d4871778a59a6433343) format("woff"), url(/fonts/SegoeUI.ttf?6581cfaeee8057734a3f16d37719bfb2) format("truetype"), url(/fonts/SegoeUI.svg?c58c763eef7d9d03a2e0fd6057a3a8ac#SegoeUI) format("svg");
+  src: url(/fonts/SegoeUI.eot?3b1b8cc3b81b5496bb98a1102dbcea2d?#iefix) format("embedded-opentype"), url(/fonts/SegoeUI.woff?37a8424b0f445d4871778a59a6433343) format("woff"), url(/fonts/SegoeUI.ttf?6581cfaeee8057734a3f16d37719bfb2) format("truetype"), url(/fonts/SegoeUI.svg?ce29c33845f7564c3fed96213c8e6408#SegoeUI) format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -12764,18 +12764,22 @@ h1 {
   color: #ffffff;
   font-size: 0.88888889rem;
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 50px 0 30px;
 }
 
 .main-services-links .card-img-overlay .card-title {
-  padding: 16% 15px 0 15px;
-  margin-bottom: 6%;
-}
-
-@media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
-  .main-services-links .card-img-overlay .card-title {
-    /* mobile-all */
-    padding-top: 9%;
-  }
+  padding: 0 15px;
+  margin-bottom: 20px;
 }
 
 .main-services-links .card-img-overlay .card-text {
@@ -13189,7 +13193,7 @@ h1 {
   height: 50px;
   margin-right: 10px;
   background-repeat: no-repeat;
-  background-position-y: 10px;
+  background-position-y: 9px;
   background-position-x: center;
   background-image: url(/images/address.png?85d89650880e2a31d903d67ae77b8fb7);
 }
@@ -13219,11 +13223,9 @@ h1 {
   height: 50px;
   margin-right: 10px;
   background-repeat: no-repeat;
-  background-position-y: 10px;
+  background-position-y: 9px;
   background-position-x: center;
   background-image: url(/images/phone.png?918c38b17cf1b2ed61a4c88b6be5a1c8);
-  -ms-background-position-y: 15px;
-  background-position-y: 15px;
 }
 
 @media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
@@ -13251,11 +13253,9 @@ h1 {
   height: 50px;
   margin-right: 10px;
   background-repeat: no-repeat;
-  background-position-y: 10px;
+  background-position-y: 9px;
   background-position-x: center;
   background-image: url(/images/open.png?d8020e095f9d752961a8222a3d76bc91);
-  -ms-background-position-y: 0;
-  background-position-y: 0;
 }
 
 @media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
@@ -13937,16 +13937,15 @@ h1 {
   margin-bottom: 4%;
 }
 
-.wch-block-head,
-.wch-descr-head {
+.wch-block-head {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  min-height: 200px;
   overflow: hidden;
+  padding: 5% 0;
   background: #000000;
   position: relative;
   overflow: hidden;
@@ -13965,8 +13964,7 @@ h1 {
   z-index: 1;
 }
 
-.wch-block-head:after,
-.wch-descr-head:after {
+.wch-block-head:after {
   content: "";
   display: inline-block;
   width: 100%;
@@ -13987,8 +13985,7 @@ h1 {
   left: 15px;
 }
 
-.wch-block-head:hover:after,
-.wch-descr-head:hover:after {
+.wch-block-head:hover:after {
   left: -200%;
 }
 
@@ -14103,7 +14100,7 @@ h1 {
   font-size: 1.66666667rem;
   font-weight: 700;
   text-transform: none;
-  margin: 17px 0;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
@@ -14117,7 +14114,6 @@ h1 {
 
 .wch-block-head-text .p,
 .wch-descr-head-text .p {
-  min-height: 83px;
   overflow: hidden;
   max-width: 72%;
   margin-bottom: 30px;
@@ -14137,8 +14133,7 @@ h1 {
 .wch-descr {
   position: relative;
   background-color: rgba(233, 233, 233, 0.6);
-  padding-top: 8px;
-  padding-bottom: 13%;
+  padding: 5% 0;
   margin-bottom: 10px;
 }
 
@@ -14164,7 +14159,6 @@ h1 {
 }
 
 .wch-descr-head {
-  margin-bottom: 2%;
   background: transparent;
   color: #232323;
 }
@@ -14185,6 +14179,7 @@ h1 {
       flex-wrap: wrap;
   max-width: 960px;
   margin-left: 8%;
+  margin-bottom: 3rem;
 }
 
 @media screen and (max-width: 1200px) {
@@ -14204,6 +14199,8 @@ h1 {
   text-align: center;
   max-height: 500px;
   overflow: hidden;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .wch-descr-wrapper .descr-block:hover {
@@ -14238,7 +14235,6 @@ h1 {
   margin-left: 14%;
   background-color: #c92727;
   max-width: 935px;
-  margin-top: 6%;
 }
 
 @media screen and (max-width: 1200px) {

@@ -31,8 +31,8 @@ $lg-kind: 1200px;
 .wch-block-head {
   display: flex;
   align-items: center;
-  min-height: 200px;
   overflow: hidden;
+  padding: 5% 0;
   @include for-black-header;
   margin-bottom: 10px;
   &-stripe {
@@ -120,14 +120,13 @@ $lg-kind: 1200px;
       font-size: rem(30px);
       font-weight: 700;
       text-transform: none;
-      margin: 17px 0;
+      margin-bottom: 1rem;
       @include mobile-all() {
         margin-top: 0;
         padding-top: 0;
       }
     }
     .p {
-      min-height: 83px;
       overflow: hidden;
       max-width: 72%;
       margin-bottom: 30px;
@@ -144,8 +143,7 @@ $lg-kind: 1200px;
 .wch-descr {
   position: relative;
   background-color: rgba(233, 233, 233, 0.6);
-  padding-top: 8px;
-  padding-bottom: 13%;
+  padding: 5% 0;
   margin-bottom: 10px;
   &-stripe {
     @extend .wch-block-head-stripe;
@@ -163,8 +161,7 @@ $lg-kind: 1200px;
     }
   }
   &-head {
-    @extend .wch-block-head;
-    margin-bottom: 2%;
+    //@extend .wch-block-head;
     background: transparent;
     color: $color_gray_darker;
     &:after {
@@ -189,6 +186,7 @@ $lg-kind: 1200px;
   flex-wrap: wrap;
   max-width: 960px;
   margin-left: 8%;
+  margin-bottom: 3rem;
   @media screen and (max-width: $lg-kind) {
     margin-left: 0;
   }
@@ -202,6 +200,7 @@ $lg-kind: 1200px;
     text-align: center;
     max-height: 500px;
     overflow: hidden;
+    @include transition(all, 0.3s, ease);
     &:hover {
       background-color: $color-red_c9;
       color: $color_white;
@@ -227,7 +226,6 @@ $lg-kind: 1200px;
   margin-left: 14%;
   background-color: $color-red_c9;
   max-width: 935px;
-  margin-top: 6%;
   @media screen and (max-width: $lg-kind){
     margin-right: 0;
   }

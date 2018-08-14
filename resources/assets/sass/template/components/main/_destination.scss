@@ -88,8 +88,6 @@
       &:before {
         @include pseudo-el-address;
         background-image: url('../img/phone.png');
-        -ms-background-position-y: 15px;
-        background-position-y: 15px;
         @include mobile-all() {
           background-size: 45%;
         }
@@ -103,8 +101,7 @@
       &:before {
         @include pseudo-el-address;
         background-image: url('../img/open.png');
-        -ms-background-position-y: 0;
-        background-position-y: 0;
+
         @include mobile-all() {
           background-size: 60%;
         }
