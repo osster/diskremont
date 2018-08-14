@@ -17,8 +17,8 @@
     height: 111px;
     background-repeat: no-repeat;
     background-position: center center;
-    @media screen and (max-width: $sm) {
-      width: 131px;
+    @include mobile-all(){
+      width: 100%;
     }
   }
   &-link {

@@ -16,6 +16,7 @@
       @include mobile-all() {
         padding-top: 5%;
         padding-bottom: 5%;
+        text-align: left;
       }
       &:hover {
         box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.16);
@@ -38,6 +39,7 @@
         margin-bottom: 20px;
         @include mobile-all() {
           padding: 0;
+          height: auto;
         }
       }
     }

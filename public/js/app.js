@@ -68484,7 +68484,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 //= components/gallery.js
 //= components/map.js
 __webpack_require__(288);
-__webpack_require__(286);
+__webpack_require__(287);
 
 $(document).ready(function () {
     var swiper = new Swiper('.main-slider.swiper-container', {
@@ -82044,7 +82044,8 @@ exports.default = function () {
 /* 283 */,
 /* 284 */,
 /* 285 */,
-/* 286 */
+/* 286 */,
+/* 287 */
 /***/ (function(module, exports) {
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
@@ -82077,7 +82078,6 @@ if ((typeof ymaps === 'undefined' ? 'undefined' : _typeof(ymaps)) == 'object') {
 }
 
 /***/ }),
-/* 287 */,
 /* 288 */
 /***/ (function(module, exports) {
 

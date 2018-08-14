@@ -14,7 +14,7 @@
                 <span class="prices-table-header-text btn-text">Цены на ремонт/покраску литых дисков, шиномонтажные и другие работы</span>
             </div>
             <div class="table-responsive-lg table-border">
-                <table class="table prices-table">
+                <table class="table prices-table table-striped">
                     <thead>
                     <tr>
                         <th class="prices-table-th" scope="col"></th>

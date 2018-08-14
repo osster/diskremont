@@ -141,7 +141,6 @@ $lg-kind: 1200px;
     }
 
     ul{
-      margin-top: 2rem;
       li{
         max-width: 72%;
         font-size: rem(16px);
@@ -149,6 +148,11 @@ $lg-kind: 1200px;
         list-style: disc;
         margin-left: 20px;
         padding-left: 20px;
+
+        @include mobile-all() {
+          max-width: 85%;
+          padding-left: 10px;
+        }
       }
     }
   }
@@ -252,6 +256,7 @@ $lg-kind: 1200px;
   margin-left: 14%;
   background-color: $color-red_c9;
   max-width: 935px;
+
   @media screen and (max-width: $lg-kind){
     margin-right: 0;
   }
@@ -280,10 +285,20 @@ $lg-kind: 1200px;
     height: 62px;
     margin-right: 19px;
     margin-left: 7.5%;
+
+    @include mobile-all() {
+      flex: 1;
+      margin-right: 15px;
+      margin-left: 8px;
+    }
   }
   &-text {
     color: $color_white;
     font-size: rem(16px);
+
+    @include mobile-all() {
+      flex: 6;
+    }
     &-descr {
       color: $white-e9;
     }
@@ -295,7 +310,7 @@ $lg-kind: 1200px;
   }
 }
 
-.why-choose > .container {
+.prices > .container {
   @include mobile-all() {
     padding: 0;
   }
