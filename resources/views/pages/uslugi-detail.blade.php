@@ -105,8 +105,7 @@
                     <div class="col">
                         <div class="price-promo-large-icon price-promo-large-icon-1"></div>
                         <div class="price-promo-large-description">На цвета чёрный/белый глянец и матовое серебро
-                            действует
-                            25% скидка! Цвета покраски Candy рассчитываются с наценкой 50% к базовой
+                            действует 25% скидка! Цвета покраски Candy рассчитываются с наценкой 50% к базовой
                         </div>
                     </div>
                     <div class="col">

@@ -76,7 +76,9 @@
                                     </span>
                                 </li>
                                 <li class="timetable destination-info-li"><span class="dest-info-span">{{ setting('kontakty.working-time') }}</span></li>
-                                <li><button class="btn btn-red"><span class="btn-text d-flex align-items-center">Оставить заявку</span></button></li>
+                                <li>
+                                    <button class="btn btn-red" data-toggle="modal" data-target="#modalCenter"><span class="btn-text d-flex align-items-center">Оставить заявку</span></button>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -108,14 +110,15 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <form action="#">
+                    <form id="callbackForm">
                         <label for="name" class="modal-label">Заказать звонок</label>
-                        <input id="name" type="name" class="popup-input" placeholder="Ваше имя">
-                        <input type="phone" class="popup-input" placeholder="Ваш телефон">
+                        <input id="name" name="name" class="popup-input" placeholder="Ваше имя" type="text" minlength="2" required/>
+                        <input id="phone" name="phone" class="popup-input" placeholder="Ваш телефон" type="text" minlength="16" required/>
                         <button class="btn btn-red" type="submit">
                             <span class="btn-text">Перезвоните мне!</span>
                         </button>
                     </form>
+                    <div class="d-none text-danger" id="callbackFormResult"></div>
                 </div>
             </div>
         </div>
