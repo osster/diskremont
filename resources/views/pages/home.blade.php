@@ -237,7 +237,7 @@
                              alt="{{ $usluga->name }}">
                         <div class="card-img-overlay">
                             <h5 class="card-title">{{ $usluga->name }}</h5>
-                            <p class="card-text">{{ $usluga->preview_text }}</p>
+                            {{--<p class="card-text">{{ $usluga->preview_text }}</p>--}}
                             <a href="{{ url("/" . $usluga->slug . ".html") }}"
                                class="btn btn-black btn-white d-flex justify-content-center align-items-center">
                                 <span class="btn-text d-flex justify-content-center">Подробнее</span>

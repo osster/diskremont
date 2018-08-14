@@ -176,66 +176,38 @@
                             <span class="left-high-header-span">Цены на хромирование и золочение дисков и других деталей</span>
                         </div>
                         <div class="left-high-body">
+                            @foreach($transp["other"] as $k=>$v)
+                                <div class="left-high-body-tr">
+                                    <div class="left-high-body-th">{{ $transp["titles"][$k] }}</div>
+                                    <div class="left-high-body-th">{{ $v }}</div>
+                                </div>
+                            @endforeach
+
                             <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
+                                <div class="left-high-body-th">Зеркало</div>
+                                <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.mirror') }}</div>
                             </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
-                            <div class="left-high-body-tr">
-                                <div class="left-high-body-th">Порошковая покраска*</div>
-                                <div class="left-high-body-th">900</div>
-                            </div>
+                                <div class="left-high-body-tr">
+                                    <div class="left-high-body-th">Ручка дверная</div>
+                                    <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.door') }}</div>
+                                </div>
+                                <div class="left-high-body-tr">
+                                    <div class="left-high-body-th">Облицовочная передняя решетка</div>
+                                    <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.bumper') }}</div>
+                                </div>
+                                <div class="left-high-body-tr">
+                                    <div class="left-high-body-th">Дуга верхняя - 2 шт</div>
+                                    <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.arc') }}</div>
+                                </div>
+                                <div class="left-high-body-tr">
+                                    <div class="left-high-body-th">Диск мотоцикла</div>
+                                    <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.motorcicle') }}</div>
+                                </div>
+                                <div class="left-high-body-tr">
+                                    <div class="left-high-body-th">Шлем</div>
+                                    <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.helmet') }}</div>
+                                </div>
+
                         </div>
                     </div>
                 </div>

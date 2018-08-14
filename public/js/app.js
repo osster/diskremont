@@ -53728,6 +53728,7 @@ window._ = __webpack_require__(9);
 window.Popper = __webpack_require__(92).default;
 
 window.Swiper = __WEBPACK_IMPORTED_MODULE_0__node_modules_swiper_dist_js_swiper_js___default.a;
+
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -53743,6 +53744,8 @@ try {
     __webpack_require__(131);
     __webpack_require__(132);
     __webpack_require__(134);
+
+    //require('../../../node_modules/swiper/dist/js/swiper.js');
 } catch (e) {}
 
 /**
@@ -68476,7 +68479,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 /***/ }),
 /* 135 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+//= components/gallery.js
+//= components/map.js
+__webpack_require__(287);
+__webpack_require__(286);
 
 $(document).ready(function () {
     var swiper = new Swiper('.main-slider.swiper-container', {
@@ -68535,8 +68543,6 @@ $(document).ready(function () {
 });
 
 $(window).on('load', function () {});
-
-//= components/gallery.js
 
 /***/ }),
 /* 136 */
@@ -69571,13 +69577,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_gsap__ = __webpack_require__(143);
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -75789,7 +75788,7 @@ var render = function() {
                       opacity: "0.8",
                       fill: "#FCF083",
                       d:
-                        "M1813.9,356.7c14.4,1.3,28.7,2.8,43.1,4c21,1.9,41.6,6.7,62.5,9.3\n                            c9.3,1.2,17.6,6,26.7,7.9c14,2.9,27.6,7.1,41.3,11.1c5.1,1.5,9.2,4.8,13,8.1c7.2,6.2,11.8,14.4,16.2,22.6\n                            c3.3,6.3,0.7,10.8-5.8,15.4c-12,8.5-25.4,9.5-38.6,5.7c-17.7-5-35.5-9.4-53.7-12.8c-14.8-2.8-29-8.2-42.1-16.2\n                            c-9.2-5.6-19.2-9.8-29.9-12.3c-9.8-2.4-18.9-6.5-27.1-12.3c-7.1-5-15-8.5-22.9-12.1c-3.3-1.5-6.5-3.4-9.6-5.2\n                            c-2-1.2-4.1-2.6-3.8-5.4c0.4-2.8,3.1-3.5,5.2-4.1C1796.7,358.3,1805.1,356.5,1813.9,356.7z"
+                        "M1813.9,357.7c14.4,1.3,28.7,2.8,43.1,4c21,1.9,41.6,6.7,62.5,9.3      c9.3,1.2,17.6,6,26.7,7.9c14,2.9,27.6,7.1,41.3,11.1c5.1,1.5,9.2,4.8,13,8.1c7.2,6.2,11.8,14.4,16.2,22.6      c3.3,6.3,0.7,10.8-5.8,15.4c-12,8.5-25.4,9.5-38.6,5.7c-17.7-5-35.5-9.4-53.7-12.8c-14.8-2.8-29-8.2-42.1-16.2      c-9.2-5.6-19.2-9.8-29.9-12.3c-9.8-2.4-18.9-6.5-27.1-12.3c-7.1-5-15-8.5-22.9-12.1c-3.3-1.5-6.5-3.4-9.6-5.2      c-2-1.2-4.1-2.6-3.8-5.4c0.4-2.8,3.1-3.5,5.2-4.1C1796.7,359.3,1805.1,357.5,1813.9,357.7z"
                     }
                   }),
                   _vm._v(" "),
@@ -75797,7 +75796,7 @@ var render = function() {
                     attrs: {
                       fill: "#E62D20",
                       d:
-                        "M167.8,354.9c-9.7,2.9-19.4,5.7-29,8.6c-2.2,0.7-4.4,1.7-6.6,2.2c-6.5,1.4-10.5-1-11.1-7.6\n                            c-1-12.5-3-25.2,1-37.6c2-6.1,7-10.3,11.8-14.3c1.4-1.2,4.8-0.1,7.2-0.1c29.3-0.3,58.5-3.1,87.7-2c3.5,1.1,7.1,1.6,10.5,2.7\n                            c1.9,0.6,4.2,0.9,4.6,3.2c0.4,2.2-1.8,3-3.2,4c-12.5,8.6-25.1,17-38.6,23.9c-9.4,4.7-18.1,10.6-27.7,14.9\n                            C172.3,353.7,170.2,354.7,167.8,354.9z"
+                        "M168.5,358.9c-9.7,2.9-19.4,5.7-29,8.6c-2.2,0.7-4.4,1.7-6.6,2.2c-6.5,1.4-10.5-1-11.1-7.6      c-1-12.5-3-25.2,1-37.6c2-6.1,7-10.3,11.8-14.3c1.4-1.2,4.8-0.1,7.2-0.1c29.3-0.3,58.5-3.1,87.7-2c3.5,1.1,7.1,1.6,10.5,2.7      c1.9,0.6,4.2,0.9,4.6,3.2c0.4,2.2-1.8,3-3.2,4c-12.5,8.6-25.1,17-38.6,23.9c-9.4,4.7-18.1,10.6-27.7,14.9      C172.9,357.7,170.9,358.7,168.5,358.9z"
                     }
                   })
                 ])
@@ -81990,6 +81989,144 @@ exports.default = function () {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 233 */,
+/* 234 */,
+/* 235 */,
+/* 236 */,
+/* 237 */,
+/* 238 */,
+/* 239 */,
+/* 240 */,
+/* 241 */,
+/* 242 */,
+/* 243 */,
+/* 244 */,
+/* 245 */,
+/* 246 */,
+/* 247 */,
+/* 248 */,
+/* 249 */,
+/* 250 */,
+/* 251 */,
+/* 252 */,
+/* 253 */,
+/* 254 */,
+/* 255 */,
+/* 256 */,
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */,
+/* 284 */,
+/* 285 */,
+/* 286 */
+/***/ (function(module, exports) {
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+if ((typeof ymaps === 'undefined' ? 'undefined' : _typeof(ymaps)) == 'object') {
+    var init = function init() {
+        var mapCenter = mapData && mapData.point != '' ? mapData.point.split(',') : [59.943872, 30.442697];
+        window.bottomMap = new ymaps.Map("map", {
+            center: mapCenter,
+            zoom: 15,
+            controls: ['zoomControl']
+        }, {
+            searchControlProvider: 'yandex#search'
+        }), myPlacemark01 = new ymaps.Placemark(mapCenter, {
+            balloonContentHeader: mapData.address,
+            balloonContentBody: '',
+            hintContent: mapData.address
+        });
+
+        window.bottomMap.behaviors.disable(['scrollZoom']);
+
+        window.bottomMap.geoObjects.add(myPlacemark01);
+
+        console.log('bottomMap', window.bottomMap);
+    };
+
+    ymaps.ready(init);
+
+    console.log('ymaps', ymaps);
+}
+
+/***/ }),
+/* 287 */
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+    var selKind = document.getElementById('selectKind');
+    var selColor = document.getElementById('selectColor');
+    var selectBodyKind = document.querySelector('.select-body-kind');
+    var selectBodyColor = document.querySelector('.select-body-color');
+    var canSelectKind = selectBodyKind.querySelector('.can-select');
+    var canSelectColor = selectBodyColor.querySelector('.can-select');
+    var selectChoice = $('.select');
+    var toggleSelect = function toggleSelect() {
+        canSelectKind.classList.toggle("hidden");
+    };
+    var toggleSelectColor = function toggleSelectColor() {
+        canSelectColor.classList.toggle("hidden");
+    };
+    var choiceKind = function choiceKind(event) {
+        var el = event.target;
+        var text = el.innerHTML;
+        if (text && el.classList.value) {
+            selKind.innerHTML = text;
+        }
+    };
+    var choiceKindColor = function choiceKindColor(event) {
+        var el = event.target;
+        var text = el.innerHTML;
+        var attr = el.getAttribute('choise-color');
+        if (attr && text) {
+            selColor.innerHTML = '<span class="color color-' + attr + '">' + text + '</span>';
+        }
+    };
+    var closeChoise = function closeChoise(event) {
+        var el = event.target;
+        if (!selectChoice[0].contains(el)) {
+            canSelectKind.classList.add('hidden');
+        }
+        if (!selectChoice[1].contains(el)) {
+            canSelectColor.classList.add('hidden');
+        }
+    };
+    selKind.addEventListener("click", toggleSelect);
+    selColor.addEventListener("click", toggleSelectColor);
+    canSelectKind.addEventListener("click", choiceKind);
+    canSelectColor.addEventListener("click", choiceKindColor);
+    document.body.addEventListener("click", closeChoise);
+
+    $('#btn-kind').on("click", toggleSelect);
+    $('#btn-color').on("click", toggleSelectColor);
+});
 
 /***/ })
 /******/ ]);

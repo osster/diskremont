@@ -25,6 +25,7 @@ class HomeController extends Controller
             $transp["tiremount"][$price->size] = $price->price_tiremount;
             $transp["prokat"][$price->size] = $price->price_prokat;
             $transp["akril"][$price->size] = $price->price_akril;
+            $transp["other"][$price->size] = $price->price_chromirovanie;
         }
 
         return $transp;
@@ -125,7 +126,9 @@ class HomeController extends Controller
                     return $this->getPrices();
                 });
 
-                return view("pages.uslugi-detail", compact('usluga', 'transp'));
+                $gallery = DiskGallery::where("disk_uslugi_id", $usluga->id)->take(12)->get();
+
+                return view("pages.uslugi-detail", compact('usluga', 'transp', 'gallery'));
             }
         }
     }

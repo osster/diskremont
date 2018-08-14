@@ -36,35 +36,37 @@
                             </thead>
                             <tbody>
                             @foreach($display_price as $code)
-                                <tr>
-                                    <th class="prices-table-th-left" scope="row">
-                                        @php
-                                            switch ($code) {
-                                                case "pokraska":
-                                                    echo "Порошковая покраска*";
-                                                    break;
-                                                case "prokat":
-                                                    echo "Прокат";
-                                                    break;
-                                                case "tiremount":
-                                                    echo "Шиномонтаж**";
-                                                    break;
-                                                case "akril":
-                                                    echo "Акриловая покраска*";
-                                                    break;
-                                                case "grind":
-                                                    echo "Полировка дисков*";
-                                                    break;
-                                                case "dimond_grind":
-                                                    echo "Алмазная проточка дисков*";
-                                                    break;
-                                            }
-                                        @endphp
-                                    </th>
-                                    @foreach($transp[$code] as $k=>$v)
-                                        <td>{{ $v }}</td>
-                                    @endforeach
-                                </tr>
+                                @if (isset($transp[$code]))
+                                    <tr>
+                                        <th class="prices-table-th-left" scope="row">
+                                            @php
+                                                switch ($code) {
+                                                    case "pokraska":
+                                                        echo "Порошковая покраска*";
+                                                        break;
+                                                    case "prokat":
+                                                        echo "Прокат";
+                                                        break;
+                                                    case "tiremount":
+                                                        echo "Шиномонтаж**";
+                                                        break;
+                                                    case "akril":
+                                                        echo "Акриловая покраска*";
+                                                        break;
+                                                    case "grind":
+                                                        echo "Полировка дисков*";
+                                                        break;
+                                                    case "dimond_grind":
+                                                        echo "Алмазная проточка дисков*";
+                                                        break;
+                                                }
+                                            @endphp
+                                        </th>
+                                        @foreach($transp[$code] as $k=>$v)
+                                            <td>{{ $v }}</td>
+                                        @endforeach
+                                    </tr>
+                                @endif
                             @endforeach
                             </tbody>
                         </table>
@@ -83,6 +85,8 @@
             @endphp
         @endif
 
+
+
         <section class="why-choose">
             <div class="container">
 
@@ -95,6 +99,31 @@
 
             </div>
         </section>
+
+        @if($gallery->count() > 0)
+
+            <div class="container">
+                <section class="main-photoalbum">
+                    <div class="main-photoalbum-wrapper text-center">
+                        <h1 class="text-center">Примеры</h1>
+                        <div class="row main-photoalbum-row">
+                            @foreach($gallery as $item)
+                                <div class="col-lg-3 col-md-4 col-6 thumb">
+                                    <a rel="example_group" data-lightbox="image" href="{{ Voyager::image($item->picture) }}">
+                                        <img class="img-fluid"
+                                             src="{{ Voyager::image($item->thumbnail('cropped', 'picture')) }}"
+                                             alt="{{ $item->name }}">
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                        <a href="{{ url("/galmenu.html") }}" class="btn btn-red">
+                            <span class="btn-text">Вся галерея</span>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        @endif
 
     </div>
 
