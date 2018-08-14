@@ -1,3 +1,8 @@
+//= components/gallery.js
+//= components/map.js
+require('./components/gallery.js');
+require('./components/map.js');
+
 $(document).ready(function () {
     var swiper = new Swiper('.main-slider.swiper-container', {
         slidesPerView: 1,
@@ -60,4 +65,3 @@ $(window).on('load', function () {
 });
 
 
-//= components/gallery.js

@@ -126,7 +126,7 @@ class HomeController extends Controller
                     return $this->getPrices();
                 });
 
-                $gallery = DiskGallery::where("disk_uslugi_id", $usluga->id)->take(24)->get();
+                $gallery = DiskGallery::where("disk_uslugi_id", $usluga->id)->take(12)->get();
 
                 return view("pages.uslugi-detail", compact('usluga', 'transp', 'gallery'));
             }

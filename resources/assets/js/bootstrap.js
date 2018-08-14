@@ -2,6 +2,7 @@ window._ = require('lodash');
 window.Popper = require('popper.js').default;
 import Swiper from '../../../node_modules/swiper/dist/js/swiper.js';
 window.Swiper = Swiper;
+
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -17,6 +18,9 @@ try {
     require('../../../node_modules/jquery-validation/dist/jquery.validate.js');
     require('../../../node_modules/jquery-datetimepicker/build/jquery.datetimepicker.full.min.js');
     require('../../../node_modules/lightbox2/dist/js/lightbox.js');
+
+
+    //require('../../../node_modules/swiper/dist/js/swiper.js');
 
 } catch (e) {
 }

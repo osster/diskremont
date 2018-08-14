@@ -58,9 +58,13 @@
                 <div class="container">
                     <div class="main-destination-block d-flex flex-wrap">
                         <div class="col pr-md-0 main-destination-block-map">
-                            <div class="map">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8005.686175734432!2d30.29522426364603!3d59.89195227961398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469630647ceebc63%3A0x48a3d6033dbe452f!2z0JzQuNGC0YDQvtGE0LDQvdGM0LXQstGB0LrQvtC1INGILiwgMjcsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5NjA4NA!5e0!3m2!1sru!2sby!4v1533115308623" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
-                            </div>
+                            <div id="map" class="map"></div>
+                            <script>
+                                var mapData = {
+                                    point: '{{ setting('kontakty.map_coord') }}',
+                                    address: '{{ setting('kontakty.address') }}'
+                                };
+                            </script>
                         </div>
                         <div class="col p-0 ">
                             <ul class="main-destination-info">
@@ -118,6 +122,8 @@
     </div>
 
 </div>
+
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 
 @yield("PAGE_SCRIPTS")
 
