@@ -221,6 +221,7 @@
                         <div class="price-kind-block-text argon">
                             <p>Цена за 1 см. сварки литого диска - <span class="red-big">110 руб.</span></p>
                             <p>Минимальная сумма работ - <span class="red-big">500 руб.</span></p>
+                            <p>Снятие сломанных секреток - <span class="red-big">750 руб./шт</span></p>
                             <p>Сварка других изделий из алюминия - цена договорная.</p>
                         </div>
                     </div>

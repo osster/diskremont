@@ -68483,8 +68483,8 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
 //= components/gallery.js
 //= components/map.js
-__webpack_require__(287);
 __webpack_require__(286);
+__webpack_require__(287);
 
 $(document).ready(function () {
     var swiper = new Swiper('.main-slider.swiper-container', {
@@ -82047,39 +82047,6 @@ exports.default = function () {
 /* 286 */
 /***/ (function(module, exports) {
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
-if ((typeof ymaps === 'undefined' ? 'undefined' : _typeof(ymaps)) == 'object') {
-    var init = function init() {
-        var mapCenter = mapData && mapData.point != '' ? mapData.point.split(',') : [59.943872, 30.442697];
-        window.bottomMap = new ymaps.Map("map", {
-            center: mapCenter,
-            zoom: 15,
-            controls: ['zoomControl']
-        }, {
-            searchControlProvider: 'yandex#search'
-        }), myPlacemark01 = new ymaps.Placemark(mapCenter, {
-            balloonContentHeader: mapData.address,
-            balloonContentBody: '',
-            hintContent: mapData.address
-        });
-
-        window.bottomMap.behaviors.disable(['scrollZoom']);
-
-        window.bottomMap.geoObjects.add(myPlacemark01);
-
-        console.log('bottomMap', window.bottomMap);
-    };
-
-    ymaps.ready(init);
-
-    console.log('ymaps', ymaps);
-}
-
-/***/ }),
-/* 287 */
-/***/ (function(module, exports) {
-
 $(document).ready(function () {
     var selKind = document.getElementById('selectKind');
     var selColor = document.getElementById('selectColor');
@@ -82127,6 +82094,39 @@ $(document).ready(function () {
     $('#btn-kind').on("click", toggleSelect);
     $('#btn-color').on("click", toggleSelectColor);
 });
+
+/***/ }),
+/* 287 */
+/***/ (function(module, exports) {
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+if ((typeof ymaps === 'undefined' ? 'undefined' : _typeof(ymaps)) == 'object') {
+    var init = function init() {
+        var mapCenter = mapData && mapData.point != '' ? mapData.point.split(',') : [59.943872, 30.442697];
+        window.bottomMap = new ymaps.Map("map", {
+            center: mapCenter,
+            zoom: 15,
+            controls: ['zoomControl']
+        }, {
+            searchControlProvider: 'yandex#search'
+        }), myPlacemark01 = new ymaps.Placemark(mapCenter, {
+            balloonContentHeader: mapData.address,
+            balloonContentBody: '',
+            hintContent: mapData.address
+        });
+
+        window.bottomMap.behaviors.disable(['scrollZoom']);
+
+        window.bottomMap.geoObjects.add(myPlacemark01);
+
+        console.log('bottomMap', window.bottomMap);
+    };
+
+    ymaps.ready(init);
+
+    console.log('ymaps', ymaps);
+}
 
 /***/ })
 /******/ ]);

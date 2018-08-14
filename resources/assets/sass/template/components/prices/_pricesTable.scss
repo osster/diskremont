@@ -1,11 +1,10 @@
 .prices {
-  .black-header {
-    //padding-top: 32px;
-    //padding-bottom: 32px;
+  margin-bottom: 6%;
+  @include mobile-all() {
     margin-bottom: 6.5vh;
   }
-  margin-bottom: 20vh;
-  @include mobile-all() {
+
+  .black-header {
     margin-bottom: 6.5vh;
   }
   .prices-table {

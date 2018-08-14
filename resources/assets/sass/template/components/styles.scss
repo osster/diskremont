@@ -126,6 +126,10 @@ h1 {
   font-weight: 700;
 }
 
+.block-shaddow {
+  box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.16);
+}
+
 @import "main";
 @import "services";
 @import "prices";
