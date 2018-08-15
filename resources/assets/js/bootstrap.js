@@ -2,6 +2,8 @@ window._ = require('lodash');
 window.Popper = require('popper.js').default;
 import Swiper from '../../../node_modules/swiper/dist/js/swiper.js';
 window.Swiper = Swiper;
+import swal from 'sweetalert2';
+window.swal = swal;
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support

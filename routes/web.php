@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/', 'HomeController@index');
 
 Route::post('/callback.html', 'HomeController@sendMail');
+Route::post('/order.html', 'HomeController@sendOrder');
 
 Route::get('/contacts.html', 'HomeController@contacts');
 Route::get('/price.html', 'HomeController@price');

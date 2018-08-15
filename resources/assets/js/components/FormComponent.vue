@@ -177,7 +177,7 @@
                             class="main-info-phone-nowrap">(812) 970-7-958</span></p>
                 </div>
                 <div class="main-info-col col">
-                    <form class="form-inline" id="orderForm">
+                    <form class="form-inline d-none" id="orderForm">
                         <div class="form-group mb-2">
                             <input type="text" class="form-control" id="orderName" name="orderName" placeholder="Ваше имя">
                         </div>
@@ -219,6 +219,8 @@
             var that = this;
 
             var orderForm = $('#orderForm');
+
+            orderForm.removeClass('d-none');
 
             var validator = $(orderForm).validate({
                 rules: {
@@ -445,12 +447,39 @@
                     disk_size: that.diskSize.label,
                     disk_polished: that.isDiskPolished,
                     tire_mount: that.isDiskMounted,
-                    client_name: '',
-                    client_phone: ''
+                    client_name: $('#orderForm input[name="orderName"]').val(),
+                    client_phone: $('#orderForm input[name="orderPhone"]').val(),
+                    total: that.totalPrice
                 };
+
+                console.log('data', data, orderForm);
 
                 axios.post('/order.html', data).then((response) => {
                     console.log(response.data);
+
+                    const resp = response.data;
+                    if (resp.success != 'OK') {
+                        var msg = '';
+
+                        Object.keys(resp.errors).map(function (k) {
+                           var val = resp.errors[k];
+                            msg += '<p>' + val[0] + '</p>';
+                        });
+
+                        swal(
+                            'Произошла ошибка!',
+                            msg,
+                            'error'
+                        );
+                    } else {
+                        swal(
+                            'Спасибо за заказ!',
+                            '<p>мы свяжемся с вами в ближайшее время</p>',
+                            'success'
+                        );
+                        $('#orderForm input[name="orderName"]').val('');
+                        $('#orderForm input[name="orderPhone"]').val('');
+                    }
 
                     if (typeof cb == 'function') {
                         cb();

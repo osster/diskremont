@@ -94,7 +94,7 @@
             {{ menu('public', 'menu.diskremont_bottom') }}
 
             <div class="payment-wrapper col-lg-4 col-6">
-                <div class="payment"></div>
+                <div class="payment">Любые способы оплаты</div>
             </div>
             <div class="soc-wrapper col-lg-2 col-6"><a href="{{ setting('kontakty.insta') }}" target="_blank" class="soc mx-md-auto"></a></div>
         </div>

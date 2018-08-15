@@ -7,6 +7,8 @@ use App\CalcDiskColor;
 use App\CalcDiskSize;
 use App\DiskGallery;
 use App\DiskUslugi;
+use App\Feedback;
+use App\Mail\CalcFormSubmitted;
 use App\Mail\CallbackFormSubmitted;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
@@ -90,12 +92,17 @@ class HomeController extends Controller
             return DiskGallery::whereNotNull('calc_color_id')->take(12)->get();
         });
 
+        $feedback = Cache::remember('hp_feedback', $minutes, function () {
+            return Feedback::take(12)->get();
+        });
+
         return view(
             "pages.home",
             compact(
                 "calcValues",
                 "uslugi",
-                "colorGallery"
+                "colorGallery",
+                "feedback"
             )
         );
     }
@@ -222,6 +229,46 @@ class HomeController extends Controller
 
             Mail::to(env("MAIL_TO_ADDRESS", "info@diskremont.ru"))
                 ->send(new CallbackFormSubmitted($inp));
+
+            if (count(Mail::failures()) > 0) {
+                $errors = [];
+                foreach (Mail::failures() as $email_address) {
+                    $errors["mail"] = "Письмо не отправлено по адресу " . $email_address;
+                }
+                return response()->json(["success" => "FAIL", "data" => $inp, "errors" => $errors]);
+            }
+
+            return response()->json(["success" => "OK", "data" => $inp]);
+        }
+    }
+
+    public function sendOrder(Request $request) {
+        $inp = $request->all();
+
+        $val = Validator::make($request->all(), [
+            "client_name" => "required|string",
+            "client_phone" => [
+                "required",
+                function($attribute, $value, $fail) {
+                    if (!preg_match("/\+\d\(\d{3}\)\d{3}-\d-\d{3}/", $value)) {
+                        return $fail('не верный формат номера.');
+                    }
+                }
+            ],
+            "car_color" => "required",
+            "disk_color" => "required",
+            "disk_polished" => "required",
+            "disk_size" => "required",
+            "tire_mount" => "required",
+            "total" => "required"
+        ]);
+
+        if ($val->fails()) {
+            return response()->json(["success" => "FAIL", "data" => $inp, "errors" => $val->errors()]);
+        } else {
+
+            Mail::to(env("MAIL_TO_ADDRESS", "info@diskremont.ru"))
+                ->send(new CalcFormSubmitted($inp));
 
             if (count(Mail::failures()) > 0) {
                 $errors = [];
