@@ -7,6 +7,10 @@ $car-padding-dropdown: 8px;
   font-size: rem(20px);
   font-weight: 700;
   padding-left: $margin-btn-group + $arrow-width;
+
+  @include mobile-all(){
+    padding-left: 0;
+  }
 }
 .form .btn-car-group .car-menu-btn {
   text-align: left;
@@ -18,6 +22,8 @@ $car-padding-dropdown: 8px;
   font-size: rem(16px);
   margin: 0 $margin-btn-group;
   padding: $car-padding-dropdown;
+  display: flex;
+
   &:focus {
     box-shadow: none;
   }
@@ -51,8 +57,12 @@ $car-padding-dropdown: 8px;
   //}
 }
 .car-dropdown-menu {
-  width: calc(100% - 63px);
+  width: calc(100% - 30px);
   border: 2px solid $color_black;
+
+  @include mobile-all(){
+    width: calc(100% - 40px);
+  }
   .dropdown-item {
     padding: $car-padding-dropdown;
     overflow: hidden;
@@ -68,6 +78,10 @@ $car-padding-dropdown: 8px;
   font-weight: $fw600;
   position: absolute;
   top: 100px;
+  @include mobile-all(){
+    position: relative;
+    top: 0;
+  }
 }
 .car-form-row {
   position: relative;
@@ -79,6 +93,10 @@ $car-padding-dropdown: 8px;
 .car-form-label {
   color: $color_black;
   font-size: rem(16px);
+
+  @include mobile-all(){
+    font-size: 11px;
+  }
   &:before {
     content: "\2713";
     color: transparent;
@@ -99,6 +117,26 @@ $car-padding-dropdown: 8px;
 .car-form-checkbox:checked + label:before {
   color: #000;
 }
+.form-check {
+  padding-left: 0;
+}
 
+.car {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
+  @include mobile-all(){
+    margin-bottom: 50px;
+  }
+}
+.car > svg {
+  max-height: 380px;
+  min-height: 380px;
+  width: 100%;
 
+  @include mobile-all(){
+    max-height: 106px;
+    min-height: 106px;
+  }
+}

@@ -1,25 +1,27 @@
 .main-promo-large {
   position: relative;
-  height: 400px;
-  overflow: hidden;
-  @include mobile-all() {
-    height: 500px;
-  }
+
+
   &:after {
     @include black-img;
   }
   .card {
     height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .card-img {
     height: 100%;
     &-overlay {
       @include max-w(978px);
-      padding: 5% 15px 1%;
+      padding: 5% 15px;
       color: $white-e9;
       z-index: 1;
+      position: relative;
+
       @include mobile-all() {
-        padding-top: 14%;
+        position: relative;
       }
       .card-title {
         font-size: rem(24px);

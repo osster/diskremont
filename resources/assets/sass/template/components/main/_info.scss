@@ -39,6 +39,11 @@
     .btn {
       width: 235px;
       height: 40px;
+      @include mobile-all(){
+        margin-right: 14px;
+        width: 100%;
+      }
+
       .btn-text {
         padding-left: 48px;
       }
@@ -50,16 +55,27 @@
     padding-left: 15px;
     padding-right: 15px;
   }
+
   &-cost {
     margin-bottom: 10px;
     color: $white-e9;
     font-size: rem(24px);
+
     @media screen and (max-width: $sm){
       font-size: rem(20px);
+    }
+    @include mobile-all(){
+      span {
+        font-weight: bold;
+      }
     }
     &-val {
       padding-left: 62px;
       white-space: nowrap;
+      @include mobile-all(){
+        padding-left: 12px;
+        font-size: 20px;
+      }
     }
   }
 

@@ -1314,19 +1314,6 @@
     </div>
 </template>
 
-<style>
-    .car {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .car > svg {
-        max-height: 380px;
-        min-height: 380px;
-        width: 100%;
-    }
-</style>
-
 <script>
     import _ from 'lodash';
     import {TweenLite, TweenMax, Power2} from "gsap";

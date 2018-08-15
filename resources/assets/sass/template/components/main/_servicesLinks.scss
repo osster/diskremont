@@ -21,7 +21,7 @@
       margin-right: 0;
     }
     @media screen and (max-width: $sm){
-      height: 45vh;
+      height: auto;
     }
     &:after {
       content: "";

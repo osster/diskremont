@@ -4,5 +4,5 @@
 @section('PAGE_TITLE', setting('site.title'))
 
 @section('PAGE_CONTENT')
-    <h1>CONTACTS</h1>
+    <h1>XXX</h1>
 @endsection
