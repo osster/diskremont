@@ -14,7 +14,7 @@
                 <span class="prices-table-header-text btn-text">Цены на ремонт/покраску литых дисков, шиномонтажные и другие работы</span>
             </div>
             <div class="table-responsive-lg table-border">
-                <table class="table prices-table">
+                <table class="table prices-table table-striped">
                     <thead>
                     <tr>
                         <th class="prices-table-th" scope="col"></th>
@@ -221,6 +221,7 @@
                         <div class="price-kind-block-text argon">
                             <p>Цена за 1 см. сварки литого диска - <span class="red-big">110 руб.</span></p>
                             <p>Минимальная сумма работ - <span class="red-big">500 руб.</span></p>
+                            <p>Снятие сломанных секреток - <span class="red-big">750 руб./шт</span></p>
                             <p>Сварка других изделий из алюминия - цена договорная.</p>
                         </div>
                     </div>
