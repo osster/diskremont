@@ -194,7 +194,7 @@
         <div class="container">
             <div class="row">
                 @foreach($uslugi as $usluga)
-                    <div class="main-services-block col-6 col-md">
+                    <div class="main-services-block col-4 col-md">
                         <a class="main-services-link" href="{{ url("/" . $usluga->slug . ".html") }}">
                             <div class="main-services-img mx-auto">
                                 <svg class="main-services-img1 ms-image" xmlns="http://www.w3.org/2000/svg">
