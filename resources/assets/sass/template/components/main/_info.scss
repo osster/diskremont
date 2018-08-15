@@ -58,8 +58,9 @@
       font-size: rem(20px);
     }
     &-val {
-      padding-left: 62px;
+      padding-left: 0;
       white-space: nowrap;
+      float: right;
     }
   }
 

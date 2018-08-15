@@ -38,7 +38,7 @@
                                     @change="setDiskSize"
                             ></b-form-slider>
                         </div>
-                        <div class="col-12 col-md-6 mb-3 col-xl-3 d-flex align-items-center justify-content-center justify-content-md-start justify-content-xl-end">
+                        <div class="col-6 col-md-6 mb-3 pr-0 col-xl-3 d-flex align-items-center justify-content-center justify-content-md-start justify-content-xl-end">
                             <div class="form-group form-check">
                                 <input type="checkbox" class="car-form-checkbox form-check-input" id="polish"
                                        v-model="isDiskPolishedValue"
@@ -46,7 +46,7 @@
                                 <label class="form-check-label car-form-label" for="polish">Алмазная полировка</label>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 mb-3 col-xl-2 justify-content-center justify-content-md-end d-flex align-items-center">
+                        <div class="col-6 col-md-6 mb-3 col-xl-2 d-flex align-items-center justify-content-center justify-content-md-end">
                             <div class="form-group form-check">
                                 <input type="checkbox" class="car-form-checkbox form-check-input" id="mount"
                                        v-model="isDiskMountedValue"
@@ -54,7 +54,7 @@
                                 <label class="form-check-label car-form-label" for="mount">Шиномонтаж</label>
                             </div>
                         </div>
-                        <div class="col-12 col-md-12 mb-3 d-none d-xl-block text-center text-md-right car-form-cost">
+                        <div class="col-12 col-md-12 mb-3 d-xl-block text-center text-md-right car-form-cost">
                             Стоимость за комплект:<br>
                             {{ totalPrice }} руб
                         </div>
@@ -177,12 +177,12 @@
                             class="main-info-phone-nowrap">(812) 970-7-958</span></p>
                 </div>
                 <div class="main-info-col col">
-                    <form class="form-inline">
+                    <form class="form-inline d-none" id="orderForm">
                         <div class="form-group mb-2">
-                            <input type="text" class="form-control" id="inputName" placeholder="Ваше имя">
+                            <input type="text" class="form-control" id="orderName" name="orderName" placeholder="Ваше имя">
                         </div>
                         <div class="form-group form-group-tel mb-2">
-                            <input type="tel" class="form-control" id="inputPhone" placeholder="Ваш телефон">
+                            <input type="text" class="form-control" id="orderPhone" name="orderPhone" placeholder="Ваш телефон">
                         </div>
                         <button type="submit" class="btn btn-red mb-2 "><span
                                 class="btn-text d-flex justify-content-center">Оформить</span></button>
@@ -211,11 +211,48 @@
                 },
                 diskColorSection: null,
                 totalPrice: 0,
-                diskColorGallerySwiper: null
+                diskColorGallerySwiper: null,
+                inProgress: false
             }
         },
         mounted: function () {
             var that = this;
+
+            var orderForm = $('#orderForm');
+
+            orderForm.removeClass('d-none');
+
+            var validator = $(orderForm).validate({
+                rules: {
+                    orderName: {
+                        required: true
+                    },
+                    orderPhone: {
+                        required: true,
+                        minlength: 16
+                    }
+                },
+                messages: {
+                    orderName: 'Укажите ваше имя',
+                    orderPhone: {
+                        required: 'Укажите ваш телефон',
+                        minlength: 'Телефон должен состоять из 16-ти символов',
+                    }
+                },
+                submitHandler: function (form) {
+
+                    if (!that.inProgress) {
+                        that.inProgress = true;
+                        that.checkout(function () {
+                            that.inProgress = false;
+                        });
+                    }
+                }
+            });
+
+            $(orderForm)
+                .find('#orderPhone')
+                .mask('+7(000)000-0-000');
         },
         computed: {
             isReady: function () {
@@ -399,6 +436,59 @@
                     }
                 }
                 ;
+            },
+            checkout: function (cb) {
+                var that = this;
+                var orderForm = $('#orderForm');
+
+                var data = {
+                    car_color: that.carColor.name,
+                    disk_color: that.diskColor.name,
+                    disk_size: that.diskSize.label,
+                    disk_polished: that.isDiskPolished,
+                    tire_mount: that.isDiskMounted,
+                    client_name: $('#orderForm input[name="orderName"]').val(),
+                    client_phone: $('#orderForm input[name="orderPhone"]').val(),
+                    total: that.totalPrice
+                };
+
+                console.log('data', data, orderForm);
+
+                axios.post('/order.html', data).then((response) => {
+                    console.log(response.data);
+
+                    const resp = response.data;
+                    if (resp.success != 'OK') {
+                        var msg = '';
+
+                        Object.keys(resp.errors).map(function (k) {
+                           var val = resp.errors[k];
+                            msg += '<p>' + val[0] + '</p>';
+                        });
+
+                        swal(
+                            'Произошла ошибка!',
+                            msg,
+                            'error'
+                        );
+                    } else {
+                        swal(
+                            'Спасибо за заказ!',
+                            '<p>мы свяжемся с вами в ближайшее время</p>',
+                            'success'
+                        );
+                        $('#orderForm input[name="orderName"]').val('');
+                        $('#orderForm input[name="orderPhone"]').val('');
+                    }
+
+                    if (typeof cb == 'function') {
+                        cb();
+                    }
+                }).catch(function (err) {
+                    if (typeof cb == 'function') {
+                        cb();
+                    }
+                });
             }
         }
     }

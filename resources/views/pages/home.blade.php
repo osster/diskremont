@@ -249,18 +249,19 @@
         </section>
     </div>
 
+    @if(setting('dlya-glavnoy.promo_1_pic') != '')
     <section class="main-promo-large">
         <div class="card bg-dark text-white">
-            <img class="card-img" src="./img/promo-service-bg.jpg" alt="Card image">
+            <img class="card-img" src="{{ Voyager::image(setting('dlya-glavnoy.promo_1_pic')) }}" alt="Промо 1">
             <div class="card-img-overlay mx-auto">
-                <h5 class="card-title">Покраска дисков</h5>
-                <p class="card-text">Мы рады предложить Вам услугу профессиональной покраски дисков. Новейшее
-                    оборудование и высокая квалификация персонала позволяют производить работы по покраске дисков любой
-                    сложности и предоставлять гарантию на оказанные услуги.</p>
-                <p class="l-promo-link"><a href="servicekind.html" class="main-promo-large-link">Подробнее</a></p>
+                {!! setting('dlya-glavnoy.promo_1_txt') !!}
+                @if(setting('dlya-glavnoy.promo_1_link') != '')
+                <p class="l-promo-link"><a href="{{ setting('dlya-glavnoy.promo_1_link') }}" class="main-promo-large-link">Подробнее</a></p>
+                @endif
             </div>
         </div>
     </section>
+    @endif
 
     <div class="container">
         <section class="main-photoalbum">
@@ -283,20 +284,20 @@
             </div>
         </section>
     </div>
+
+    @if(setting('dlya-glavnoy.promo_2_pic') != '')
     <section class="main-promo-large">
         <div class="card bg-dark text-white">
-            <img class="card-img" src="./img/promo-service-bg.jpg" alt="Card image">
+            <img class="card-img" src="{{ Voyager::image(setting('dlya-glavnoy.promo_1_pic')) }}" alt="Промо 2">
             <div class="card-img-overlay container">
-                <h5 class="card-title">Покраска дисков</h5>
-                <p class="card-text">Мы рады предложить Вам услугу профессиональной покраски дисков. Новейшее
-                    оборудование и высокая квалификация персонала позволяют производить работы по покраске дисков любой
-                    сложности и предоставлять гарантию на оказанные услуги.</p>
-                <p class="card-text">Покраска дисков порошковыми красками - это качественно и красиво! На выбор
-                    стандартные и эксклюзивные цвета. Также мы выполняем любой ремонт легкосплавных дисков и шиномонтаж
-                    на оборудовании HOFFMANN.</p>
+                {!! setting('dlya-glavnoy.promo_2_txt') !!}
+                @if(setting('dlya-glavnoy.promo_2_link') != '')
+                    <p class="l-promo-link"><a href="{{ setting('dlya-glavnoy.promo_2_link') }}" class="main-promo-large-link">Подробнее</a></p>
+                @endif
             </div>
         </div>
     </section>
+    @endif
 
     <section class="main-reviews">
         <h1 class="text-center black-header">
@@ -306,72 +307,18 @@
             <div class="row main-reviews-wrapper">
                 <div class="main-reviews-slider swiper-container">
                     <div class="swiper-wrapper">
+                        @foreach($feedback as $item)
                         <div class="card swiper-slide">
                             <a href="" class="card-link-block">
-                                <img class="card-img-top" src="./img/service4.png" alt="Card image cap">
+                                <img class="card-img-top" src="{{ Voyager::image($item->picture) }}" alt="Card image cap">
                                 <div class="card-body">
-                                    <h4 class="card-title">Card 1</h4>
-                                    <p class="card-text">-Помогли очень быстро и качественно решить проблему! Спасибо
-                                        большое, приедем еще!</p>
-                                    <a class="card-link">Показать всё</a>
+                                    <h4 class="card-title">{{ $item->name }}</h4>
+                                    <p class="card-text">{!! $item->message !!}</p>
+                                    <!--<a class="card-link">Показать всё</a>-->
                                 </div>
                             </a>
                         </div>
-                        <div class="card swiper-slide">
-                            <a href="" class="card-link-block">
-                                <img class="card-img-top" src="./img/service3.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Card 2</h4>
-                                    <p class="card-text">-Помогли очень быстро и качественно решить проблему! Спасибо
-                                        большое, приедем еще!</p>
-                                    <a class="card-link">Показать всё</a>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card swiper-slide">
-                            <a href="" class="card-link-block">
-                                <img class="card-img-top" src="./img/service2.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Card 3</h4>
-                                    <p class="card-text">-Помогли очень быстро и качественно решить проблему! Спасибо
-                                        большое, приедем еще!</p>
-                                    <a class="card-link">Показать всё</a>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card swiper-slide">
-                            <a href="" class="card-link-block">
-                                <img class="card-img-top" src="./img/service1.jpg" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Card 1</h4>
-                                    <p class="card-text">-Помогли очень быстро и качественно решить проблему! Спасибо
-                                        большое, приедем еще!</p>
-                                    <a class="card-link">Показать всё</a>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card swiper-slide">
-                            <a href="" class="card-link-block">
-                                <img class="card-img-top" src="./img/service2.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Card 2</h4>
-                                    <p class="card-text">-Помогли очень быстро и качественно решить проблему! Спасибо
-                                        большое, приедем еще!</p>
-                                    <a class="card-link">Показать всё</a>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card swiper-slide">
-                            <a href="" class="card-link-block">
-                                <img class="card-img-top" src="./img/service3.png" alt="Card image cap">
-                                <div class="card-body">
-                                    <h4 class="card-title">Card 3</h4>
-                                    <p class="card-text">-Помогли очень быстро и качественно решить проблему! Спасибо
-                                        большое, приедем еще!</p>
-                                    <a class="card-link">Показать всё</a>
-                                </div>
-                            </a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="control swiper-button-prev" href="#">

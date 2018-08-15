@@ -6,6 +6,9 @@
     height: 39px;
     border: 1px solid $color_gray_light95;
     background-color: $color_white_c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .soc {
     width: 40px;
