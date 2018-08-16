@@ -11,10 +11,22 @@
         <meta name="description" content="{{ $page_info->description }}" />
     @else
         <title>@yield("PAGE_TITLE")</title>
+        <meta name="description" content="@yield("PAGE_DESC")" />
     @endif
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/app.css">
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#d82f2f">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 
     @yield("PAGE_STYLES")
 </head>
