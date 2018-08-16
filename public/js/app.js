@@ -72811,10 +72811,7 @@ var render = function() {
                   [
                     _c("img", {
                       staticClass: "main-gallery-img",
-                      attrs: {
-                        src: "/storage/" + color.picture,
-                        alt: color.name
-                      }
+                      attrs: { src: color.picture, alt: color.name }
                     })
                   ]
                 )
@@ -72849,7 +72846,7 @@ var render = function() {
                             _c("img", {
                               staticClass: "main-gallery-img",
                               attrs: {
-                                src: "/storage/" + color.picture,
+                                src: color.picture_cropped,
                                 alt: color.name,
                                 title: color.name,
                                 "data-original-title": color.name,
@@ -72881,7 +72878,7 @@ var render = function() {
                   _c("img", {
                     staticClass: "main-promo-img",
                     attrs: {
-                      src: "/storage/" + _vm.diskColor.picture,
+                      src: _vm.diskColor.picture,
                       alt: _vm.diskColor.name
                     }
                   }),

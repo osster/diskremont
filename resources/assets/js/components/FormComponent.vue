@@ -143,7 +143,7 @@
 
                 <div id="swiper-disk-color-slides" class="d-none">
                     <div class="swiper-slide" v-for="color in diskColorList" @click="setDiskColor(color)">
-                        <img class="main-gallery-img" :src="'/storage/' + color.picture" :alt="color.name">
+                        <img class="main-gallery-img" :src="color.picture" :alt="color.name">
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-12 d-flex main-gallery-wrapper">
@@ -157,7 +157,7 @@
                                  v-for="color in diskColorList">
                                 <img class="main-gallery-img"
                                      @click="setDiskColor(color)"
-                                     :src="'/storage/' + color.picture"
+                                     :src="color.picture_cropped"
                                      :alt="color.name"
                                      :title="color.name"
                                      :data-original-title="color.name"
@@ -172,7 +172,7 @@
 
                 <div class="col-lg-5 col-md-12 d-flex justify-content-end">
                     <div class="main-promo-block">
-                        <img class="main-promo-img" :src="'/storage/' + diskColor.picture" :alt="diskColor.name">
+                        <img class="main-promo-img" :src="diskColor.picture" :alt="diskColor.name">
                         <div class="main-promo-block-name">{{ diskColor.name }}</div>
                         <!--
                         <button class="btn btn-black">
