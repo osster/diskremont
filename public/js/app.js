@@ -72470,7 +72470,7 @@ var render = function() {
       _c("div", { staticClass: "container" }, [
         _c(
           "div",
-          { staticClass: "form mt-3 mt-md-0" },
+          { staticClass: "form mt-0" },
           [
             _c("div", { staticClass: "row mb-0 car-form-row" }, [
               _c(
@@ -72770,13 +72770,9 @@ var render = function() {
                     "col-12 col-md-12 mb-3 d-xl-block text-center text-md-right car-form-cost"
                 },
                 [
-                  _vm._v("\n                        Стоимость за комплект:"),
-                  _c("br"),
-                  _vm._v(
-                    "\n                        " +
-                      _vm._s(_vm.totalPrice) +
-                      " руб\n                    "
-                  )
+                  _c("span", [_vm._v("Стоимость за комплект:")]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.totalPrice) + " руб.")])
                 ]
               )
             ]),

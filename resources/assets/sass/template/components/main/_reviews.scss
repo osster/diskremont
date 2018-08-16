@@ -8,6 +8,9 @@
     color: $color_gray_darker;
     .card-img-top {
       height: 300px;
+      @include mobile-all(){
+        height: 264px;
+      }
     }
     .card-body {
       padding: 7% 2%;

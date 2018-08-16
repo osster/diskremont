@@ -1,5 +1,7 @@
 .main-description {
-  padding-top: 3.8%;
+  h1 {
+    padding-top: 0;
+  }
   .media {
     margin-top: 4%;
     @media screen and (max-width: $sm) {

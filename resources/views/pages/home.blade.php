@@ -210,7 +210,7 @@
     </section>
 
     <div class="container text-center">
-        <div class="h2 pb-2 pb-md-5">Рассчитать покраску дисков</div>
+        <div class="h2 pb-md-5">Рассчитать покраску дисков</div>
     </div>
     <div id="calc-app"></div>
 
@@ -286,8 +286,7 @@
 
     @if(setting('dlya-glavnoy.promo_2_pic') != '')
     <section class="main-promo-large">
-        <div class="card bg-dark text-white">
-            <img class="card-img" src="{{ Voyager::image(setting('dlya-glavnoy.promo_1_pic')) }}" alt="Промо 2">
+        <div class="card bg-dark text-white" style="background-image: url({{ Voyager::image(setting('dlya-glavnoy.promo_1_pic')) }})">
             <div class="card-img-overlay container">
                 {!! setting('dlya-glavnoy.promo_2_txt') !!}
                 @if(setting('dlya-glavnoy.promo_2_link') != '')
