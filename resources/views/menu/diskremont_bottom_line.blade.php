@@ -1,5 +1,5 @@
 @if(!isset($innerLoop))
-<nav class="d-flex flex-wrap footer-nav col-md-12 px-0">
+<nav class="d-flex flex-wrap footer-nav col-md-12">
 @else
 <nav class="dropdown-menu">
 @endif
