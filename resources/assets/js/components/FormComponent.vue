@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="form mt-3 mt-md-0">
                     <div class="row mb-0 car-form-row">
-                        <div class="col-12 col-md-6 mb-3 col-xl-4 text-center text-md-left">
+                        <div class="col-6 col-md-6 mb-3 col-xl-4 text-center text-md-left">
                             <label class="car-menu-label">Цвет автомобиля:</label><br>
                             <div class="btn-group btn-car-group">
                                 <button type="button" class="btn dropdown-toggle car-menu-btn" data-toggle="dropdown"
@@ -24,7 +24,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6 mb-3 col-xl-3 b-slider text-center text-md-right text-xl-center">
+                        <div class="col-6 col-md-6 mb-3 col-xl-4 text-center text-md-left d-block d-md-none">
+                            <label class="car-menu-label">Размер дисков:</label><br>
+                            <div class="btn-group btn-car-group">
+                                <button type="button" class="btn dropdown-toggle car-menu-btn" data-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false">
+                                    {{ diskSizeValue !== null ? diskSizeValue + '"' : 'Выбрать размер' }}
+                                </button>
+                                <div class="dropdown-menu car-dropdown-menu">
+                                    <a v-for="(size, key) in diskSizeValues.ticks"
+                                       class="dropdown-item"
+                                       :class="(diskSizeValue == size ? 'active' : '')"
+                                       href="javascript:void(0)"
+                                       @click="setDiskSize({ newValue: size })">{{diskSizeValues.ticksLabels[key]}}</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3 col-xl-3 b-slider text-center text-md-right text-xl-center d-none d-md-block">
                             <label class="car-menu-label">Размер дисков:</label><br>
                             <b-form-slider
                                     v-if="diskSize !== null"
@@ -418,7 +435,7 @@
                             },
                             breakpoints: {
                                 480: {
-                                    slidesPerView: 1,
+                                    slidesPerView: 3,
                                     slidesPerColumn: 1,
                                 },
                                 767: {

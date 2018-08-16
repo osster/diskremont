@@ -70,7 +70,8 @@
       }
     }
     &-val {
-      padding-left: 62px;
+      float: right;
+      padding-left: 0px;
       white-space: nowrap;
       @include mobile-all(){
         padding-left: 12px;

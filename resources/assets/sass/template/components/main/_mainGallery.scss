@@ -5,6 +5,11 @@
     &.active {
       border: 2px solid $color_red_c9;
     }
+
+    @include mobile-all(){
+      height: 80px;
+      width: 80px;
+    }
   }
   &.swiper-container {
     max-width: 630px;
