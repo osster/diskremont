@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield("PAGE_TITLE")</title>
+    @if($page_info)
+        <title>{{ $page_info->title }}</title>
+        <meta name="description" content="{{ $page_info->description }}" />
+    @else
+        <title>@yield("PAGE_TITLE")</title>
+    @endif
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/app.css">
@@ -90,6 +95,8 @@
 
     <footer class="footer">
         <div class="container footer-container d-flex flex-wrap align-items-center">
+
+            {{ menu('footer_menu', 'menu.diskremont_bottom_line') }}
 
             {{ menu('public', 'menu.diskremont_bottom') }}
 

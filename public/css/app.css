@@ -12206,6 +12206,7 @@ h1 {
 @media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
   .car-menu-label {
     /* mobile-all */
+    font-size: 0.95rem;
     padding-left: 0;
   }
 }
@@ -12223,6 +12224,15 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
+  .form .btn-car-group .car-menu-btn {
+    /* mobile-all */
+    max-width: 140px;
+    min-width: 140px;
+    margin: auto;
+  }
 }
 
 .form .btn-car-group .car-menu-btn:focus {
@@ -12370,7 +12380,8 @@ h1 {
 
 .ms-image {
   margin: auto;
-  height: 100%;
+  max-height: 70%;
+  max-width: 70%;
 }
 
 .main-services {
@@ -12518,6 +12529,14 @@ h1 {
 
 .main-gallery .swiper-slide.active {
   border: 2px solid #c92727;
+}
+
+@media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
+  .main-gallery .swiper-slide {
+    /* mobile-all */
+    height: 80px;
+    width: 80px;
+  }
 }
 
 .main-gallery.swiper-container {
@@ -12746,9 +12765,9 @@ h1 {
 }
 
 .main-info-cost-val {
-  padding-left: 0;
-  white-space: nowrap;
   float: right;
+  padding-left: 0px;
+  white-space: nowrap;
 }
 
 @media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
