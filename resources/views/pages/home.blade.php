@@ -166,23 +166,27 @@
             </div>
             <div class="swiper-wrapper">
                 @if(setting('dlya-glavnoy.first-slide-img'))
-                    <div class="swiper-slide active">
+                    <div class="swiper-slide active @if(setting('dlya-glavnoy.first-slide-txt-1') != '') swiper-slide_cover @endif">
                         <img class="d-block w-100" src="{{ Voyager::image(setting('dlya-glavnoy.first-slide-img')) }}"
                              alt="{{ setting('dlya-glavnoy.first-slide-txt-1') }}">
+                        @if(setting('dlya-glavnoy.first-slide-txt-1') != '')
                         <div class="swiper-slide-text container">
                             <p class="mb-0">{{ setting('dlya-glavnoy.first-slide-txt-1') }}</p>
                             <p class="carousel-item-text-big">{{ setting('dlya-glavnoy.first-slide-txt-2') }}</p>
                         </div>
+                        @endif
                     </div>
                 @endif
                 @foreach($uslugi as $usluga)
                     @if($usluga->home_slide_pic != "")
-                        <div class="swiper-slide active">
+                        <div class="swiper-slide active @if($usluga->home_slide_txt != '') swiper-slide_cover @endif">
                             <img class="d-block w-100" src="{{ Voyager::image($usluga->thumbnail('cropped', 'home_slide_pic')) }}"
                                  alt="{{ $usluga->name }}">
+                            @if($usluga->home_slide_txt != '')
                             <div class="swiper-slide-text container">
                                 <p class="mb-0">{{ $usluga->home_slide_txt }}</p>
                             </div>
+                            @endif
                         </div>
                     @endif
                 @endforeach
@@ -210,7 +214,7 @@
     </section>
 
     <div class="container text-center">
-        <div class="h2 pb-md-5">Рассчитать покраску дисков</div>
+        <div class="h2 pb-2 pb-md-5">Рассчитать покраску дисков</div>
     </div>
     <div id="calc-app"></div>
 
@@ -286,7 +290,8 @@
 
     @if(setting('dlya-glavnoy.promo_2_pic') != '')
     <section class="main-promo-large">
-        <div class="card bg-dark text-white" style="background-image: url({{ Voyager::image(setting('dlya-glavnoy.promo_1_pic')) }})">
+        <div class="card bg-dark text-white">
+            <img class="card-img" src="{{ Voyager::image(setting('dlya-glavnoy.promo_1_pic')) }}" alt="Промо 2">
             <div class="card-img-overlay container">
                 {!! setting('dlya-glavnoy.promo_2_txt') !!}
                 @if(setting('dlya-glavnoy.promo_2_link') != '')

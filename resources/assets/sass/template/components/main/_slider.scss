@@ -36,33 +36,35 @@
       z-index: 1;
       @media screen and (max-width: $md) {
         top: 50%;
-        transform: translate(-50%, -50%) ;
+        transform: translate(-50%, -50%);
       }
       p {
         padding: 0 15%;
       }
     }
 
-    &::after {
-      @include black-img;
+    &_cover {
+      &::after {
+        @include black-img;
+      }
     }
   }
-  .swiper-pagination{
+  .swiper-pagination {
     bottom: 36px;
-      &-bullet {
-        width: 16px;
-        height: 16px;
-        margin-right: 8px;
-        margin-left: 8px;
-        border: 1px solid $color_gray_light95;
-        border-radius: 0;
-        background-color: $color_white_c4;
-        opacity: 0.3;
+    &-bullet {
+      width: 16px;
+      height: 16px;
+      margin-right: 8px;
+      margin-left: 8px;
+      border: 1px solid $color_gray_light95;
+      border-radius: 0;
+      background-color: $color_white_c4;
+      opacity: 0.3;
 
-        &-active {
-          background-color: $color_white;
-        }
+      &-active {
+        background-color: $color_white;
       }
+    }
   }
 }
 

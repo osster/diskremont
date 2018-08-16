@@ -12010,7 +12010,7 @@ h1 {
   padding: 0 15%;
 }
 
-#mainSlider .swiper-slide::after {
+#mainSlider .swiper-slide_cover::after {
   content: "";
   position: absolute;
   top: 2px;
