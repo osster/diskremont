@@ -14044,12 +14044,26 @@ h1 {
   background-color: #c4c4c4;
 }
 
+@media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
+  .footer .payment {
+    /* mobile-all */
+    font-size: 16px;
+  }
+}
+
 .footer .soc {
   width: 40px;
   height: 40px;
   background: url(/images/icon-instagram-social.png?25b5a35484f97facd6970ddc952d1848) no-repeat;
   margin-left: 28%;
-  display: inline-block;
+  display: block;
+}
+
+@media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
+  .footer .soc {
+    /* mobile-all */
+    margin-left: 0;
+  }
 }
 
 .footer-container {
