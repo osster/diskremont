@@ -62,12 +62,15 @@ class HomeController extends Controller
                     "name" => $name,
                 ];
             }
-            $disk_colors = CalcDiskColor::select(["section", "name", "picture", "value_16 as hash", "rate", "wheel_img", "wheel_polished_img"])->orderBy("sort", "ASC")->get()->toArray();
+            $disk_colors = CalcDiskColor::select(["section", "name", "picture", "value_16 as hash", "rate", "wheel_img", "wheel_polished_img"])->orderBy("sort", "ASC")->get();
             foreach ($disk_colors as $k => $disk_color) {
-                $disk_color["hash"] = preg_replace('/^#/', '', $disk_color["hash"]);
-                $disk_color["wheel_img"] = Voyager::image($disk_color["wheel_img"]);
-                $disk_color["wheel_polished_img"] = Voyager::image($disk_color["wheel_polished_img"]);
-                $disk_colors[$k] = $disk_color;
+                $arColor = $disk_color->toArray();
+                $arColor["hash"] = preg_replace('/^#/', '', $arColor["hash"]);
+                $arColor["wheel_img"] = Voyager::image($arColor["wheel_img"]);
+                $arColor["wheel_polished_img"] = Voyager::image($disk_color["wheel_polished_img"]);
+                $arColor["picture_cropped"] = Voyager::image($disk_color->thumbnail('cropped', 'picture'));
+                $arColor["picture"] = Voyager::image($disk_color->picture);
+                $disk_colors[$k] = $arColor;
             }
 
             $disk_sizes = CalcDiskSize::select(["size", "price", "price_grind", "price_tiremount"])->get()->toArray();
@@ -143,7 +146,11 @@ class HomeController extends Controller
                 $gallery = DiskGallery::where("disk_uslugi_id", $usluga->id)->take(12)->get();
 
                 return view("pages.uslugi-detail", compact('usluga', 'transp', 'gallery'));
+            } else {
+                abort(404, 'Такой страницы не существует');
             }
+        } else {
+            abort(404, 'Такой страницы не существует');
         }
     }
 
