@@ -2,14 +2,12 @@
   background-color: $color_gray_darker;
 
   .payment {
-    padding-left: 3%;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    text-align: center;
     @include max-w(306px);
-    height: 39px;
-    border: 1px solid $color_gray_light95;
     background-color: $color_white_c4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .soc {
@@ -22,9 +20,7 @@
   &-container {
     min-height: 201px;
   }
-  .footer-nav {
-    padding-left: 2.5%;
-  }
+
   &-nav-a {
     color: $color_white_c4;
     font-size: rem(20px);
@@ -32,8 +28,9 @@
   }
   &-nav-li {
     margin: 0 4%;
-    @media screen and (max-width: $md) {
-      margin: 3vw 7vw;
+    @include mobile-all(){
+      margin: 8px 0;
+      width: 50%;
     }
   }
   .all-rights {
