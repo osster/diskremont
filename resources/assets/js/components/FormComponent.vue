@@ -2,7 +2,7 @@
     <div>
         <section class="calc-bar">
             <div class="container">
-                <div class="form mt-3 mt-md-0">
+                <div class="form mt-0">
                     <div class="row mb-0 car-form-row">
                         <div class="col-6 col-md-6 mb-3 col-xl-4 text-center text-md-left">
                             <label class="car-menu-label">Цвет автомобиля:</label><br>
@@ -72,8 +72,8 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-12 mb-3 d-xl-block text-center text-md-right car-form-cost">
-                            Стоимость за комплект:<br>
-                            {{ totalPrice }} руб
+                            <span>Стоимость за комплект:</span>
+                            <span>{{ totalPrice }} руб.</span>
                         </div>
                     </div>
                     <!--

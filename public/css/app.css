@@ -11385,7 +11385,7 @@ a.text-dark:focus {
 
 @font-face {
   font-family: 'SegoeUI';
-  src: url(/fonts/SegoeUI.eot?3b1b8cc3b81b5496bb98a1102dbcea2d?#iefix) format("embedded-opentype"), url(/fonts/SegoeUI.woff?37a8424b0f445d4871778a59a6433343) format("woff"), url(/fonts/SegoeUI.ttf?6581cfaeee8057734a3f16d37719bfb2) format("truetype"), url(/fonts/SegoeUI.svg?c58c763eef7d9d03a2e0fd6057a3a8ac#SegoeUI) format("svg");
+  src: url(/fonts/SegoeUI.eot?3b1b8cc3b81b5496bb98a1102dbcea2d?#iefix) format("embedded-opentype"), url(/fonts/SegoeUI.woff?37a8424b0f445d4871778a59a6433343) format("woff"), url(/fonts/SegoeUI.ttf?6581cfaeee8057734a3f16d37719bfb2) format("truetype"), url(/fonts/SegoeUI.svg?ce29c33845f7564c3fed96213c8e6408#SegoeUI) format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -11476,8 +11476,8 @@ h2,
   h2,
   .h2 {
     /* mobile-all */
-    font-size: 18.72px;
-    line-height: 32.76px;
+    font-size: 15.84px;
+    line-height: 27.72px;
     padding: 0.75rem 0 0;
   }
 }
@@ -12232,6 +12232,8 @@ h1 {
     max-width: 140px;
     min-width: 140px;
     margin: auto;
+    height: 33px;
+    padding: 0 8px;
   }
 }
 
@@ -12253,6 +12255,13 @@ h1 {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
   border: none;
+}
+
+@media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
+  .form .btn-car-group .car-menu-btn:after {
+    /* mobile-all */
+    right: -7px;
+  }
 }
 
 .btn-car-group {
@@ -12294,8 +12303,20 @@ h1 {
 @media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
   .car-form-cost {
     /* mobile-all */
+    font-size: 1.1rem;
     position: relative;
     top: 0;
+  }
+}
+
+.car-form-cost span {
+  display: block;
+}
+
+@media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
+  .car-form-cost span {
+    /* mobile-all */
+    display: inline-block;
   }
 }
 
@@ -12360,7 +12381,7 @@ h1 {
 @media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
   .car {
     /* mobile-all */
-    margin-bottom: 50px;
+    margin-bottom: 25px;
   }
 }
 
@@ -12378,9 +12399,17 @@ h1 {
   }
 }
 
+@media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
+  .calc-bar .form-group {
+    /* mobile-all */
+    margin-bottom: 0;
+  }
+}
+
 .ms-image {
   margin: auto;
-  height: 100%;
+  max-height: 70%;
+  max-width: 70%;
 }
 
 .main-services {
@@ -12547,6 +12576,8 @@ h1 {
   display: block;
   -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .main-gallery-images {
@@ -12592,15 +12623,23 @@ h1 {
   height: 44px;
   z-index: 10;
   cursor: pointer;
-  position: relative;
+}
+
+@media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
+  .main-gallery-wrapper .swiper-button {
+    /* mobile-all */
+    top: 77%;
+    width: 22px;
+    height: 40px;
+  }
 }
 
 .main-gallery-wrapper .swiper-button-next {
-  right: 0;
+  right: -12px;
 }
 
 .main-gallery-wrapper .swiper-button-prev {
-  left: 0;
+  left: -12px;
 }
 
 .lightbox .lb-container .lb-image {
@@ -12619,6 +12658,15 @@ h1 {
 @media screen and (max-width: 992px) {
   .main-promo-block {
     margin: 7% auto 0;
+  }
+}
+
+@media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
+  .main-promo-block {
+    /* mobile-all */
+    height: 150px;
+    width: 150px;
+    margin: 3% auto;
   }
 }
 
@@ -12767,7 +12815,6 @@ h1 {
   float: right;
   padding-left: 0px;
   white-space: nowrap;
-  float: right;
 }
 
 @media (max-width: 812px) and (max-height: 576px) and (orientation: landscape), (max-width: 576px) and (max-height: 812px) and (orientation: portrait) {
@@ -13017,6 +13064,7 @@ h1 {
 
 .main-promo-large {
   position: relative;
+  overflow: hidden;
 }
 
 .main-promo-large:after {
@@ -13038,6 +13086,7 @@ h1 {
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .main-promo-large .card-img {

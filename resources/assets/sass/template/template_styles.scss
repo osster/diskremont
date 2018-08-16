@@ -64,8 +64,8 @@ input[type="url"], input[type="week"] {
   padding: 1.5rem 0 0;
 
   @include mobile-all() {
-    font-size: #{$font_size_h2 * 0.65}px;
-    line-height: #{$line_height_h2 * 0.65}px;
+    font-size: #{$font_size_h2 * 0.55}px;
+    line-height: #{$line_height_h2 * 0.55}px;
     padding: 0.75rem 0 0;
   }
 }
