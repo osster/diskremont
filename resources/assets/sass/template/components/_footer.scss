@@ -8,6 +8,9 @@
     text-align: center;
     @include max-w(306px);
     background-color: $color_white_c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @include mobile-all(){
       font-size: 16px;

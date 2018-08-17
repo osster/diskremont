@@ -3,6 +3,10 @@
 
 @section('PAGE_TITLE', setting('site.title'))
 
+@section("PAGE_STYLES")
+    <link rel="stylesheet" href="/css/uslugi_critical.min.css">
+@endsection
+
 @section('PAGE_CONTENT')
     <div class="content">
         <main>

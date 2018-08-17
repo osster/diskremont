@@ -72,7 +72,7 @@
                             </div>
                         </div>
                         <div class="col-12 col-md-12 mb-3 d-xl-block text-center text-md-right car-form-cost">
-                            <span>Стоимость за комплект:</span>>
+                            <span>Стоимость за комплект:</span>
                             <span>{{ totalPrice }} руб.</span>
                         </div>
                     </div>

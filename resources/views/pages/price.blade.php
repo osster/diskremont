@@ -3,6 +3,10 @@
 
 @section('PAGE_TITLE', setting('site.title'))
 
+@section("PAGE_STYLES")
+    <link rel="stylesheet" href="/css/price_critical.min.css">
+@endsection
+
 @section('PAGE_CONTENT')
     <section class="prices">
         <h1 class="black-header">
@@ -68,81 +72,6 @@
                         балансировка. Для внедорожноков цена комплекса увеличивается на 500 руб.</p>
                 </div>
             </div>
-            <!--<div class="table-responsive-md table-border">-->
-            <!--<table class="table prices-table">-->
-            <!--<thead>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th" scope="col"></th>-->
-            <!--<th class="prices-table-th" scope="col">Порошковая покраска*</th>-->
-            <!--<th class="prices-table-th" scope="col">Прокат</th>-->
-            <!--<th class="prices-table-th" scope="col">Шиномонтаж**</th>-->
-            <!--<th class="prices-table-th" scope="col">Акриловая покраска*</th>-->
-            <!--</tr>-->
-            <!--</thead>-->
-            <!--<tbody>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">13''</th>-->
-            <!--<td>900</td>-->
-            <!--<td>900</td>-->
-            <!--<td>900</td>-->
-            <!--<td>900</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">14''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">15''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">16''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">17''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">18''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">19''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">20-24''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--</tbody>-->
-            <!--</table>-->
-            <!--<div class="prices-table-footer">-->
-            <!--<p class="prices-table-footer-first-p">* В цену не входят услуги шиномонтажа</p>-->
-            <!--<p>** Цена за полный шиномонтажный комплекс: снятие и постановка, проверка, шиномонтаж, балансировка. Для внедорожноков цена комплекса увеличивается на 500 руб.</p>-->
-            <!--</div>-->
-            <!--</div>-->
         </div>
 
     </section>

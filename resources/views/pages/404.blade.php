@@ -3,6 +3,10 @@
 
 @section('PAGE_TITLE', setting('site.title'))
 
+@section("PAGE_STYLES")
+    <link rel="stylesheet" href="/css/home_critical.min.css">
+@endsection
+
 @section('PAGE_CONTENT')
     <section class="found404">
         <h1 class="black-header">

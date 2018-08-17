@@ -1,7 +1,7 @@
 @if(!isset($innerLoop))
-<nav class="d-flex flex-wrap footer-nav col-md-12">
+<ul class="d-flex flex-wrap footer-nav col-md-12">
 @else
-<nav class="dropdown-menu">
+<ul class="dropdown-menu">
 @endif
 
 @php
@@ -66,4 +66,4 @@
     </li>
 @endforeach
 
-</nav>
+</ul>

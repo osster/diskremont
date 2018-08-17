@@ -8,6 +8,10 @@ $(document).ready(function () {
         slidesPerView: 1,
         spaceBetween: 30,
         loop: true,
+        // Disable preloading of all images
+        preloadImages: false,
+        // Enable lazy loading
+        lazy: true,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -43,6 +47,10 @@ $(document).ready(function () {
         slidesPerView: 3,
         spaceBetween: 20,
         loop: true,
+        // Disable preloading of all images
+        preloadImages: false,
+        // Enable lazy loading
+        lazy: true,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',

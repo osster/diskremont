@@ -3,6 +3,10 @@
 
 @section('PAGE_TITLE', setting('site.title'))
 
+@section("PAGE_STYLES")
+    <link rel="stylesheet" href="/css/galmenu_critical.min.css">
+@endsection
+
 @section('PAGE_CONTENT')
     <h1 class="black-header">
         <span class="black-header-span">Фотогалерея</span>

@@ -14,6 +14,7 @@
   }
   .card-img {
     height: 100%;
+    position: absolute;
     &-overlay {
       @include max-w(978px);
       padding: 5% 15px;

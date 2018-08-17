@@ -8,36 +8,33 @@
 
     @if($page_info)
         <title>{{ $page_info->title }}</title>
-        <meta name="description" content="{{ $page_info->description }}" />
+        <meta name="description" content="{{ $page_info->description }}"/>
     @else
         <title>@yield("PAGE_TITLE")</title>
-        <meta name="description" content="@yield("PAGE_DESC")" />
+        <meta name="description" content="@yield("PAGE_DESC")"/>
     @endif
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/app.css">
-
     <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/icons/apple-touch-icon-57x57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/icons/apple-touch-icon-114x114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/icons/apple-touch-icon-72x72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/icons/apple-touch-icon-144x144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/icons/apple-touch-icon-60x60.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/icons/apple-touch-icon-120x120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/icons/apple-touch-icon-76x76.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/icons/apple-touch-icon-152x152.png" />
-    <link rel="icon" type="image/png" href="/icons/favicon-196x196.png" sizes="196x196" />
-    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16" />
-    <link rel="icon" type="image/png" href="/icons/favicon-128.png" sizes="128x128" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/icons/apple-touch-icon-57x57.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/icons/apple-touch-icon-114x114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/icons/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/icons/apple-touch-icon-144x144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/icons/apple-touch-icon-60x60.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/icons/apple-touch-icon-120x120.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/icons/apple-touch-icon-76x76.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/icons/apple-touch-icon-152x152.png"/>
+    <link rel="icon" type="image/png" href="/icons/favicon-196x196.png" sizes="196x196"/>
+    <link rel="icon" type="image/png" href="/icons/favicon-96x96.png" sizes="96x96"/>
+    <link rel="icon" type="image/png" href="/icons/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="/icons/favicon-16x16.png" sizes="16x16"/>
+    <link rel="icon" type="image/png" href="/icons/favicon-128.png" sizes="128x128"/>
     <meta name="application-name" content="&nbsp;"/>
-    <meta name="msapplication-TileColor" content="#FFFFFF" />
-    <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png" />
-    <meta name="msapplication-square70x70logo" content="/icons/mstile-70x70.png" />
-    <meta name="msapplication-square150x150logo" content="/icons/mstile-150x150.png" />
-    <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png" />
-    <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png" />
+    <meta name="msapplication-TileColor" content="#FFFFFF"/>
+    <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png"/>
+    <meta name="msapplication-square70x70logo" content="/icons/mstile-70x70.png"/>
+    <meta name="msapplication-square150x150logo" content="/icons/mstile-150x150.png"/>
+    <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png"/>
+    <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png"/>
 
 
     @yield("PAGE_STYLES")
@@ -70,11 +67,14 @@
                     <ul class="mb-0 header-info text-right d-none d-md-block">
                         <li class="header-info-address">{{ setting('kontakty.address') }}</li>
                         <li class="header-info-phones">
-                            <a href="tel:{{ setting('kontakty.phone_1') }}" class="header-info-phone">{{ setting('kontakty.phone_1') }}</a>
-                            <a href="tel:{{ setting('kontakty.phone_2') }}" class="header-info-phone">{{ setting('kontakty.phone_2') }}</a>
+                            <a href="tel:{{ setting('kontakty.phone_1') }}"
+                               class="header-info-phone">{{ setting('kontakty.phone_1') }}</a>
+                            <a href="tel:{{ setting('kontakty.phone_2') }}"
+                               class="header-info-phone">{{ setting('kontakty.phone_2') }}</a>
                         </li>
                         <li>
-                            <a class="header-info-call" href="#" data-toggle="modal" data-target="#modalCenter">Перезвоните мне</a>
+                            <a class="header-info-call" href="#" data-toggle="modal" data-target="#modalCenter">Перезвоните
+                                мне</a>
                         </li>
                     </ul>
                 </nav>
@@ -97,16 +97,20 @@
                         </div>
                         <div class="col p-0 ">
                             <ul class="main-destination-info">
-                                <li class="address destination-info-li"><span class="dest-info-span">{{ setting('kontakty.address') }}</span></li>
+                                <li class="address destination-info-li"><span
+                                            class="dest-info-span">{{ setting('kontakty.address') }}</span></li>
                                 <li class="phones destination-info-li">
                                     <span class="dest-info-span">
                                     <a href="tel:{{ setting('kontakty.phone_1') }}">{{ setting('kontakty.phone_1') }}</a><br/>
                                     <a href="tel:{{ setting('kontakty.phone_2') }}">{{ setting('kontakty.phone_2') }}</a>
                                     </span>
                                 </li>
-                                <li class="timetable destination-info-li"><span class="dest-info-span">{{ setting('kontakty.working-time') }}</span></li>
+                                <li class="timetable destination-info-li"><span
+                                            class="dest-info-span">{{ setting('kontakty.working-time') }}</span></li>
                                 <li>
-                                    <button class="btn btn-red" data-toggle="modal" data-target="#modalCenter"><span class="btn-text d-flex align-items-center">Оставить заявку</span></button>
+                                    <button class="btn btn-red" data-toggle="modal" data-target="#modalCenter"><span
+                                                class="btn-text d-flex align-items-center">Оставить заявку</span>
+                                    </button>
                                 </li>
                             </ul>
                         </div>
@@ -127,7 +131,8 @@
             <div class="payment-wrapper col-lg-4 col-10 my-4 my-mb-0">
                 <div class="payment">Любые способы оплаты</div>
             </div>
-            <div class="soc-wrapper col-lg-2 col-2 p-0"><a href="{{ setting('kontakty.insta') }}" target="_blank" class="soc mx-md-auto"></a></div>
+            <div class="soc-wrapper col-lg-2 col-2 p-0"><a href="{{ setting('kontakty.insta') }}" target="_blank"
+                                                           class="soc mx-md-auto"></a></div>
         </div>
         <div class="all-rights">
             <div class="container">
@@ -143,8 +148,10 @@
                 <div class="modal-body">
                     <form id="callbackForm">
                         <label for="name" class="modal-label">Заказать звонок</label>
-                        <input id="name" name="name" class="popup-input" placeholder="Ваше имя" type="text" minlength="2" required/>
-                        <input id="phone" name="phone" class="popup-input" placeholder="Ваш телефон" type="text" minlength="16" required/>
+                        <input id="name" name="name" class="popup-input" placeholder="Ваше имя" type="text"
+                               minlength="2" required/>
+                        <input id="phone" name="phone" class="popup-input" placeholder="Ваш телефон" type="text"
+                               minlength="16" required/>
                         <button class="btn btn-red" type="submit">
                             <span class="btn-text">Перезвоните мне!</span>
                         </button>
@@ -161,6 +168,38 @@
 
 @yield("PAGE_SCRIPTS")
 
+<script>
+    !function (a) {
+        "use strict";
+        var b = function (b, c, d) {
+            var g, e = a.document, f = e.createElement("link");
+            if (c) g = c; else {
+                var h = (e.body || e.getElementsByTagName("head")[0]).childNodes;
+                g = h[h.length - 1]
+            }
+            var i = e.styleSheets;
+            f.rel = "stylesheet", f.href = b, f.media = "only x", g.parentNode.insertBefore(f, c ? g : g.nextSibling);
+            var j = function (a) {
+                for (var b = f.href, c = i.length; c--;) if (i[c].href === b) return a();
+                setTimeout(function () {
+                    j(a)
+                })
+            };
+            return f.onloadcssdefined = j, j(function () {
+                f.media = d || "all"
+            }), f
+        };
+        "undefined" != typeof module ? module.exports = b : a.loadCSS = b
+    }("undefined" != typeof global ? global : this);
+    loadCSS('css/app.css');
+</script>
+
+{{--
+<!-- Styles -->
+<link rel="stylesheet" href="css/app.css">
+--}}
+
 <script src="js/app.js"></script>
+
 </body>
 </html>
