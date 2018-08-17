@@ -20,6 +20,7 @@
     -webkit-align-items: center;
     align-items: center;
     height: 380px;
+
     @media screen and (max-width: $md) {
       height: calc(60vh - 103px);
     }
@@ -61,8 +62,10 @@
       background-color: $color_white_c4;
       opacity: 0.3;
 
-      &-active {
+      &-active,
+      &:hover{
         background-color: $color_white;
+        opacity: 0.6;
       }
     }
   }

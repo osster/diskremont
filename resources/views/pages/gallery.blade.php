@@ -13,9 +13,9 @@
     </h1>
     <div class="container">
         <section class="gallery">
-            <div class="col-lg-6">
+            <div class="col-12 col-md-6 p-0">
                 @if($filterData["serviceList"]->count() > 0)
-                <div class="select first-select">
+                <div class="select first-select mr-md-2">
                     <div class="select-label-wr">
                         <span class="select-label">Выберите раздел</span>
                     </div>
@@ -45,9 +45,9 @@
             </div>
 
 
-            <div class="col-lg-6">
+            <div class="col-12 col-md-6 p-0">
                 @if($filterData["colorList"]->count() > 0)
-                <div class="select">
+                <div class="select m-0 ml-md-2">
                     <div class="select-label-wr">
                         <span class="select-label">Выберите цвет</span>
                     </div>

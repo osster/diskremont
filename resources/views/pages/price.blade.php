@@ -77,19 +77,18 @@
     </section>
 
     <section class="main-promo-large price-promo-large">
-        <div class="card bg-dark text-white">
-            <img class="card-img" src="./img/promo-service-bg.jpg" alt="Card image">
-            <div class="card-img-overlay mx-auto d-flex flex-wrap">
-                <div class="col">
+        <div class="card bg-dark text-white" style="background-image: url(./img/promo-service-bg.jpg);">
+            <div class="card-img-overlay d-flex flex-column flex-md-row mx-auto">
+                <div class="col-12 col-md-6">
                     <div class="price-promo-large-icon price-promo-large-icon-1"></div>
-                    <div class="price-promo-large-description">На цвета чёрный/белый глянец и матовое серебро действует
-                        25% скидка! Цвета покраски Candy рассчитываются с наценкой 50% к базовой
+                    <div class="price-promo-large-description">На цвета чёрный/белый глянец и матовое серебро
+                        действует 25% скидка! Цвета покраски Candy рассчитываются с наценкой 50% к базовой
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md-6">
                     <div class="price-promo-large-icon price-promo-large-icon-2"></div>
                     <div class="price-promo-large-description">Новая услуга - наш курьер готов в течение дня забрать
-                        Ваши диски и доставить готовые всего за 1000 рублей.
+                        Ваши диски и доставить готовые всего за 500 рублей.
                     </div>
                 </div>
             </div>
