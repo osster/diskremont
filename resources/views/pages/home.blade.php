@@ -3,6 +3,10 @@
 
 @section('PAGE_TITLE', setting('site.title'))
 
+@section("PAGE_STYLES")
+    <link rel="stylesheet" href="/css/home_critical.min.css">
+@endsection
+
 @section('PAGE_CONTENT')
 
     <svg class="d-none" xmlns="http://www.w3.org/2000/svg">
@@ -167,8 +171,9 @@
             <div class="swiper-wrapper">
                 @if(setting('dlya-glavnoy.first-slide-img'))
                     <div class="swiper-slide active @if(setting('dlya-glavnoy.first-slide-txt-1') != '') swiper-slide_cover @endif">
-                        <img class="d-block w-100" src="{{ Voyager::image(setting('dlya-glavnoy.first-slide-img')) }}"
+                        <img class="d-block w-100 swiper-lazy" data-src="{{ Voyager::image(setting('dlya-glavnoy.first-slide-img')) }}"
                              alt="{{ setting('dlya-glavnoy.first-slide-txt-1') }}">
+                        <div class="swiper-lazy-preloader"></div>
                         @if(setting('dlya-glavnoy.first-slide-txt-1') != '')
                         <div class="swiper-slide-text container">
                             <p class="mb-0">{{ setting('dlya-glavnoy.first-slide-txt-1') }}</p>
@@ -180,8 +185,9 @@
                 @foreach($uslugi as $usluga)
                     @if($usluga->home_slide_pic != "")
                         <div class="swiper-slide active @if($usluga->home_slide_txt != '') swiper-slide_cover @endif">
-                            <img class="d-block w-100" src="{{ Voyager::image($usluga->thumbnail('cropped', 'home_slide_pic')) }}"
+                            <img class="d-block w-100 swiper-lazy" data-src="{{ Voyager::image($usluga->thumbnail('cropped', 'home_slide_pic')) }}"
                                  alt="{{ $usluga->name }}">
+                            <div class="swiper-lazy-preloader"></div>
                             @if($usluga->home_slide_txt != '')
                             <div class="swiper-slide-text container">
                                 <p class="mb-0">{{ $usluga->home_slide_txt }}</p>
@@ -290,8 +296,7 @@
 
     @if(setting('dlya-glavnoy.promo_2_pic') != '')
     <section class="main-promo-large">
-        <div class="card bg-dark text-white">
-            <img class="card-img" src="{{ Voyager::image(setting('dlya-glavnoy.promo_1_pic')) }}" alt="Промо 2">
+        <div class="card bg-dark text-white" style="background-image: url({{ Voyager::image(setting('dlya-glavnoy.promo_2_pic'))}})">
             <div class="card-img-overlay container">
                 {!! setting('dlya-glavnoy.promo_2_txt') !!}
                 @if(setting('dlya-glavnoy.promo_2_link') != '')
@@ -313,7 +318,8 @@
                         @foreach($feedback as $item)
                         <div class="card swiper-slide">
                             <a href="" class="card-link-block">
-                                <img class="card-img-top" src="{{ Voyager::image($item->picture) }}" alt="Card image cap">
+                                <img class="card-img-top swiper-lazy" data-src="{{ Voyager::image($item->picture) }}" alt="Card image cap">
+                                <div class="swiper-lazy-preloader"></div>
                                 <div class="card-body">
                                     <h4 class="card-title">{{ $item->name }}</h4>
                                     <p class="card-text">{!! $item->message !!}</p>

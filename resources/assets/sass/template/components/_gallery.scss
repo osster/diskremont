@@ -7,6 +7,12 @@
     padding-bottom: 23px;
     margin-bottom: 7.74%;
   }
+
+  .select-item {
+    .color-preview {
+      display: none;
+    }
+  }
 }
 .can-select {
   padding: 0;
@@ -58,7 +64,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  max-width: 530px;
+  max-width: 100%;
   height: 46px;
   margin-bottom: 10px;
   background-color: $color_black;
@@ -94,7 +100,8 @@
     height: 46px;
     background: $color_white;
     border: 2px solid $color_black;
-    //padding-left: 12px;
+    padding-right: 50px;
+    padding-left: 20px;
     cursor: pointer;
   }
 }

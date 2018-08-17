@@ -3,6 +3,10 @@
 
 @section('PAGE_TITLE', setting('site.title'))
 
+@section("PAGE_STYLES")
+    <link rel="stylesheet" href="/css/price_critical.min.css">
+@endsection
+
 @section('PAGE_CONTENT')
     <section class="prices">
         <h1 class="black-header">
@@ -68,99 +72,23 @@
                         балансировка. Для внедорожноков цена комплекса увеличивается на 500 руб.</p>
                 </div>
             </div>
-            <!--<div class="table-responsive-md table-border">-->
-            <!--<table class="table prices-table">-->
-            <!--<thead>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th" scope="col"></th>-->
-            <!--<th class="prices-table-th" scope="col">Порошковая покраска*</th>-->
-            <!--<th class="prices-table-th" scope="col">Прокат</th>-->
-            <!--<th class="prices-table-th" scope="col">Шиномонтаж**</th>-->
-            <!--<th class="prices-table-th" scope="col">Акриловая покраска*</th>-->
-            <!--</tr>-->
-            <!--</thead>-->
-            <!--<tbody>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">13''</th>-->
-            <!--<td>900</td>-->
-            <!--<td>900</td>-->
-            <!--<td>900</td>-->
-            <!--<td>900</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">14''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">15''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">16''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">17''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">18''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">19''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--<tr>-->
-            <!--<th class="prices-table-th-left" scope="row">20-24''</th>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--<td>1000</td>-->
-            <!--</tr>-->
-            <!--</tbody>-->
-            <!--</table>-->
-            <!--<div class="prices-table-footer">-->
-            <!--<p class="prices-table-footer-first-p">* В цену не входят услуги шиномонтажа</p>-->
-            <!--<p>** Цена за полный шиномонтажный комплекс: снятие и постановка, проверка, шиномонтаж, балансировка. Для внедорожноков цена комплекса увеличивается на 500 руб.</p>-->
-            <!--</div>-->
-            <!--</div>-->
         </div>
 
     </section>
 
     <section class="main-promo-large price-promo-large">
-        <div class="card bg-dark text-white">
-            <img class="card-img" src="./img/promo-service-bg.jpg" alt="Card image">
-            <div class="card-img-overlay mx-auto d-flex flex-wrap">
-                <div class="col">
+        <div class="card bg-dark text-white" style="background-image: url(./img/promo-service-bg.jpg);">
+            <div class="card-img-overlay d-flex flex-column flex-md-row mx-auto">
+                <div class="col-12 col-md-6">
                     <div class="price-promo-large-icon price-promo-large-icon-1"></div>
-                    <div class="price-promo-large-description">На цвета чёрный/белый глянец и матовое серебро действует
-                        25% скидка! Цвета покраски Candy рассчитываются с наценкой 50% к базовой
+                    <div class="price-promo-large-description">На цвета чёрный/белый глянец и матовое серебро
+                        действует 25% скидка! Цвета покраски Candy рассчитываются с наценкой 50% к базовой
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-md-6">
                     <div class="price-promo-large-icon price-promo-large-icon-2"></div>
                     <div class="price-promo-large-description">Новая услуга - наш курьер готов в течение дня забрать
-                        Ваши диски и доставить готовые всего за 1000 рублей.
+                        Ваши диски и доставить готовые всего за 500 рублей.
                     </div>
                 </div>
             </div>

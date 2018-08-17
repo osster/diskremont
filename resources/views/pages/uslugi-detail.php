@@ -64,7 +64,7 @@
                     <div class="wch-new-icon"></div>
                     <div class="wch-new-text">
                         <div class="wch-new-text-name">Новая услуга!!!</div>
-                        <div class="wch-new-text-descr">Наш сотрудник готов в течение дня забрать Ваши диски в пределах КАД. Выезд курьера с доставкой готовых дисков стоит всего 1000 рублей.</div>
+                        <div class="wch-new-text-descr">Наш сотрудник готов в течение дня забрать Ваши диски в пределах КАД. Выезд курьера с доставкой готовых дисков стоит всего 500 рублей.</div>
                     </div>
                 </div>
                 <div class="wch-descr-stripe"></div>
