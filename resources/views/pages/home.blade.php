@@ -4,7 +4,9 @@
 @section('PAGE_TITLE', setting('site.title'))
 
 @section("PAGE_STYLES")
-    <link rel="stylesheet" href="/css/home_critical.min.css">
+<style>
+    {{ file_get_contents( public_path("/css/home_critical.min.css")) }}
+</style>
 @endsection
 
 @section('PAGE_CONTENT')
@@ -322,7 +324,7 @@
                                 <div class="swiper-lazy-preloader"></div>
                                 <div class="card-body">
                                     <h4 class="card-title">{{ $item->name }}</h4>
-                                    <p class="card-text">{!! $item->message !!}</p>
+                                    <div class="card-text">{!! $item->message !!}</div>
                                     <!--<a class="card-link">Показать всё</a>-->
                                 </div>
                             </a>

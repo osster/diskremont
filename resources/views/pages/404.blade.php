@@ -4,7 +4,7 @@
 @section('PAGE_TITLE', setting('site.title'))
 
 @section("PAGE_STYLES")
-    <link rel="stylesheet" href="/css/home_critical.min.css">
+    {{ file_get_contents( public_path("/css/home_critical.min.css")) }}
 @endsection
 
 @section('PAGE_CONTENT')

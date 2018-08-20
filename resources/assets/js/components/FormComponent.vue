@@ -155,13 +155,14 @@
                             <div class="swiper-slide"
                                  :class="(diskColor.hash == color.hash) ? 'active' : ''"
                                  v-for="color in diskColorList">
-                                <img class="main-gallery-img"
+                                <img class="main-gallery-img swiper-lazy"
                                      @click="setDiskColor(color)"
                                      :src="color.picture_cropped"
                                      :alt="color.name"
                                      :title="color.name"
                                      :data-original-title="color.name"
                                      data-toggle="tooltip" data-placement="bottom">
+                                <div class="swiper-lazy-preloader"></div>
                             </div>
                         </div>
                     </div>
@@ -429,6 +430,8 @@
                             spaceBetween: 10,
                             loopFillGroupWithBlank: false,
                             loop: false,
+                            preloadImages: false,
+                            lazy: true,
                             navigation: {
                                 nextEl: container.parentNode.querySelector('.swiper-button-next'),
                                 prevEl: container.parentNode.querySelector('.swiper-button-prev'),

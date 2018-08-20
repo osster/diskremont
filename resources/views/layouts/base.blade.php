@@ -126,17 +126,23 @@
 
             {{ menu('footer_menu', 'menu.diskremont_bottom_line') }}
 
-            {{ menu('public', 'menu.diskremont_bottom') }}
+            {{-- menu('public', 'menu.diskremont_bottom') --}}
 
+            <!--
             <div class="payment-wrapper col-lg-4 col-10 my-4 my-mb-0">
-                <div class="payment">Любые способы оплаты</div>
+                <div class="payment">Visa, Master Card</div>
             </div>
             <div class="soc-wrapper col-lg-2 col-2 p-0"><a href="{{ setting('kontakty.insta') }}" target="_blank"
                                                            class="soc mx-md-auto"></a></div>
+            -->
+            <div class="col-lg-12 text-center">
+                <a href="{{ setting('kontakty.insta') }}" target="_blank"
+                   class="soc mx-md-auto"></a>
+            </div>
         </div>
         <div class="all-rights">
-            <div class="container">
-                <span class="all-rights-text">© 2008 - {{ date('Y') }} Все права защищены</span>
+            <div class="container text-center">
+                <span class="all-rights-text">© 2006 - {{ date('Y') }} Все права защищены</span>
             </div>
         </div>
     </footer>
@@ -145,9 +151,17 @@
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Заказать звонок</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
                 <div class="modal-body">
                     <form id="callbackForm">
+                        <!--
                         <label for="name" class="modal-label">Заказать звонок</label>
+                        -->
                         <input id="name" name="name" class="popup-input" placeholder="Ваше имя" type="text"
                                minlength="2" required/>
                         <input id="phone" name="phone" class="popup-input" placeholder="Ваш телефон" type="text"

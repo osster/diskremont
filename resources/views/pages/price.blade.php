@@ -4,7 +4,9 @@
 @section('PAGE_TITLE', setting('site.title'))
 
 @section("PAGE_STYLES")
-    <link rel="stylesheet" href="/css/price_critical.min.css">
+<style>
+    {!!  file_get_contents( public_path("/css/price_critical.min.css"))  !!}
+</style>
 @endsection
 
 @section('PAGE_CONTENT')

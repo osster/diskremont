@@ -169,3 +169,14 @@ $car-padding-dropdown: 8px;
     margin-bottom: 0;
   }
 }
+
+@include mobile-all(){
+  .tooltip {
+    display: none;
+  }
+}
+@include tablet-all(){
+  .tooltip {
+    display: none;
+  }
+}

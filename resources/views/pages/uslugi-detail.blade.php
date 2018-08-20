@@ -3,7 +3,9 @@
 @section('PAGE_TITLE', setting('site.title'))
 
 @section("PAGE_STYLES")
-    <link rel="stylesheet" href="/css/uslugi_detail_critical.min.css">
+<style>
+    {!!  file_get_contents( public_path("/css/uslugi_detail_critical.min.css"))  !!}
+</style>
 @endsection
 
 @section('PAGE_CONTENT')
@@ -39,6 +41,10 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @php
+                                $oneStar = false;
+                                $twoStars = false;
+                            @endphp
                             @foreach($display_price as $code)
                                 @if (isset($transp[$code]))
                                     <tr>
@@ -47,21 +53,26 @@
                                                 switch ($code) {
                                                     case "pokraska":
                                                         echo "Порошковая покраска*";
+                                                        $oneStar = true;
                                                         break;
                                                     case "prokat":
                                                         echo "Прокат";
                                                         break;
                                                     case "tiremount":
                                                         echo "Шиномонтаж**";
+                                                        $twoStars = true;
                                                         break;
                                                     case "akril":
                                                         echo "Акриловая покраска*";
+                                                        $oneStar = true;
                                                         break;
                                                     case "grind":
                                                         echo "Полировка дисков*";
+                                                        $oneStar = true;
                                                         break;
                                                     case "dimond_grind":
                                                         echo "Алмазная проточка дисков*";
+                                                        $oneStar = true;
                                                         break;
                                                 }
                                             @endphp
@@ -75,9 +86,13 @@
                             </tbody>
                         </table>
                         <div class="prices-table-footer">
-                            <p class="prices-table-footer-first-p">* В цену не входят услуги шиномонтажа</p>
-                            <p>** Цена за полный шиномонтажный комплекс: снятие и постановка, проверка, шиномонтаж,
-                                балансировка. Для внедорожноков цена комплекса увеличивается на 500 руб.</p>
+                            @if($oneStar)
+                                <p class="prices-table-footer-first-p">* В цену не входят услуги шиномонтажа</p>
+                            @endif
+                            @if($twoStars)
+                                <p>** Цена за полный шиномонтажный комплекс: снятие и постановка, проверка, шиномонтаж,
+                                    балансировка. Для внедорожноков цена комплекса увеличивается на 500 руб.</p>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -102,6 +117,8 @@
             </div>
         </section>
 
+        {{--  Только для покраски --}}
+        @if($usluga->id == 1)
         <section class="main-promo-large price-promo-large">
             <div class="card bg-dark text-white" style="background-image: url(./img/promo-service-bg.jpg);">
                 <div class="card-img-overlay d-flex flex-column flex-md-row mx-auto">
@@ -120,6 +137,7 @@
                 </div>
             </div>
         </section>
+        @endif
 
         @if($gallery->count() > 0)
 

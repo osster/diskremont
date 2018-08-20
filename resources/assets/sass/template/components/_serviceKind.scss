@@ -46,20 +46,20 @@ $lg-kind: 1200px;
     @include mobile-all() {
       display: none;
     }
-    &:after {
-      content: '';
-      position: absolute;
-      display: inline-block;
-      width: 75px;
-      height: 65px;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-image: url('../img/arrow-big-black.png');
-      top: auto;
-      bottom: 30px;
-      right: 50%;
-      transform: translate(50%, -50%);
-    }
+    //&:after {
+    //  content: '';
+    //  position: absolute;
+    //  display: inline-block;
+    //  width: 75px;
+    //  height: 65px;
+    //  background-repeat: no-repeat;
+    //  background-position: center center;
+    //  background-image: url('../img/stripe-black.png');
+    //  top: auto;
+    //  bottom: 30px;
+    //  right: 50%;
+    //  transform: translate(50%, -50%);
+    //}
   }
   &-1 {
     &:before {
@@ -170,9 +170,9 @@ $lg-kind: 1200px;
     @media screen and (max-width: $lg-kind){
       display: none;
     }
-    &:after {
-      background-image: url('../img/arrow-big-white.png');
-    }
+    //&:after {
+    //  background-image: url('../img/stripe-white.png');
+    //}
   }
   &-head {
     //@extend .wch-block-head;
