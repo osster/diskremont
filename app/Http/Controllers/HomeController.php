@@ -145,7 +145,13 @@ class HomeController extends Controller
 
                 $gallery = DiskGallery::where("disk_uslugi_id", $usluga->id)->take(12)->get();
 
-                return view("pages.uslugi-detail", compact('usluga', 'transp', 'gallery'));
+                $colors = collect([]);
+
+                if ($gallery->max('calc_color_id') > 0) {
+                    $colors = CalcDiskColor::all();
+                }
+
+                return view("pages.uslugi-detail", compact('usluga', 'transp', 'gallery', 'colors'));
             } else {
                 abort(404, 'Такой страницы не существует');
             }
@@ -156,6 +162,16 @@ class HomeController extends Controller
 
     public function gallery(Request $request)
     {
+        $v = Validator::make($request->all(), [
+            "service_id" => "nullable|numeric|exists:disk_uslugi,id",
+            "color_id" => "nullable|exists:calc_disk_colors,section"
+        ]);
+
+        if ($v->fails()) {
+            return redirect(route('gallery'))
+                ->withErrors($v)
+                ->withInput();
+        }
 
         $page = $request->has("page") ? intval($request->get("page")) : 0;
         $service_id = $request->has("service_id") ? intval($request->get("service_id")) : 0;

@@ -2,8 +2,12 @@
   position: relative;
   margin-bottom: 2.5rem;
   overflow: hidden;
-  @media screen and (max-width: $md) {
+
+  @include tablet-all() {
     margin-bottom: 2rem;
+  }
+  @include mobile-all() {
+    margin-bottom: 1rem;
   }
   .swiper-slide {
     position: relative;
@@ -21,9 +25,13 @@
     align-items: center;
     height: 380px;
 
-    @media screen and (max-width: $md) {
+    @include tablet-all() {
       height: calc(60vh - 103px);
     }
+    @include mobile-all() {
+      height: calc(50vh - 103px);
+    }
+
     &-text {
       position: absolute;
       top: 33%;
@@ -52,6 +60,9 @@
   }
   .swiper-pagination {
     bottom: 36px;
+    @include mobile-all() {
+      bottom: 10px;
+    }
     &-bullet {
       width: 16px;
       height: 16px;

@@ -12,7 +12,13 @@
 
     <div class="kind">
         <h1 class="black-header">
-            <span class="black-header-span">{!! $usluga->name !!}</span>
+            <span class="black-header-span">
+                @if($page_info && $page_info->h1 != "")
+                    {{ $page_info->h1 }}
+                @else
+                    {!! $usluga->name !!}
+                @endif
+            </span>
         </h1>
 
         @php
@@ -93,6 +99,7 @@
                                 <p>** Цена за полный шиномонтажный комплекс: снятие и постановка, проверка, шиномонтаж,
                                     балансировка. Для внедорожноков цена комплекса увеличивается на 500 руб.</p>
                             @endif
+                            <p>{{setting('aktsii.additional-offers')}}</p>
                         </div>
                     </div>
                 </div>
@@ -104,12 +111,42 @@
             @endphp
         @endif
 
+        @if ($colors->count() > 0)
+            @php
+                ob_start();
+            @endphp
+            <div class="container" id="disk-color-samples">
+                <section class="main-photoalbum">
+                    <div class="main-photoalbum-wrapper text-center">
+                        <h1 class="text-center">Цвета покраски</h1>
+                        <div class="row main-photoalbum-row">
+                            @foreach($colors as $item)
+                                <div class="col-lg-3 col-md-4 col-6 thumb">
+                                    <a rel="example_group" data-lightbox="image"
+                                       href="{{ Voyager::image($item->picture) }}">
+                                        <img class="img-fluid"
+                                             src="{{ Voyager::image($item->thumbnail('cropped', 'picture')) }}"
+                                             alt="{{ $item->name }}">
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+            </div>
+            @php
+                $colorsHTML = ob_get_contents();
+                ob_end_clean ();
+            @endphp
+        @endif
+
         <section class="why-choose">
             <div class="container">
 
                 @php
                     $detail_text = $usluga->detail_text;
                     $detail_text = preg_replace("/({{PRICES}})/", $priceHTML, $detail_text);
+                    $detail_text = preg_replace("/({{COLORS}})/", $colorsHTML, $detail_text);
                 @endphp
 
                 {!! $detail_text !!}
@@ -140,7 +177,6 @@
         @endif
 
         @if($gallery->count() > 0)
-
             <div class="container">
                 <section class="main-photoalbum">
                     <div class="main-photoalbum-wrapper text-center">

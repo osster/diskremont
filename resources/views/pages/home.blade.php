@@ -174,7 +174,7 @@
                 @if(setting('dlya-glavnoy.first-slide-img'))
                     <div class="swiper-slide active @if(setting('dlya-glavnoy.first-slide-txt-1') != '') swiper-slide_cover @endif">
                         <img class="d-block w-100 swiper-lazy" data-src="{{ Voyager::image(setting('dlya-glavnoy.first-slide-img')) }}"
-                             alt="{{ setting('dlya-glavnoy.first-slide-txt-1') }}">
+                             alt="{{ setting('dlya-glavnoy.first-slide-txt-1', "diskremont") }}">
                         <div class="swiper-lazy-preloader"></div>
                         @if(setting('dlya-glavnoy.first-slide-txt-1') != '')
                         <div class="swiper-slide-text container">
@@ -229,7 +229,13 @@
 
     <div class="container">
         <section class="main-description">
-            <h1>Мастерская "Дискремонт"</h1>
+            <h1>
+                @if($page_info && $page_info->h1 != "")
+                    {{ $page_info->h1 }}
+                @else
+                    Мастерская "Дискремонт"
+                @endif
+            </h1>
             <div class="media">
                 <img class="main-description-img"
                      src="{{ setting('dlya-glavnoy.about-picture') ? Voyager::image(setting('dlya-glavnoy.about-picture')) : "./img/service1.jpg" }}"
@@ -241,7 +247,7 @@
         </section>
 
         <section class="main-services-links">
-            <h1>Наши услуги</h1>
+            <div class="h1 text-center">Наши услуги</div>
             <div class="main-services-links-block d-flex flex-wrap justify-content-center">
                 @foreach($uslugi as $usluga)
                     <article class="card text-center">
@@ -277,11 +283,11 @@
     <div class="container">
         <section class="main-photoalbum">
             <div class="main-photoalbum-wrapper text-center">
-                <h1 class="text-center">Фотоальбом</h1>
+                <div class="h1 text-center">Фотоальбом</div>
                 <div class="row main-photoalbum-row">
                     @foreach($colorGallery as $item)
                         <div class="col-lg-3 col-md-4 col-6 thumb">
-                            <a rel="example_group" data-lightbox="image" href="{{ Voyager::image($item->picture) }}">
+                            <a rel="photo-gallery" data-lightbox="image" href="{{ Voyager::image($item->picture) }}">
                                 <img class="img-fluid"
                                      src="{{ Voyager::image($item->thumbnail('cropped', 'picture')) }}"
                                      alt="{{ $item->name }}">
@@ -310,9 +316,9 @@
     @endif
 
     <section class="main-reviews">
-        <h1 class="text-center black-header">
+        <div class="h1 text-center black-header">
             <span class="black-header-span">Отзывы</span>
-        </h1>
+        </div>
         <div class="container">
             <div class="row main-reviews-wrapper">
                 <div class="main-reviews-slider swiper-container">
@@ -332,10 +338,10 @@
                         @endforeach
                     </div>
                 </div>
-                <div class="control swiper-button-prev" href="#">
+                <div class="control swiper-button-prev">
                     <span class="carousel-control-prev-icon"></span>
                 </div>
-                <div class="control swiper-button-next" href="#">
+                <div class="control swiper-button-next">
                     <span class="carousel-control-next-icon"></span>
                 </div>
             </div>

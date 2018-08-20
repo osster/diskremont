@@ -12,7 +12,7 @@
 */
 
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'disk-admin'], function () {
     Voyager::routes();
 
     Route::get('gallery-lists', '\\App\\Http\\Controllers\\Voyager\\Disk\\DiskGalleryController@getData');
@@ -21,6 +21,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 Route::get('/', 'HomeController@index');
+
+//Route::post('/sitemap.xml', 'HomeController@index');
 
 Route::post('/callback.html', 'HomeController@sendMail');
 Route::post('/order.html', 'HomeController@sendOrder');

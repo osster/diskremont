@@ -14,7 +14,13 @@
         <main>
             <section class="services-blocks">
                 <h1 class="black-header">
-                    <span class="black-header-span">Услуги</span>
+                    <span class="black-header-span">
+                        @if($page_info && $page_info->h1 != "")
+                            {{ $page_info->h1 }}
+                        @else
+                            Услуги
+                        @endif
+                    </span>
                 </h1>
                 <div class="container">
                     @php

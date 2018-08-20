@@ -11,7 +11,13 @@
 
 @section('PAGE_CONTENT')
     <h1 class="black-header">
-        <span class="black-header-span">Фотогалерея</span>
+        <span class="black-header-span">
+            @if($page_info && $page_info->h1 != "")
+                {{ $page_info->h1 }}
+            @else
+                Фотогалерея
+            @endif
+        </span>
     </h1>
     <div class="container">
         <section class="gallery">

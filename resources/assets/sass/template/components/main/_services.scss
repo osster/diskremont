@@ -8,9 +8,15 @@
   padding-bottom: 2.5rem;
   margin-bottom: 4rem;
   border-bottom: 1px solid #575757;
-  @media screen and (max-width: $md) {
+
+  @include tablet-all(){
     margin-top: 2%;
     margin-bottom: 2%;
+  }
+  @include mobile-all(){
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 1.5rem;
   }
   &-img {
     display: flex;
@@ -21,7 +27,7 @@
     @include mobile-all(){
       width: 70px;
       height: 70px;
-      margin-bottom: 13px;
+      margin-bottom: 0px;
     }
   }
   &-link {

@@ -36,6 +36,9 @@
     <meta name="msapplication-wide310x150logo" content="/icons/mstile-310x150.png"/>
     <meta name="msapplication-square310x310logo" content="/icons/mstile-310x310.png"/>
 
+    <script type="application/ld+json">
+{!! setting('site.ld-json') !!}
+    </script>
 
     @yield("PAGE_STYLES")
 </head>
@@ -47,8 +50,9 @@
         <header>
             <div class="container">
                 <nav class="navbar navbar-expand-md pl-0 pr-0 navbar-light">
-                    <a class="navbar-brand p-0" href="{{ url("/") }}"><img src="storage/{{ setting('site.logo') }}"
-                                                                           alt="logo"></a>
+                    <a class="navbar-brand p-0" href="{{ url("/") }}">
+                        <img src="{{ Voyager::image(setting('site.logo')) }}" alt="logo">
+                    </a>
                     <ul class="mb-0 header-info text-right d-block d-md-none">
                         <li class="header-info-phones">
                             <span class="header-info-phone">(812) 972-0-666</span>
@@ -56,7 +60,7 @@
                         </li>
                     </ul>
 
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    <button id="showCallbackForm" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -147,7 +151,7 @@
         </div>
     </footer>
 
-    <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="showCallbackForm"
          aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -182,6 +186,7 @@
 
 @yield("PAGE_SCRIPTS")
 
+{{--
 <script>
     !function (a) {
         "use strict";
@@ -207,13 +212,13 @@
     }("undefined" != typeof global ? global : this);
     loadCSS('css/app.css');
 </script>
-
-{{--
-<!-- Styles -->
-<link rel="stylesheet" href="css/app.css">
 --}}
 
-<script src="js/app.js"></script>
+<!-- Styles -->
+<link rel="stylesheet" href="{{ asset("css/app.css") }}">
+
+
+<script src="{{ asset("js/app.js") }}"></script>
 
 </body>
 </html>
