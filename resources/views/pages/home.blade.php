@@ -173,9 +173,10 @@
             <div class="swiper-wrapper">
                 @if(setting('dlya-glavnoy.first-slide-img'))
                     <div class="swiper-slide active @if(setting('dlya-glavnoy.first-slide-txt-1') != '') swiper-slide_cover @endif">
-                        <img class="d-block w-100 swiper-lazy" data-src="{{ Voyager::image(setting('dlya-glavnoy.first-slide-img')) }}"
+                        <img class="d-block w-100"
+                             srcset="{{ Voyager::image(setting('dlya-glavnoy.first-slide-mob-img')) }} 800w, {{ Voyager::image(setting('dlya-glavnoy.first-slide-img')) }}"
+                             src="{{ Voyager::image(setting('dlya-glavnoy.first-slide-img')) }}"
                              alt="{{ setting('dlya-glavnoy.first-slide-txt-1', "diskremont") }}">
-                        <div class="swiper-lazy-preloader"></div>
                         @if(setting('dlya-glavnoy.first-slide-txt-1') != '')
                         <div class="swiper-slide-text container">
                             <p class="mb-0">{{ setting('dlya-glavnoy.first-slide-txt-1') }}</p>
@@ -187,9 +188,10 @@
                 @foreach($uslugi as $usluga)
                     @if($usluga->home_slide_pic != "")
                         <div class="swiper-slide active @if($usluga->home_slide_txt != '') swiper-slide_cover @endif">
-                            <img class="d-block w-100 swiper-lazy" data-src="{{ Voyager::image($usluga->thumbnail('cropped', 'home_slide_pic')) }}"
+                            <img class="d-block w-100"
+                                 srcset="{{ Voyager::image($usluga->thumbnail('cropped_mob', 'home_slide_pic_mob')) }} 800w, {{ Voyager::image($usluga->thumbnail('cropped', 'home_slide_pic')) }}"
+                                 src="{{ Voyager::image($usluga->thumbnail('cropped', 'home_slide_pic')) }}"
                                  alt="{{ $usluga->name }}">
-                            <div class="swiper-lazy-preloader"></div>
                             @if($usluga->home_slide_txt != '')
                             <div class="swiper-slide-text container">
                                 <p class="mb-0">{{ $usluga->home_slide_txt }}</p>

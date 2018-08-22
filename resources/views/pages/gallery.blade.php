@@ -93,10 +93,13 @@
 
             <div class="gal-row">
                 @foreach($galleryList as $item)
-                    <a class="gal-pic" href="{{ Voyager::image($item->picture) }}" data-lightbox="image" data-id="{{ $item->id }}" data-title="{{ $item->name }}">
-                        <img src="{{ Voyager::image($item->thumbnail('cropped', 'picture')) }}" alt="{{ $item->name }}">
+                    @php
+                        $obColor = $item->color->first();
+                    @endphp
+                    <a class="gal-pic" href="{{ Voyager::image($item->picture) }}" data-lightbox="image" data-id="{{ $item->id }}" data-title="{{ $item->name != "" ? $item->name : (($obColor) ? $obColor->name : "") }}">
+                        <img src="{{ Voyager::image($item->thumbnail('cropped', 'picture')) }}" alt="{{ $item->name != "" ? $item->name : (($obColor) ? $obColor->name : "") }}">
                     </a>
-                    {{ print_r($item->thumbnail('resize')) }}
+                    {{ $item->name != "" ? $item->name : (($obColor) ? $obColor->name : "") }}
                 @endforeach
             </div>
 

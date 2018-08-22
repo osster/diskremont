@@ -47,7 +47,7 @@ class HomeController extends Controller
             $car_colors = CalcCarColor::select(["name", "value_16 as hash", "body_render_img"])->orderBy("sort", "ASC")->get()->toArray();
             foreach ($car_colors as $k => $car_color) {
                 $car_color["hash"] = preg_replace('/^#/', '', $car_color["hash"]);
-                $car_color["body_render_img"] = Voyager::image($car_color["body_render_img"]);
+                $car_color["body_render_img"] = "/storage/" . $car_color["body_render_img"];
                 $car_colors[$k] = $car_color;
             }
 
@@ -66,10 +66,13 @@ class HomeController extends Controller
             foreach ($disk_colors as $k => $disk_color) {
                 $arColor = $disk_color->toArray();
                 $arColor["hash"] = preg_replace('/^#/', '', $arColor["hash"]);
-                $arColor["wheel_img"] = Voyager::image($arColor["wheel_img"]);
-                $arColor["wheel_polished_img"] = Voyager::image($disk_color["wheel_polished_img"]);
-                $arColor["picture_cropped"] = Voyager::image($disk_color->thumbnail('cropped', 'picture'));
-                $arColor["picture"] = Voyager::image($disk_color->picture);
+                $arColor["wheel_img"] = "/storage/" . $arColor["wheel_img"];
+                $arColor["wheel_polished_img"] = "/storage/" . $disk_color["wheel_polished_img"];
+                $arColor["picture_small"] = "/storage/" . $disk_color->thumbnail('small', 'picture');
+                $arColor["picture_small_mob"] = "/storage/" . $disk_color->thumbnail('small_mob', 'picture');
+                $arColor["picture_cropped"] = "/storage/" . $disk_color->thumbnail('cropped', 'picture');
+                $arColor["picture_cropped_mob"] = "/storage/" . $disk_color->thumbnail('cropped_mob', 'picture');
+                $arColor["picture"] = "/storage/" . $disk_color->picture;
                 $disk_colors[$k] = $arColor;
             }
 
@@ -148,7 +151,7 @@ class HomeController extends Controller
                 $colors = collect([]);
 
                 if ($gallery->max('calc_color_id') > 0) {
-                    $colors = CalcDiskColor::all();
+                    $colors = CalcDiskColor::orderBy("sort", "ASC")->get();
                 }
 
                 return view("pages.uslugi-detail", compact('usluga', 'transp', 'gallery', 'colors'));

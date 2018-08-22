@@ -55,8 +55,8 @@
                     </a>
                     <ul class="mb-0 header-info text-right d-block d-md-none">
                         <li class="header-info-phones">
-                            <span class="header-info-phone">(812) 972-0-666</span>
-                            <span class="header-info-phone">(812) 970-7-958</span>
+                            <a class="header-info-phone" href="tel:{{ str_replace(" ", "", setting('kontakty.phone_1')) }}">{{ setting('kontakty.phone_1') }}</a>
+                            <a class="header-info-phone" href="tel:{{ str_replace(" ", "", setting('kontakty.phone_2')) }}">{{ setting('kontakty.phone_2') }}</a>
                         </li>
                     </ul>
 
@@ -105,8 +105,8 @@
                                             class="dest-info-span">{{ setting('kontakty.address') }}</span></li>
                                 <li class="phones destination-info-li">
                                     <span class="dest-info-span">
-                                    <a href="tel:{{ setting('kontakty.phone_1') }}">{{ setting('kontakty.phone_1') }}</a><br/>
-                                    <a href="tel:{{ setting('kontakty.phone_2') }}">{{ setting('kontakty.phone_2') }}</a>
+                                    <a href="tel:{{ str_replace(" ", "", setting('kontakty.phone_1')) }}">{{ setting('kontakty.phone_1') }}</a><br/>
+                                    <a href="tel:{{ str_replace(" ", "", setting('kontakty.phone_2')) }}">{{ setting('kontakty.phone_2') }}</a>
                                     </span>
                                 </li>
                                 <li class="timetable destination-info-li"><span

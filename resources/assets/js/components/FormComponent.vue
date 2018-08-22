@@ -157,12 +157,12 @@
                                  v-for="color in diskColorList">
                                 <img class="main-gallery-img swiper-lazy"
                                      @click="setDiskColor(color)"
-                                     :src="color.picture_cropped"
+                                     :srcset="color.picture_small + ', ' + color.picture_small_mob + ' 640w'"
+                                     :src="color.picture_small"
                                      :alt="color.name"
                                      :title="color.name"
                                      :data-original-title="color.name"
                                      data-toggle="tooltip" data-placement="bottom">
-                                <div class="swiper-lazy-preloader"></div>
                             </div>
                         </div>
                     </div>
@@ -173,8 +173,10 @@
 
                 <div class="col-lg-5 col-md-12 d-flex justify-content-end">
                     <div class="main-promo-block">
-                        <img class="main-promo-img" :src="diskColor.picture" :alt="diskColor.name">
-                        <div class="main-promo-block-name">{{ diskColor.name }}</div>
+                        <a :href="diskColor.picture" rel="disk-photo" data-lightbox="image">
+                            <img class="main-promo-img" :src="diskColor.picture_cropped" :srcset="diskColor.picture_cropped + ', ' + diskColor.picture_cropped_mob + ' 640w'" :alt="diskColor.name">
+                            <div class="main-promo-block-name">{{ diskColor.name }}</div>
+                        </a>
                         <!--
                         <button class="btn btn-black">
                             <span class="btn-text d-flex align-items-center">Примеры работ</span>

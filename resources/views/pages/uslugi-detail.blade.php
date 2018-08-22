@@ -99,7 +99,6 @@
                                 <p>** Цена за полный шиномонтажный комплекс: снятие и постановка, проверка, шиномонтаж,
                                     балансировка. Для внедорожноков цена комплекса увеличивается на 500 руб.</p>
                             @endif
-                            <p>{{setting('aktsii.additional-offers')}}</p>
                         </div>
                     </div>
                 </div>
@@ -111,6 +110,9 @@
             @endphp
         @endif
 
+        @php
+            $colorsHTML = "";
+        @endphp
         @if ($colors->count() > 0)
             @php
                 ob_start();
@@ -121,12 +123,14 @@
                         <h1 class="text-center">Цвета покраски</h1>
                         <div class="row main-photoalbum-row">
                             @foreach($colors as $item)
-                                <div class="col-lg-3 col-md-4 col-6 thumb">
+                                <div class="col-lg-2 col-md-4 col-6 thumb">
                                     <a rel="example_group" data-lightbox="image"
                                        href="{{ Voyager::image($item->picture) }}">
                                         <img class="img-fluid"
                                              src="{{ Voyager::image($item->thumbnail('cropped', 'picture')) }}"
                                              alt="{{ $item->name }}">
+
+                                        <strong class="small">{{ $item->name }}</strong>
                                     </a>
                                 </div>
                             @endforeach
