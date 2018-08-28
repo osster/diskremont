@@ -173,7 +173,7 @@
 
                 <div class="col-lg-5 col-md-12 d-flex justify-content-end">
                     <div class="main-promo-block">
-                        <a :href="diskColor.picture" rel="disk-photo" data-lightbox="image">
+                        <a :href="diskColor.picture" rel="disk-photo" data-lightbox="disk-image" :data-title="diskColor.name">
                             <img class="main-promo-img" :src="diskColor.picture_cropped" :srcset="diskColor.picture_cropped + ', ' + diskColor.picture_cropped_mob + ' 640w'" :alt="diskColor.name">
                             <div class="main-promo-block-name">{{ diskColor.name }}</div>
                         </a>
@@ -442,9 +442,12 @@
                                 480: {
                                     slidesPerView: 3,
                                     slidesPerColumn: 1,
+                                    spaceBetween: 4,
                                 },
                                 767: {
                                     slidesPerView: 3,
+                                    //slidesPerColumn: 1,
+                                    spaceBetween: 4,
                                 },
                             }
                         });

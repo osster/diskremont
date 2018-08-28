@@ -67,9 +67,13 @@
                                     $obColor = $filterData["colorList"]->where("id", $filterData["selectedColor"])->first();
                                     //dd($filterData["selectedColor"])
                                 @endphp
-                                {{ ($obColor) ? $obColor->name : "" }}
+                                {{ ($obColor) ? $obColor->name : "Все цвета" }}
                             </button>
                             <div class="can-select dropdown-menu">
+                                <a class="select-item color color-black @if(!$obColor) active @endif" href="{{ route("gallery", ["service_id" => $filterData["selectedService"], "color_id" => null]) }}">
+                                    <span class="color-preview"></span>
+                                    Все цвета
+                                </a>
                                 @foreach($filterData["colorList"] as $color)
                                     @php
                                         $arProps = ["service_id" => $filterData["selectedService"], "color_id" => $color->id];

@@ -31,6 +31,13 @@ mix.js([
         ],
         options: {
             minify: true,
+            ignore: [
+                /url\(/,
+                /@import/,
+                '@font-face',
+                /print/,
+                /\.navbar\-toggler\-icon/
+            ]
         },
     })
     .browserSync('http://diskremont.local/');

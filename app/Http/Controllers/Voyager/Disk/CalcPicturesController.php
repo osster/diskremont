@@ -3,17 +3,62 @@ namespace App\Http\Controllers\Voyager\Disk;
 
 use App\CalcDiskColor;
 use App\DiskUslugi;
+use App\Http\Controllers\Voyager\ReloadImageWorksTrait;
 use App\Http\Controllers\Voyager\VoyagerBaseController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Constraint;
 use Intervention\Image\Facades\Image;
 use TCG\Voyager\Events\BreadDataAdded;
 use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Facades\Voyager;
+use Intervention\Image\Facades\Image as InterventionImage;
 
 class CalcPicturesController extends VoyagerBaseController
 {
+    use ReloadImageWorksTrait;
+
+    private function OptimJPG($infile, $outfile, $qual = 85, $xres = -1, $yres = -1)
+    {
+        $im = new Imagick();
+        $im->readImage($infile);
+        $im->stripImage();
+        $im->setImageColorSpace(Imagick::COLORSPACE_SRGB);
+        if (($xres > 0) && ($yres > 0)) {
+            $im->adaptiveResizeImage($xres, $yres);
+        };
+        $im->setImageCompressionQuality($qual);
+        $im->setSamplingFactors(array('2x2', '1x1', '1x1'));
+        $image1 = $im->getImageBlob();
+        $im->setInterlaceScheme(Imagick::INTERLACE_PLANE);
+        $image2 = $im->getImageBlob();
+        if (strlen($image1) > strlen($image2)) {
+            file_put_contents($outfile, $image2);
+        } else {
+            file_put_contents($outfile, $image1);
+        };
+        $im->clear();
+        $im->destroy();
+    }
+
+    private function OptimPNG($infile, $outfile, $qual = 85, $xres = -1, $yres = -1)
+    {
+        $im = new Imagick();
+        $im->readImage($infile);
+        $im->stripImage();
+        $im->setImageColorSpace(Imagick::COLORSPACE_SRGB);
+        if (($xres > 0) && ($yres > 0)) {
+            $im->adaptiveResizeImage($xres, $yres);
+        };
+        $im->setImageCompression(\Imagick::COMPRESSION_UNDEFINED);
+        $im->setImageCompressionQuality(0);
+        $im->setSamplingFactors(array('2x2', '1x1', '1x1'));
+        $image1 = $im->getImageBlob();
+        file_put_contents($outfile, $image1);
+        $im->clear();
+        $im->destroy();
+    }
 
     private function img64decode($bsf) {
         $iData = null;
@@ -36,27 +81,6 @@ class CalcPicturesController extends VoyagerBaseController
         }
 
         return $iData;
-    }
-
-    private function imgOpt($img_path) {
-        $im = new Imagick();
-        $im->readImage($img_path);
-        $im->stripImage();
-        $im->setImageColorSpace(Imagick::COLORSPACE_SRGB);
-        $im->adaptiveResizeImage($xres*2,$yres*2);
-        $im->setImageCompressionQuality($hiq);
-        $im->setSamplingFactors(array('2x2', '1x1', '1x1'));
-        $image1=$im->getImageBlob();
-        $im->setInterlaceScheme(Imagick::INTERLACE_PLANE);
-        $image2=$im->getImageBlob();
-        if(strlen($image1)>strlen($image2)) {
-            file_put_contents($outfile2,$image2);
-        } else {
-            file_put_contents($outfile2,$image1);
-        };
-        $im->clear();
-        $im->destroy();
-
     }
 
     // POST BR(E)AD
@@ -98,6 +122,9 @@ class CalcPicturesController extends VoyagerBaseController
                 if(isset($arData["wheel_img"])) {
                     $img = $this->img64decode($data->wheel_img);
 
+//                    $img = (string) InterventionImage::make($img)
+//                        ->encode("png", 70);
+
                     Storage::disk('local')->put("public/calc/disk/wheel_img_{$id}.png", $img);
 
                     $data->wheel_img = "calc/disk/wheel_img_{$id}.png";
@@ -106,6 +133,9 @@ class CalcPicturesController extends VoyagerBaseController
 
                 if(isset($arData["wheel_polished_img"])) {
                     $img = $this->img64decode($data->wheel_polished_img);
+
+//                    $img = (string) InterventionImage::make($img)
+//                        ->encode("png", 70);
 
                     Storage::disk('local')->put("public/calc/disk/wheel_polished_img_{$id}.png", $img);
 
@@ -116,10 +146,15 @@ class CalcPicturesController extends VoyagerBaseController
                 if(isset($arData["body_render_img"])) {
                     $img = $this->img64decode($data->body_render_img);
 
-                    Storage::disk('local')->put("public/calc/car/body_render_img_{$id}.png", $img);
+                    $img = (string) InterventionImage::make($img)
+                        ->encode("jpg", 50);
 
-                    $data->body_render_img = "calc/car/body_render_img_{$id}.png";
+                    Storage::disk('local')->put("public/calc/car/body_render_img_{$id}.jpg", $img);
+
+                    $data->body_render_img = "calc/car/body_render_img_{$id}.jpg";
                     $data->save();
+
+                    //dd($data->body_render_img);
                 }
 
             }

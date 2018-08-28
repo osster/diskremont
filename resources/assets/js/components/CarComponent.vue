@@ -1,6 +1,5 @@
 <template>
     <div class="car">
-
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2244 827"
 	        enable-background="new 0 0 2244 827" xml:space="preserve">
 
@@ -1386,8 +1385,10 @@
                 var that = this;
                 if (val) {
                     //console.log('isSelfReady');
-                    that.$nextTick(function () {
-                        that.carMoveIn();
+                    that.imagePreload(that.bodyFillImage, function (src) {
+                        that.$nextTick(function () {
+                            that.carMoveIn();
+                        });
                     });
                 }
             },
@@ -1400,8 +1401,10 @@
                 //console.log('carBodyColor');
                 that.carMoveOut(function () {
                     that.bodyFillImage = val.body_render_img;
-                    that.$nextTick(function () {
-                        that.carMoveIn();
+                    that.imagePreload(that.bodyFillImage, function (src) {
+                        that.$nextTick(function () {
+                            that.carMoveIn();
+                        });
                     });
                 });
             },
@@ -1567,7 +1570,7 @@
                     });
                 }
             },
-            setWheelsTween: function() {
+            setWheelsTween: function () {
                 var that = this;
                 that.wheels = document.querySelectorAll('.car-wheel image');
                 TweenMax.set(that.wheels, {rotation: 0, transformOrigin: '50% 50%'});
@@ -1585,6 +1588,13 @@
                 };
                 //console.log('carWheelsRotate start', rotationConfig);
                 TweenMax.to(that.wheels, that.moveDuration, rotationConfig);
+            },
+            imagePreload: function (url, cb) {
+                var img = new Image;
+                img.onload = function () {
+                    cb(url);
+                };
+                img.src = url;
             }
         }
     }

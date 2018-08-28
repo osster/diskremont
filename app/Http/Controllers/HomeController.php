@@ -194,9 +194,9 @@ class HomeController extends Controller
         $availableColorIds = DiskGallery::where('disk_uslugi_id', $service_id)->groupBy('calc_color_id')->pluck('calc_color_id')->toArray();
         $availableColorSections = CalcDiskColor::whereIn('id', $availableColorIds)->groupBy('section')->pluck('section')->toArray();
 
-        if ($color_id == '' && !empty($availableColorSections)) {
-            $color_id = array_first($availableColorSections);
-        }
+//        if ($color_id == '' && !empty($availableColorSections)) {
+//            $color_id = array_first($availableColorSections);
+//        }
 
         $qBuilder = DiskGallery::where('disk_uslugi_id', $service_id);
 

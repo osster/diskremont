@@ -98,8 +98,17 @@ $car-padding-dropdown: 8px;
     top: 0;
   }
 
+  @include tablet-all(){
+    top: 140px;
+  }
+
   span {
     display: block;
+
+    &:last-of-type {
+      color: $color_red_middle;
+      font-size: 1.2rem;
+    }
 
     @include mobile-all(){
       display: inline-block;

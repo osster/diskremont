@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Voyager\ReloadImageWorksTrait;
 use App\Http\Controllers\Voyager\VoyagerBaseController;
 use Illuminate\Http\Request;
 
 class CalcDiskColorController extends VoyagerBaseController
 {
+    use ReloadImageWorksTrait;
 
     /**
      * POST BRE(A)D - Store data.

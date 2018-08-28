@@ -4,9 +4,9 @@
 @section('PAGE_TITLE', setting('site.title'))
 
 @section("PAGE_STYLES")
-<style>
-    {!!  file_get_contents( public_path("/css/price_critical.min.css"))  !!}
-</style>
+    <style>
+        {!!  file_get_contents( public_path("/css/price_critical.min.css"))  !!}
+    </style>
 @endsection
 
 @section('PAGE_CONTENT')
@@ -26,7 +26,7 @@
                 <span class="prices-table-header-text btn-text">Цены на ремонт/покраску литых дисков, шиномонтажные и другие работы</span>
             </div>
             <div class="table-responsive-lg table-border">
-                <table class="table prices-table table-striped">
+                <table class="table prices-table table-striped d-none d-lg-block">
                     <thead>
                     <tr>
                         <th class="prices-table-th" scope="col"></th>
@@ -37,43 +37,125 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <th class="prices-table-th-left" scope="row">Порошковая покраска*</th>
+                        <th class="prices-table-th-left" scope="row">Порошковая покраска, руб*</th>
                         @foreach($transp["pokraska"] as $k=>$v)
                             <td>{{ $v }}</td>
                         @endforeach
                     </tr>
                     <tr>
-                        <th class="prices-table-th-left" scope="row">Прокат</th>
+                        <th class="prices-table-th-left" scope="row">Прокат, руб</th>
                         @foreach($transp["prokat"] as $k=>$v)
                             <td>{{ $v }}</td>
                         @endforeach
                     </tr>
                     <tr>
-                        <th class="prices-table-th-left" scope="row">Шиномонтаж**</th>
+                        <th class="prices-table-th-left" scope="row">Шиномонтаж, руб**</th>
                         @foreach($transp["tiremount"] as $k=>$v)
                             <td>{{ $v }}</td>
                         @endforeach
                     </tr>
                     <tr>
-                        <th class="prices-table-th-left" scope="row">Акриловая покраска*</th>
+                        <th class="prices-table-th-left" scope="row">Акриловая покраска, руб*</th>
                         @foreach($transp["akril"] as $k=>$v)
                             <td>{{ $v }}</td>
                         @endforeach
                     </tr>
                     <tr>
-                        <th class="prices-table-th-left" scope="row">Полировка дисков*</th>
+                        <th class="prices-table-th-left" scope="row">Полировка дисков, руб*</th>
                         @foreach($transp["grind"] as $k=>$v)
                             <td>{{ $v }}</td>
                         @endforeach
                     </tr>
                     <tr>
-                        <th class="prices-table-th-left" scope="row">Алмазная проточка дисков*</th>
+                        <th class="prices-table-th-left" scope="row">Алмазная проточка дисков, руб*</th>
                         @foreach($transp["dimond_grind"] as $k=>$v)
                             <td>{{ $v }}</td>
                         @endforeach
                     </tr>
                     </tbody>
                 </table>
+
+                <div class="m-4 text-center d-block d-lg-none">
+                    <table class="table prices-table table-striped w-100">
+                        <thead>
+                        <tr>
+                            <th colspan="2" class="h3">Порошковая покраска, руб*</th>
+                        </tr>
+                        </thead>
+                        @foreach($transp["titles"] as $k=>$v)
+                            <tr>
+                                <th class="w-50">{{ $v }}</th>
+                                <td class="w-50">{{ $transp["pokraska"][$k] }}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                    <table class="table prices-table table-striped">
+                        <thead>
+                        <tr>
+                            <th colspan="2" class="h3">Прокат, руб</th>
+                        </tr>
+                        </thead>
+                        @foreach($transp["titles"] as $k=>$v)
+                            <tr>
+                                <th class="w-50">{{ $v }}</th>
+                                <td class="w-50">{{ $transp["prokat"][$k] }}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                    <table class="table prices-table table-striped">
+                        <thead>
+                        <tr>
+                            <th colspan="2" class="h3">Шиномонтаж, руб*</th>
+                        </tr>
+                        </thead>
+                        @foreach($transp["titles"] as $k=>$v)
+                            <tr>
+                                <th class="w-50">{{ $v }}</th>
+                                <td class="w-50">{{ $transp["tiremount"][$k] }}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                    <table class="table prices-table table-striped">
+                        <thead>
+                        <tr>
+                            <th colspan="2" class="h3">Акриловая покраска, руб*</th>
+                        </tr>
+                        </thead>
+                        @foreach($transp["titles"] as $k=>$v)
+                            <tr>
+                                <th class="w-50">{{ $v }}</th>
+                                <td class="w-50">{{ $transp["akril"][$k] }}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                    <table class="table prices-table table-striped">
+                        <thead>
+                        <tr>
+                            <th colspan="2" class="h3">Полировка дисков, руб*</th>
+                        </tr>
+                        </thead>
+                        @foreach($transp["titles"] as $k=>$v)
+                            <tr>
+                                <th class="w-50">{{ $v }}</th>
+                                <td class="w-50">{{ $transp["grind"][$k] }}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                    <table class="table prices-table table-striped">
+                        <thead>
+                        <tr>
+                            <th colspan="2" class="h3">Алмазная проточка дисков, руб*</th>
+                        </tr>
+                        </thead>
+                        @foreach($transp["titles"] as $k=>$v)
+                            <tr>
+                                <th class="w-50">{{ $v }}</th>
+                                <td class="w-50">{{ $transp["dimond_grind"][$k] }}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                </div>
+
                 <div class="prices-table-footer">
                     <p class="prices-table-footer-first-p">* В цену не входят услуги шиномонтажа</p>
                     <p>** Цена за полный шиномонтажный комплекс: снятие и постановка, проверка, шиномонтаж,
@@ -123,26 +205,26 @@
                                 <div class="left-high-body-th">Зеркало</div>
                                 <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.mirror') }}</div>
                             </div>
-                                <div class="left-high-body-tr">
-                                    <div class="left-high-body-th">Ручка дверная</div>
-                                    <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.door') }}</div>
-                                </div>
-                                <div class="left-high-body-tr">
-                                    <div class="left-high-body-th">Облицовочная передняя решетка</div>
-                                    <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.bumper') }}</div>
-                                </div>
-                                <div class="left-high-body-tr">
-                                    <div class="left-high-body-th">Дуга верхняя - 2 шт</div>
-                                    <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.arc') }}</div>
-                                </div>
-                                <div class="left-high-body-tr">
-                                    <div class="left-high-body-th">Диск мотоцикла</div>
-                                    <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.motorcicle') }}</div>
-                                </div>
-                                <div class="left-high-body-tr">
-                                    <div class="left-high-body-th">Шлем</div>
-                                    <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.helmet') }}</div>
-                                </div>
+                            <div class="left-high-body-tr">
+                                <div class="left-high-body-th">Ручка дверная</div>
+                                <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.door') }}</div>
+                            </div>
+                            <div class="left-high-body-tr">
+                                <div class="left-high-body-th">Облицовочная передняя решетка</div>
+                                <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.bumper') }}</div>
+                            </div>
+                            <div class="left-high-body-tr">
+                                <div class="left-high-body-th">Дуга верхняя - 2 шт</div>
+                                <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.arc') }}</div>
+                            </div>
+                            <div class="left-high-body-tr">
+                                <div class="left-high-body-th">Диск мотоцикла</div>
+                                <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.motorcicle') }}</div>
+                            </div>
+                            <div class="left-high-body-tr">
+                                <div class="left-high-body-th">Шлем</div>
+                                <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.helmet') }}</div>
+                            </div>
 
                         </div>
                     </div>

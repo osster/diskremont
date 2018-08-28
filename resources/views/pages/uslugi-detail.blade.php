@@ -37,7 +37,7 @@
                         <span class="prices-table-header-text btn-text">Цены</span>
                     </div>
                     <div class="table-responsive-lg table-border">
-                        <table class="table prices-table">
+                        <table class="table prices-table d-none d-lg-block">
                             <thead>
                             <tr>
                                 <th class="prices-table-th" scope="col"></th>
@@ -58,26 +58,26 @@
                                             @php
                                                 switch ($code) {
                                                     case "pokraska":
-                                                        echo "Порошковая покраска*";
+                                                        echo "Порошковая покраска, руб*";
                                                         $oneStar = true;
                                                         break;
                                                     case "prokat":
-                                                        echo "Прокат";
+                                                        echo "Прокат, руб";
                                                         break;
                                                     case "tiremount":
-                                                        echo "Шиномонтаж**";
+                                                        echo "Шиномонтаж, руб**";
                                                         $twoStars = true;
                                                         break;
                                                     case "akril":
-                                                        echo "Акриловая покраска*";
+                                                        echo "Акриловая покраска, руб*";
                                                         $oneStar = true;
                                                         break;
                                                     case "grind":
-                                                        echo "Полировка дисков*";
+                                                        echo "Полировка дисков, руб*";
                                                         $oneStar = true;
                                                         break;
                                                     case "dimond_grind":
-                                                        echo "Алмазная проточка дисков*";
+                                                        echo "Алмазная проточка дисков, руб*";
                                                         $oneStar = true;
                                                         break;
                                                 }
@@ -91,6 +91,55 @@
                             @endforeach
                             </tbody>
                         </table>
+
+                        <div class="text-center d-block d-lg-none">
+                        @foreach($display_price as $code)
+                            @if (isset($transp[$code]))
+                                <table class="table prices-table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th colspan="2" class="h3">
+                                            @php
+                                                switch ($code) {
+                                                    case "pokraska":
+                                                        echo "Порошковая покраска, руб*";
+                                                        $oneStar = true;
+                                                        break;
+                                                    case "prokat":
+                                                        echo "Прокат, руб";
+                                                        break;
+                                                    case "tiremount":
+                                                        echo "Шиномонтаж, руб**";
+                                                        $twoStars = true;
+                                                        break;
+                                                    case "akril":
+                                                        echo "Акриловая покраска, руб*";
+                                                        $oneStar = true;
+                                                        break;
+                                                    case "grind":
+                                                        echo "Полировка дисков, руб*";
+                                                        $oneStar = true;
+                                                        break;
+                                                    case "dimond_grind":
+                                                        echo "Алмазная проточка дисков, руб*";
+                                                        $oneStar = true;
+                                                        break;
+                                                }
+                                            @endphp
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    @foreach($transp["titles"] as $k=>$v)
+                                        <tr>
+                                            <th class="w-50">{{ $v }}</th>
+                                            <td class="w-50">{{ $transp[$code][$k] }}</td>
+                                        </tr>
+                                    @endforeach
+                                </table>
+                            @endif
+                        @endforeach
+                        </div>
+
                         <div class="prices-table-footer">
                             @if($oneStar)
                                 <p class="prices-table-footer-first-p">* В цену не входят услуги шиномонтажа</p>
@@ -127,7 +176,7 @@
                                     <a rel="example_group" data-lightbox="image"
                                        href="{{ Voyager::image($item->picture) }}">
                                         <img class="img-fluid"
-                                             src="{{ Voyager::image($item->thumbnail('cropped', 'picture')) }}"
+                                             src="{{ Voyager::image($item->thumbnail('cropped_mid', 'picture')) }}"
                                              alt="{{ $item->name }}">
 
                                         <strong class="small">{{ $item->name }}</strong>
