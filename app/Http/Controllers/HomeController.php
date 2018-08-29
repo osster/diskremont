@@ -76,11 +76,11 @@ class HomeController extends Controller
                 $disk_colors[$k] = $arColor;
             }
 
-            $disk_sizes = CalcDiskSize::select(["size", "price", "price_grind", "price_tiremount"])->get()->toArray();
+            $disk_sizes = CalcDiskSize::select(["size", "price", "price_dimond_grind", "price_tiremount"])->get()->toArray();
             foreach ($disk_sizes as $k => $disk_size) {
                 $disk_size["label"] = $disk_size["size"] . "\"";
                 $disk_size["price"] = doubleVal($disk_size["price"]);
-                $disk_size["price_grind"] = doubleVal($disk_size["price_grind"]);
+                $disk_size["price_grind"] = doubleVal($disk_size["price_dimond_grind"]);
                 $disk_size["price_tiremount"] = doubleVal($disk_size["price_tiremount"]);
                 $disk_sizes[$k] = $disk_size;
             }

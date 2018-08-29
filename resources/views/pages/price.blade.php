@@ -54,12 +54,14 @@
                             <td>{{ $v }}</td>
                         @endforeach
                     </tr>
+                    {{--
                     <tr>
                         <th class="prices-table-th-left" scope="row">Акриловая покраска, руб*</th>
                         @foreach($transp["akril"] as $k=>$v)
                             <td>{{ $v }}</td>
                         @endforeach
                     </tr>
+                    --}}
                     <tr>
                         <th class="prices-table-th-left" scope="row">Полировка дисков, руб*</th>
                         @foreach($transp["grind"] as $k=>$v)
@@ -115,6 +117,7 @@
                             </tr>
                         @endforeach
                     </table>
+                    {{--
                     <table class="table prices-table table-striped">
                         <thead>
                         <tr>
@@ -128,6 +131,7 @@
                             </tr>
                         @endforeach
                     </table>
+                    --}}
                     <table class="table prices-table table-striped">
                         <thead>
                         <tr>
@@ -191,16 +195,16 @@
                 <div class="col-lg-5">
                     <div class="left-high">
                         <div class="left-high-header ">
-                            <span class="left-high-header-span">Цены на хромирование и золочение дисков и других деталей</span>
+                            <span class="left-high-header-span">Цены порошковую покраску дисков</span>
                         </div>
                         <div class="left-high-body">
-                            @foreach($transp["other"] as $k=>$v)
+                            @foreach($transp["pokraska"] as $k=>$v)
                                 <div class="left-high-body-tr">
                                     <div class="left-high-body-th">{{ $transp["titles"][$k] }}</div>
                                     <div class="left-high-body-th">{{ $v }}</div>
                                 </div>
                             @endforeach
-
+                            {{--
                             <div class="left-high-body-tr">
                                 <div class="left-high-body-th">Зеркало</div>
                                 <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.mirror') }}</div>
@@ -225,7 +229,7 @@
                                 <div class="left-high-body-th">Шлем</div>
                                 <div class="left-high-body-th">{{ setting('tseny-na-khromirovanie-i-zolochenie.helmet') }}</div>
                             </div>
-
+                            --}}
                         </div>
                     </div>
                 </div>
