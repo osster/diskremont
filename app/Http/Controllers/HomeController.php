@@ -62,7 +62,7 @@ class HomeController extends Controller
                     "name" => $name,
                 ];
             }
-            $disk_colors = CalcDiskColor::select(["section", "name", "picture", "value_16 as hash", "rate", "wheel_img", "wheel_polished_img"])->orderBy("sort", "ASC")->get();
+            $disk_colors = CalcDiskColor::select(["section", "is_default", "name", "picture", "value_16 as hash", "rate", "wheel_img", "wheel_polished_img"])->orderBy("sort", "ASC")->get();
             foreach ($disk_colors as $k => $disk_color) {
                 $arColor = $disk_color->toArray();
                 $arColor["hash"] = preg_replace('/^#/', '', $arColor["hash"]);

@@ -306,9 +306,18 @@
                 if (val) {
                     that.diskColorSection = _.first(that.diskColorSections);
 
-                    that.$nextTick(function () {
-                        that.initDiskColorGallery();
-                    });
+                    var color = _.find(that.diskColorList, {'is_default': '1'});
+                    if (typeof color === 'undefined') {
+                        color = _.first(that.diskColorList);
+                    }
+                    if (typeof color !== 'undefined') {
+                        that.setDiskColor(color);
+                        that.$nextTick(function () {
+                            that.initDiskColorGallery();
+                        });
+                    } else {
+                        console.error('Color not set ((');
+                    }
                 }
             },
             diskSize: function (val) {
@@ -340,12 +349,12 @@
             diskColorSection: function (val) {
                 var that = this;
                 var color = _.find(that.diskColorList, {'section': val.key});
-                if (typeof color !== 'undefined') {
-                    that.setDiskColor(color);
-                    that.$nextTick(function () {
-                        that.initDiskColorGallery();
-                    });
-                }
+//                if (typeof color !== 'undefined') {
+//                    that.setDiskColor(color);
+//                    that.$nextTick(function () {
+//                        that.initDiskColorGallery();
+//                    });
+//                }
             },
             carColor: function (val) {
                 var that = this;
