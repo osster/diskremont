@@ -31,3 +31,24 @@
     bottom: -2px;
   }
 }
+.promo-gray {
+  background-color: #6e6e6e;
+  color: #FFF;
+  p {
+    padding: 0.2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 74px;
+      height: 55px;
+      background-image: url(/images/cruissant.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-right: 0.5rem
+    }
+  }
+}
