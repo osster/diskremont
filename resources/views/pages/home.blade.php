@@ -278,11 +278,11 @@
             </div>
         </div>
     </div>
-    <div class="promo-gray">
-        <div class="container text-center">
-            <p>Круассаны, кофе и чай бесплатно!</p>
-        </div>
-    </div>
+    {{--<div class="promo-gray">--}}
+        {{--<div class="container text-center">--}}
+            {{--<p>Круассаны, кофе и чай бесплатно!</p>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
     <section class="bd-highlight main-services">
         <div class="container">
