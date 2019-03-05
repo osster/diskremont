@@ -163,7 +163,7 @@
                 <div class="prices-table-footer">
                     <p class="prices-table-footer-first-p">* В цену не входят услуги шиномонтажа</p>
                     <p>** Цена за полный шиномонтажный комплекс: снятие и постановка, проверка, шиномонтаж,
-                        балансировка. Для внедорожноков цена комплекса увеличивается на 500 руб.</p>
+                        балансировка. Для внедорожноков цена комплекса увеличивается на 500&nbsp;руб.</p>
                 </div>
             </div>
         </div>
@@ -183,7 +183,7 @@
                 <div class="col-12 col-md-6">
                     <div class="price-promo-large-icon price-promo-large-icon-2"></div>
                     <div class="price-promo-large-description">Новая услуга - наш курьер готов в течение дня забрать
-                        Ваши диски и доставить готовые всего за 500 рублей.
+                        Ваши диски и доставить готовые всего за 1000&nbsp;рублей.
                     </div>
                 </div>
             </div>
@@ -242,9 +242,9 @@
                                     </span>
                         </div>
                         <div class="price-kind-block-text argon">
-                            <p>Цена за 1 см. сварки литого диска - <span class="red-big">110 руб.</span></p>
-                            <p>Минимальная сумма работ - <span class="red-big">500 руб.</span></p>
-                            <p>Снятие сломанных секреток - <span class="red-big">750 руб./шт</span></p>
+                            <p>Цена за 1 см. сварки литого диска - <span class="red-big">110&nbsp;руб.</span></p>
+                            <p>Минимальная сумма работ - <span class="red-big">500&nbsp;руб.</span></p>
+                            <p>Снятие сломанных секреток - <span class="red-big">750&nbsp;руб./шт</span></p>
                             <p>Сварка других изделий из алюминия - цена договорная.</p>
                         </div>
                     </div>
@@ -256,7 +256,7 @@
                         </div>
                         <div class="price-kind-block-text">
                             <p>Цена на работы определяется мастером и составляет от <span
-                                        class="red-big">300 руб.</span> за 1 диск.</p>
+                                        class="red-big">300&nbsp;руб.</span> за 1&nbsp;диск.</p>
                         </div>
                     </div>
                     <div class="price-kind-block">
@@ -267,7 +267,7 @@
                         </div>
                         <div class="price-kind-block-text">
                             <p>Цена на работы определяется мастером и составляет от <span
-                                        class="red-big">1000 руб.</span> за 1 диск.</p>
+                                        class="red-big">1000&nbsp;руб.</span> за 1&nbsp;диск.</p>
                         </div>
                     </div>
                     <div class="price-kind-block">
@@ -277,8 +277,18 @@
                                     </span>
                         </div>
                         <div class="price-kind-block-text">
-                            <p>Стоимость повторной ошиповки зимних шин составляет <span class="red-big">20 руб.</span>
-                                за 1 шип.</p>
+                            <p>Стоимость повторной ошиповки зимних шин составляет <span class="red-big">20&nbsp;руб.</span>
+                                за 1&nbsp;шип.</p>
+                        </div>
+                    </div>
+                    <div class="price-kind-block">
+                        <div class="price-kind-block-header">
+                                    <span class="price-kind-block-header-span">
+                                        Забор - доставка дисков
+                                    </span>
+                        </div>
+                        <div class="price-kind-block-text">
+                            <p>Стоимость забора и доставки дисков курьером из любой точки Санкт-Петербурга - <span class="red-big">1000&nbsp;руб.</span></p>
                         </div>
                     </div>
                 </div>

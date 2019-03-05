@@ -221,7 +221,7 @@
                     <div class="col-12 col-md-6">
                         <div class="price-promo-large-icon price-promo-large-icon-2"></div>
                         <div class="price-promo-large-description">Новая услуга - наш курьер готов в течение дня забрать
-                            Ваши диски и доставить готовые всего за 500 рублей.
+                            Ваши диски и доставить готовые всего за 1000 рублей.
                         </div>
                     </div>
                 </div>
@@ -294,5 +294,4 @@
     -->
 
 @endsection
-
 
