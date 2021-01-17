@@ -5,13 +5,6 @@
   */
 
 /*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
-
-/*!
  * Lightbox v2.11.3
  * by Lokesh Dhakar
  *
