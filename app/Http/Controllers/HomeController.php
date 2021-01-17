@@ -208,7 +208,10 @@ class HomeController extends Controller
 
         $galleryList = $qBuilder->paginate(24);
 
-        $serviceList = DiskUslugi::all();
+        $serviceList = DiskUslugi::whereIn("id", DiskGallery::whereNotNull("disk_uslugi_id")->groupBy("disk_uslugi_id")->pluck("disk_uslugi_id"))
+            ->select(["disk_uslugi.id", "disk_uslugi.name"])
+            ->groupBy(["disk_uslugi.id", "disk_uslugi.name"])
+            ->get();
 
         $colorList = [];
         foreach ($disk_color_sections_options as $key => $name) {
@@ -257,7 +260,7 @@ class HomeController extends Controller
             return response()->json(["success" => "FAIL", "data" => $inp, "errors" => $val->errors()]);
         } else {
 
-            Mail::to(env("MAIL_TO_ADDRESS", "info@diskremont.ru"))
+            Mail::to(env("MAIL_TO_ADDRESS", "mail@diskremont.ru"))
                 ->send(new CallbackFormSubmitted($inp));
 
             if (count(Mail::failures()) > 0) {
@@ -297,7 +300,7 @@ class HomeController extends Controller
             return response()->json(["success" => "FAIL", "data" => $inp, "errors" => $val->errors()]);
         } else {
 
-            Mail::to(env("MAIL_TO_ADDRESS", "info@diskremont.ru"))
+            Mail::to(env("MAIL_TO_ADDRESS", "mail@diskremont.ru"))
                 ->send(new CalcFormSubmitted($inp));
 
             if (count(Mail::failures()) > 0) {

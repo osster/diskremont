@@ -31,7 +31,7 @@ class CalcFormSubmitted extends Mailable
     public function build()
     {
         return $this->view('mails.CalcFormSubmitted')
-            ->subject("Новая заказ с сайта")
+            ->subject("Новый заказ с сайта")
             ->with(["data" => $this->data]);
     }
 }

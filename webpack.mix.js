@@ -19,7 +19,7 @@ mix.js([
     .criticalCss({
         enabled: mix.inProduction(),
         paths: {
-            base: 'https://disk.devel.by/',
+            base: 'https://diskremont.ru/',
             templates: './public/css/'
         },
         urls: [

@@ -105,51 +105,39 @@
                       transform="translate(864.376 675.708) rotate(-24)"/>
             </g>
         </symbol>
-        <symbol id="prokatka" xmlns="http://www.w3.org/2000/svg" viewBox="4562 630 75 75">
+        <symbol id="prokatka" xmlns="http://www.w3.org/2000/svg" viewBox="4554.928 625.524 88.821 83.861">
             <g transform="translate(3950.006 -34.573)">
-                <g id="ray">
-                    <path fill="none" stroke="currentColor" stroke-width="3px"
-                          d="M645.654,677.081l-.66,13.492a11,11,0,0,0-2,1,15.741,15.741,0,0,0-1.717,1.335l-11.8-6.335"/>
-                    <path fill="none" stroke="currentColor" stroke-width="3px"
-                          d="M634.994,689.573a24.044,24.044,0,0,1,4.729-4,17.685,17.685,0,0,1,5.271-2"/>
+                <g id="ray" transform="translate(621.372 666.9)">
+                    <path class="cls-1" fill="none" stroke="currentColor" stroke-width="2px" d="M652.256,677.081l-.929,19a15.494,15.494,0,0,0-2.816,1.408,22.162,22.162,0,0,0-2.418,1.88l-16.615-8.921" transform="translate(-629.478 -677.081)"/>
+                    <path class="cls-1" fill="none" stroke="currentColor" stroke-width="2px" d="M634.994,692.022a33.862,33.862,0,0,1,6.659-5.633,24.9,24.9,0,0,1,7.423-2.816" transform="translate(-627.227 -674.431)"/>
                 </g>
-                <g transform="translate(916.83 -215.734) rotate(59)">
-                    <path fill="none" stroke="currentColor" stroke-width="3px"
-                          d="M645.654,677.081l-.66,13.492a11,11,0,0,0-2,1,15.741,15.741,0,0,0-1.717,1.335l-11.8-6.335"/>
-                    <path fill="none" stroke="currentColor" stroke-width="3px"
-                          d="M634.994,689.573a24.044,24.044,0,0,1,4.729-4,17.685,17.685,0,0,1,5.271-2"/>
+                <g id="ray-2" data-name="ray" transform="translate(665.286 660.528) rotate(59)">
+                    <path class="cls-1" fill="none" stroke="currentColor" stroke-width="2px" d="M22.778,0l-.929,19a15.492,15.492,0,0,0-2.816,1.408,22.169,22.169,0,0,0-2.418,1.88L0,13.366" transform="translate(0)"/>
+                    <path class="cls-1" fill="none" stroke="currentColor" stroke-width="2px" d="M0,8.449A33.858,33.858,0,0,1,6.659,2.816,24.9,24.9,0,0,1,14.082,0" transform="translate(7.768 9.142)"/>
                 </g>
-                <g transform="translate(1578.044 474.948) rotate(119)">
-                    <path fill="none" stroke="currentColor" stroke-width="3px"
-                          d="M645.654,677.081l-.66,13.492a11,11,0,0,0-2,1,15.741,15.741,0,0,0-1.717,1.335l-11.8-6.335"/>
-                    <path fill="none" stroke="currentColor" stroke-width="3px"
-                          d="M634.994,689.573a24.044,24.044,0,0,1,4.729-4,17.685,17.685,0,0,1,5.271-2"/>
+                <g id="ray-3" data-name="ray" transform="translate(693.472 695.295) rotate(119)">
+                    <path class="cls-1" fill="none" stroke="currentColor" stroke-width="2px" d="M22.778,0l-.929,19a15.492,15.492,0,0,0-2.816,1.408,22.169,22.169,0,0,0-2.418,1.88L0,13.366" transform="translate(0)"/>
+                    <path class="cls-1" fill="none" stroke="currentColor" stroke-width="2px" d="M0,8.449A33.858,33.858,0,0,1,6.659,2.816,24.9,24.9,0,0,1,14.082,0" transform="translate(7.768 9.142)"/>
                 </g>
-                <g transform="translate(1273.907 1426.21) rotate(-178)">
-                    <path fill="none" stroke="currentColor" stroke-width="3px"
-                          d="M645.654,677.081l-.66,13.492a11,11,0,0,0-2,1,15.741,15.741,0,0,0-1.717,1.335l-11.8-6.335"/>
-                    <path fill="none" stroke="currentColor" stroke-width="3px"
-                          d="M634.994,689.573a24.044,24.044,0,0,1,4.729-4,17.685,17.685,0,0,1,5.271-2"/>
+                <g id="ray-4" data-name="ray" transform="translate(676.24 738.001) rotate(-178)">
+                    <path class="cls-1" fill="none" stroke="currentColor" stroke-width="2px" d="M22.778,0l-.929,19a15.494,15.494,0,0,0-2.816,1.408,22.162,22.162,0,0,0-2.418,1.88L0,13.366"/>
+                    <path class="cls-1" fill="none" stroke="currentColor" stroke-width="2px" d="M0,8.449A33.861,33.861,0,0,1,6.659,2.816,24.9,24.9,0,0,1,14.082,0" transform="translate(7.768 9.142)"/>
                 </g>
-                <g transform="translate(-283.115 913.185) rotate(-60)">
-                    <path fill="none" stroke="currentColor" stroke-width="3px"
-                          d="M645.654,677.081l-.66,13.492a11,11,0,0,0-2,1,15.741,15.741,0,0,0-1.717,1.335l-11.8-6.335"/>
-                    <path fill="none" stroke="currentColor" stroke-width="3px"
-                          d="M634.994,689.573a24.044,24.044,0,0,1,4.729-4,17.685,17.685,0,0,1,5.271-2"/>
+                <g id="ray-5" data-name="ray" transform="translate(605.201 708.441) rotate(-60)">
+                    <path class="cls-1" fill="none" stroke="currentColor" stroke-width="2px" d="M22.778,0l-.929,19a15.492,15.492,0,0,0-2.816,1.408,22.169,22.169,0,0,0-2.418,1.88L0,13.366"/>
+                    <path class="cls-1" fill="none" stroke="currentColor" stroke-width="2px" d="M0,8.449A33.858,33.858,0,0,1,6.659,2.816,24.9,24.9,0,0,1,14.082,0" transform="translate(7.768 9.142)"/>
                 </g>
-                <g transform="translate(365.657 1615.18) rotate(-120)">
-                    <path fill="none" stroke="currentColor" stroke-width="3px"
-                          d="M645.654,677.081l-.66,13.492a11,11,0,0,0-2,1,15.741,15.741,0,0,0-1.717,1.335l-11.8-6.335"/>
-                    <path fill="none" stroke="currentColor" stroke-width="3px"
-                          d="M634.994,689.573a24.044,24.044,0,0,1,4.729-4,17.685,17.685,0,0,1,5.271-2"/>
+                <g id="ray-6" data-name="ray" transform="translate(632.369 743.524) rotate(-120)">
+                    <path class="cls-1" fill="none" stroke="currentColor" stroke-width="2px" d="M22.778,0l-.929,19a15.492,15.492,0,0,0-2.816,1.408,22.169,22.169,0,0,0-2.418,1.88L0,13.366"/>
+                    <path class="cls-1" fill="none" stroke="currentColor" stroke-width="2px" d="M0,8.449A33.858,33.858,0,0,1,6.659,2.816,24.9,24.9,0,0,1,14.082,0" transform="translate(7.768 9.142)"/>
                 </g>
-                <g stroke="currentColor" stroke-width="3px" fill="none" transform="translate(642.994 695.573)">
-                    <circle stroke="none" cx="6.5" cy="6.5" r="6.5"/>
-                    <circle fill="none" cx="6.5" cy="6.5" r="5"/>
+                <g class="cls-2" fill="transparent" stroke="currentColor" stroke-width="2px" transform="translate(642.994 695.573)">
+                    <circle class="cls-4" stroke="none" cx="6.5" cy="6.5" r="6.5"/>
+                    <circle class="cls-5" fill="none" cx="6.5" cy="6.5" r="5.5"/>
                 </g>
-                <g stroke="currentColor" stroke-width="13px" fill="none" transform="translate(611.994 664.573)">
-                    <circle stroke="none" cx="37.5" cy="37.5" r="37.5"/>
-                    <circle fill="none" cx="37.5" cy="37.5" r="31"/>
+                <g class="cls-3" fill="transparent" stroke="currentColor" stroke-width="4px" transform="translate(611.994 664.573)">
+                    <circle class="cls-4" stroke="none" cx="37.5" cy="37.5" r="37.5"/>
+                    <circle class="cls-5" fill="none" cx="37.5" cy="37.5" r="35.5"/>
                 </g>
             </g>
         </symbol>
@@ -161,6 +149,93 @@
                           d="M1042,670.6h34a6.65,6.65,0,0,1,2,1.4,5.026,5.026,0,0,1,1,2v33s-1.808,8.232-6.558,12.482S1060,724,1060,724s-8.75-.268-14-4.518-6.62-12.122-6.62-12.122V674a2.827,2.827,0,0,1,.62-2A6.65,6.65,0,0,1,1042,670.6Z"/>
                     <path fill="none" stroke="currentColor" stroke-width="3px"
                           d="M1045,719s-5.376,2.655-9.509,5a19.308,19.308,0,0,0-5.988,5,11.657,11.657,0,0,0-2.5,4,26,26,0,0,0-1,5h66a26,26,0,0,0-1-5,13.449,13.449,0,0,0-2.252-4,25.06,25.06,0,0,0-6.748-5.446c-4.539-2.324-9-4.554-9-4.554"/>
+                </g>
+            </g>
+        </symbol>
+        <symbol id="oshipovka" xmlns="http://www.w3.org/2000/svg" viewBox="5176.35 631.069 75.765 75.764">
+            <g data-name="icon hranenie" transform="translate(3759 5)">
+                <g id="icon_ошиповка" data-name="icon ошиповка" transform="translate(1417.35 626.069)">
+                    <g id="Rectangle_274" data-name="Rectangle 274" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="translate(34.852)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_282" data-name="Rectangle 282" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="matrix(0.921, 0.391, -0.391, 0.921, 49.894, 1.827)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_284" data-name="Rectangle 284" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="matrix(-0.921, 0.391, -0.391, -0.921, 55.473, 71.569)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_286" data-name="Rectangle 286" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="translate(3.894 54.883) rotate(-112)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_288" data-name="Rectangle 288" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="translate(1.623 26.501) rotate(-68)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_279" data-name="Rectangle 279" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="matrix(0.719, 0.695, -0.695, 0.719, 62.017, 8.527)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_281" data-name="Rectangle 281" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="matrix(-0.695, 0.719, -0.719, -0.695, 67.237, 62.018)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_276" data-name="Rectangle 276" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="translate(0 40.913) rotate(-90)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_275" data-name="Rectangle 275" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="translate(34.852 65.662)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_283" data-name="Rectangle 283" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="matrix(0.921, 0.391, -0.391, 0.921, 24.238, 62.27)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_285" data-name="Rectangle 285" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="matrix(-0.921, 0.391, -0.391, -0.921, 29.817, 11.126)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_287" data-name="Rectangle 287" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="translate(64.775 30.285) rotate(-112)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_289" data-name="Rectangle 289" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="translate(62.504 51.099) rotate(-68)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_278" data-name="Rectangle 278" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="matrix(0.719, 0.695, -0.695, 0.719, 16.404, 55.76)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_280" data-name="Rectangle 280" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="matrix(-0.695, 0.719, -0.719, -0.695, 20.004, 16.405)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                    <g id="Rectangle_277" data-name="Rectangle 277" class="cls-1" stroke-width="2px" stroke="currentColor" fill="none" transform="translate(65.662 40.913) rotate(-90)">
+                        <rect class="cls-3" stroke="none" width="6.061" height="10.102"/>
+                        <rect class="cls-4" fill="none" x="1" y="1" width="4.061" height="8.102"/>
+                    </g>
+                </g>
+                <g id="Ellipse_39" data-name="Ellipse 39" class="cls-2" stroke-width="4px" stroke="currentColor" fill="none" transform="translate(1423.886 632.882)">
+                    <circle class="cls-3" stroke="none" cx="31.453" cy="31.453" r="31.453"/>
+                    <circle class="cls-4" fill="none" cx="31.453" cy="31.453" r="29.453"/>
+                </g>
+            </g>
+        </symbol>
+        <symbol id="storage" xmlns="http://www.w3.org/2000/svg" viewBox="5176.592 628.23 72.65 70.95">
+            <g id="icon_storage" transform="translate(3950)">
+                <g class="cls-1" stroke="none" fill="none" transform="translate(1240.811 654.062)">
+                    <path class="cls-4" stroke="none" fill="none" d="M 22.5588321685791 44.11755752563477 C 19.64797210693359 44.11755752563477 16.8247013092041 43.54768753051758 14.16747188568115 42.42376708984375 C 11.60037231445313 41.33798599243164 9.294682502746582 39.78337860107422 7.314432144165039 37.80313873291016 C 5.334192276000977 35.82289505004883 3.779582262039185 33.51720809936523 2.693792104721069 30.95011711120605 C 1.569872140884399 28.29288673400879 1.000002145767212 25.46963691711426 1.000002145767212 22.55877685546875 C 1.000002145767212 19.64791679382324 1.569872140884399 16.82466697692871 2.693792104721069 14.16743659973145 C 3.779582262039185 11.60034656524658 5.334192276000977 9.294656753540039 7.314432144165039 7.314416885375977 C 9.294682502746582 5.334177017211914 11.60037231445313 3.779566764831543 14.16747188568115 2.693786859512329 C 16.8247013092041 1.569866895675659 19.64797210693359 0.9999968409538269 22.5588321685791 0.9999968409538269 C 25.46969223022461 0.9999968409538269 28.2929630279541 1.569866895675659 30.95019149780273 2.693786859512329 C 33.51729202270508 3.779566764831543 35.82298278808594 5.334177017211914 37.80323028564453 7.314416885375977 C 39.78347396850586 9.294656753540039 41.33808135986328 11.60034656524658 42.42387390136719 14.16743659973145 C 43.54779052734375 16.82466697692871 44.11766052246094 19.64791679382324 44.11766052246094 22.55877685546875 C 44.11766052246094 25.46963691711426 43.54779052734375 28.29288673400879 42.42387390136719 30.95011711120605 C 41.33808135986328 33.51720809936523 39.78347396850586 35.82289505004883 37.80323028564453 37.80313873291016 C 35.82298278808594 39.78337860107422 33.51729202270508 41.33798599243164 30.95019149780273 42.42376708984375 C 28.2929630279541 43.54768753051758 25.46969223022461 44.11755752563477 22.5588321685791 44.11755752563477 Z"/>
+                    <path class="cls-5" fill="none" stroke="currentColor" stroke-width="2px" d="M 22.5588321685791 43.11755752563477 C 25.33514213562012 43.11755752563477 28.02734184265137 42.57426834106445 30.56064224243164 41.50276565551758 C 33.00854110717773 40.4673957824707 35.20739364624023 38.98475646972656 37.09612274169922 37.09602737426758 C 38.9848518371582 35.20729827880859 40.46750259399414 33.00845718383789 41.50287246704102 30.56056594848633 C 42.57437133789063 28.02726745605469 43.11766052246094 25.3350772857666 43.11766052246094 22.55877685546875 C 43.11766052246094 19.7824764251709 42.57437133789063 17.09028625488281 41.50287246704102 14.55698680877686 C 40.46750259399414 12.10909652709961 38.9848518371582 9.910256385803223 37.09612274169922 8.021527290344238 C 35.20739364624023 6.132796764373779 33.00854110717773 4.65015697479248 30.56064224243164 3.614786863327026 C 28.02734184265137 2.543286800384521 25.33514213562012 1.999996900558472 22.5588321685791 1.999996900558472 C 19.78252220153809 1.999996900558472 17.09032249450684 2.543286800384521 14.55702209472656 3.614786863327026 C 12.10912227630615 4.65015697479248 9.910272598266602 6.132796764373779 8.021542549133301 8.021527290344238 C 6.132812023162842 9.910256385803223 4.650162220001221 12.10909652709961 3.614792108535767 14.55698680877686 C 2.543292284011841 17.09028625488281 2.000002145767212 19.7824764251709 2.000002145767212 22.55877685546875 C 2.000002145767212 25.3350772857666 2.543292284011841 28.02726745605469 3.614792108535767 30.56056594848633 C 4.650162220001221 33.00845718383789 6.132812023162842 35.20729827880859 8.021542549133301 37.09602737426758 C 9.910272598266602 38.98475646972656 12.10912227630615 40.4673957824707 14.55702209472656 41.50276565551758 C 17.09032249450684 42.57426834106445 19.78252220153809 43.11755752563477 22.5588321685791 43.11755752563477 M 22.5588321685791 45.11755752563477 C 10.09993171691895 45.11755752563477 2.168579158023931e-06 35.01764678955078 2.168579158023931e-06 22.55877685546875 C 2.168579158023931e-06 10.09990692138672 10.09993171691895 -3.144531319776434e-06 22.5588321685791 -3.144531319776434e-06 C 35.01773071289063 -3.144531319776434e-06 45.11766052246094 10.09990692138672 45.11766052246094 22.55877685546875 C 45.11766052246094 35.01764678955078 35.01773071289063 45.11755752563477 22.5588321685791 45.11755752563477 Z"/>
+                </g>
+                <path class="cls-2" fill="none" stroke="currentColor" stroke-width="4px" d="M5661.822,673.555V630.89l35.064-25.611,33.585,25.611v42.664" transform="translate(-4433.23 25.445)"/>
+                <g class="cls-3" stroke="currentColor" fill="#fff" stroke-width="2px" transform="translate(1247.409 661.348)">
+                    <ellipse class="cls-4" stroke="none" cx="15.618" cy="15.618" rx="15.618" ry="15.618"/>
+                    <ellipse class="cls-6" fill="none" cx="15.618" cy="15.618" rx="14.618" ry="14.618"/>
                 </g>
             </g>
         </symbol>

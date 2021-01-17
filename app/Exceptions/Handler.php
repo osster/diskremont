@@ -52,7 +52,11 @@ class Handler extends ExceptionHandler
     {
         //check if exception is an instance of ModelNotFoundException.
         //or NotFoundHttpException
-        if ($exception instanceof ModelNotFoundException or $exception instanceof NotFoundHttpException) {
+        if ($exception instanceof ModelNotFoundException
+            or $exception instanceof NotFoundHttpException
+            or $exception instanceof \InvalidArgumentException
+            or $exception instanceof \ErrorException
+        ) {
             // ajax 404 json feedback
             if ($request->ajax()) {
                 return response()->json(['error' => 'Not Found'], 404);

@@ -486,10 +486,10 @@
                     total: that.totalPrice
                 };
 
-                console.log('data', data, orderForm);
+                //console.log('data', data, orderForm);
 
                 axios.post('/order.html', data).then((response) => {
-                    console.log(response.data);
+                    //console.log(response.data);
 
                     const resp = response.data;
                     if (resp.success != 'OK') {
@@ -506,6 +506,11 @@
                             'error'
                         );
                     } else {
+                        if (typeof yaCounter1499499 !== 'undefined') {
+                            yaCounter1499499.reachGoal("form");
+                        } else {
+                            console.error("Яндекс счётчик не определён.");
+                        }
                         swal(
                             'Спасибо за заказ!',
                             '<p>мы свяжемся с вами в ближайшее время</p>',
