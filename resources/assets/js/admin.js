@@ -1,6 +1,6 @@
 window._ = require('lodash');
 
-window.Vue = require('vue');
+window.Vue = require('vue').default;
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -8,7 +8,7 @@ window.Vue = require('vue');
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = require('axios');
+window.axios = require('axios').default;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -32,9 +32,9 @@ if (token) {
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('car-to-png-component', require('./components/Car2PngComponent.vue'));
-Vue.component('wheel-to-png-component', require('./components/Wheel2PngComponent.vue'));
-Vue.component('disk-gallery-upload-component', require('./components/DiskGalleryUploadComponent.vue'));
+Vue.component('car-to-png-component', require('./components/Car2PngComponent.vue').default);
+Vue.component('wheel-to-png-component', require('./components/Wheel2PngComponent.vue').default);
+Vue.component('disk-gallery-upload-component', require('./components/DiskGalleryUploadComponent.vue').default);
 
 import store from './store/store';
 

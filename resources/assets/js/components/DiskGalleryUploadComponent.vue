@@ -100,7 +100,7 @@
             getDataLists: function () {
                 var that = this;
                 //gallery-lists
-                axios.get('/admin/gallery-lists').then((response) => {
+                axios.get('/disk-admin/gallery-lists').then((response) => {
                     //console.log(response.data)
                     that.colorList = response.data.data.colors;
                     that.serviceList = response.data.data.services;

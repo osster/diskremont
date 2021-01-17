@@ -102,7 +102,7 @@
                                         @endcan
                                         @foreach($dataType->browseRows as $row)
                                             <td>
-                                                <?php $options = json_decode($row->details); ?>
+                                                <?php $options = $row->details; ?>
                                                 @if($row->type == 'image')
                                                     <img src="@if( !filter_var($data->{$row->field}, FILTER_VALIDATE_URL)){{ Voyager::image( $data->{$row->field} ) }}@else{{ $data->{$row->field} }}@endif" style="width:100px">
                                                 @elseif($row->type == 'relationship')
@@ -190,8 +190,10 @@
                                             </td>
                                         @endforeach
                                         <td class="no-sort no-click" id="bread-actions">
-                                            @foreach(Voyager::actions() as $action)
-                                                @include('voyager::bread.partials.actions', ['action' => $action])
+                                            @foreach($actions as $action)
+                                                @if (!method_exists($action, 'massAction'))
+                                                    @include('voyager::bread.partials.actions', ['action' => $action])
+                                                @endif
                                             @endforeach
                                         </td>
                                     </tr>
