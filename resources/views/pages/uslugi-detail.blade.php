@@ -221,7 +221,7 @@
                     <div class="col-12 col-md-6">
                         <div class="price-promo-large-icon price-promo-large-icon-2"></div>
                         <div class="price-promo-large-description">Новая услуга - наш курьер готов в течение дня забрать
-                            Ваши диски и доставить готовые всего за 500 рублей.
+                            Ваши диски и доставить готовые всего за 1000 рублей.
                         </div>
                     </div>
                 </div>
@@ -234,6 +234,23 @@
                 <section class="main-photoalbum">
                     <div class="main-photoalbum-wrapper text-center">
                         <h1 class="text-center">Примеры</h1>
+                        <div class="wch-descr-wrapper d-flex justify-content-center">
+                            <div class="col-md-4 col-12">
+                                <video class="pr-0 pr-md-3 pb-3" controls="controls" width="100%" height="320">
+                                    <source src="storage/disk-uslugi/video/video01.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <video class="pr-0 pr-md-3 pb-3" controls="controls" width="100%" height="320">
+                                    <source src="storage/disk-uslugi/video/video02.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="col-md-4 col-12">
+                                <video class="pr-0 pr-md-3 pb-3" controls="controls" width="100%" height="320">
+                                    <source src="storage/disk-uslugi/video/video03.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
                         <div class="row main-photoalbum-row">
                             @foreach($gallery as $item)
                                 <div class="col-lg-3 col-md-4 col-6 thumb">
@@ -277,5 +294,4 @@
     -->
 
 @endsection
-
 

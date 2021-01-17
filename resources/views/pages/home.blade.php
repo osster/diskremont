@@ -278,11 +278,17 @@
             </div>
         </div>
     </div>
+    {{--<div class="promo-gray">--}}
+        {{--<div class="container text-center">--}}
+            {{--<p>Круассаны, кофе и чай бесплатно!</p>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
     <section class="bd-highlight main-services">
         <div class="container">
             <div class="row">
-                @foreach($uslugi as $usluga)
+                @foreach($uslugi as $i=>$usluga)
+                    @if ($i<6)
                     <div class="main-services-block col-4 col-md-2">
                         <a class="main-services-link" href="{{ url("/" . $usluga->slug . ".html") }}">
                             <div class="main-services-img mx-auto">
@@ -293,6 +299,7 @@
                             <p class="main-services-label">{{ $usluga->name }}</p>
                         </a>
                     </div>
+                    @endif
                 @endforeach
             </div>
         </div>
@@ -326,7 +333,8 @@
         <section class="main-services-links">
             <div class="h1 text-center">Наши услуги</div>
             <div class="main-services-links-block d-flex flex-wrap justify-content-center">
-                @foreach($uslugi as $usluga)
+                @foreach($uslugi as $i=>$usluga)
+                    @if ($i<6)
                     <article class="card text-center">
                         <img class="card-img" src="{{Voyager::image($usluga->thumbnail('cropped')) }}"
                              alt="{{ $usluga->name }}">
@@ -339,6 +347,7 @@
                             </a>
                         </div>
                     </article>
+                    @endif
                 @endforeach
             </div>
         </section>

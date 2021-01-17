@@ -1,9 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="4974.357 633.103 69.285 70.397">
-  <g id="svarka" transform="translate(3950 -36)">
-    <rect id="visor" fill="currentColor" width="30" height="17" transform="translate(1044 682)"/>
-    <g id="person">
-      <path id="Path_77" data-name="Path 77" fill="none" stroke="currentColor" stroke-width="3px" d="M1042,670.6h34a6.65,6.65,0,0,1,2,1.4,5.026,5.026,0,0,1,1,2v33s-1.808,8.232-6.558,12.482S1060,724,1060,724s-8.75-.268-14-4.518-6.62-12.122-6.62-12.122V674a2.827,2.827,0,0,1,.62-2A6.65,6.65,0,0,1,1042,670.6Z"/>
-      <path id="Path_78" data-name="Path 78" fill="none" stroke="currentColor" stroke-width="3px" d="M1045,719s-5.376,2.655-9.509,5a19.308,19.308,0,0,0-5.988,5,11.657,11.657,0,0,0-2.5,4,26,26,0,0,0-1,5h66a26,26,0,0,0-1-5,13.449,13.449,0,0,0-2.252-4,25.06,25.06,0,0,0-6.748-5.446c-4.539-2.324-9-4.554-9-4.554"/>
-    </g>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="4970.835 629.835 77.165 77.165">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.64;
+        fill: url(#pattern);
+      }
+
+      .cls-2 {
+        fill: #575757;
+      }
+    </style>
+    <pattern id="pattern" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" viewBox="0 0 225 225">
+      <image width="225" height="225" xlink:href="data:image/png;base64,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"/>
+    </pattern>
+  </defs>
+  <g id="svarka" transform="translate(3950 -36)">
+    <path id="person" class="cls-1" d="M0,0H77.165V77.165H0Z" transform="translate(1020.835 665.835)"/>
+    <rect id="visor" class="cls-2" width="30" height="17" transform="translate(1044 682)"/>
+  </g>
+</svg>
