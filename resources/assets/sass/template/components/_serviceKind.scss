@@ -28,6 +28,24 @@ $lg-kind: 1200px;
   margin: 4% 0;
 }
 
+.wch-block-head__before {
+  content: "";
+  position: absolute;
+  left: -156px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90px;
+  height: 90px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  @include mobile-all() {
+    left: -60px;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .wch-block-head {
   display: flex;
   align-items: center;
@@ -63,52 +81,38 @@ $lg-kind: 1200px;
   }
   &-1 {
     &:before {
-      content: "";
-      position: absolute;
-      left: -156px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 90px;
-      height: 90px;
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-image: url('../img/choise1.png');
-      @include mobile-all() {
-        left: -60px;
-        background-size: contain;
-        width: 40px;
-        height: 40px;
-      }
+      @extend .wch-block-head__before;
+      background-image: url('../../../img/choise1.png');
     }
   }
   &-2 {
     &:before {
-      @extend .wch-block-head-1:before;
-      background-image: url('../img/choise3.png');
+      @extend .wch-block-head__before;
+      background-image: url('../../../img/choise3.png');
     }
   }
   &-3 {
     &:before {
-      @extend .wch-block-head-1:before;
-      background-image: url('../img/choise4.png');
+      @extend .wch-block-head__before;
+      background-image: url('../../../img/choise4.png');
     }
   }
   &-4 {
     &:before {
-      @extend .wch-block-head-1:before;
-      background-image: url('../img/choise5.png');
+      @extend .wch-block-head__before;
+      background-image: url('../../../img/choise5.png');
     }
   }
   &-5 {
     &:before {
-      @extend .wch-block-head-1:before;
-      background-image: url('../img/choise6.png');
+      @extend .wch-block-head__before;
+      background-image: url('../../../img/choise6.png');
     }
   }
   &-6 {
     &:before {
-      @extend .wch-block-head-1:before;
-      background-image: url('../img/choise7.png');
+      @extend .wch-block-head__before;
+      background-image: url('../../../img/choise7.png');
     }
   }
   &-text {
@@ -171,7 +175,7 @@ $lg-kind: 1200px;
       display: none;
     }
     //&:after {
-    //  background-image: url('../img/stripe-white.png');
+    //  background-image: url('../../../img/stripe-white.png');
     //}
   }
   &-head {
@@ -189,20 +193,20 @@ $lg-kind: 1200px;
   }
   &-head-1 {
     &:before {
-      @extend .wch-block-head-1:before;
-      background-image: url('../img/choise2.png');
+      @extend .wch-block-head__before;
+      background-image: url('../../../img/choise2.png');
     }
   }
   &-head-2 {
     &:before {
-      @extend .wch-block-head-1:before;
-      background-image: url('../img/choise8.png');
+      @extend .wch-block-head__before;
+      background-image: url('../../../img/choise8.png');
     }
   }
   &-head-3 {
     &:before {
-      @extend .wch-block-head-1:before;
-      background-image: url('../img/choise9.png');
+      @extend .wch-block-head__before;
+      background-image: url('../../../img/choise9.png');
     }
   }
 }
@@ -278,7 +282,7 @@ $lg-kind: 1200px;
   &-icon {
     content: "";
     display: inline-block;
-    background: transparent url('../img/new.png') center center no-repeat;
+    background: transparent url('../../../img/new.png') center center no-repeat;
     -webkit-background-size: contain;
     background-size: contain;
     width: 90px;

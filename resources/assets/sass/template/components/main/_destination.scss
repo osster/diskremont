@@ -1,6 +1,6 @@
 .main-destination {
   position: relative;
-  background: url("../img/bg-addresses.jpg");
+  background: url("../../../../img/bg-addresses.jpg");
   padding-top: 100px;
   padding-bottom: 100px;
   border-bottom: 8px solid $grey-6e;
@@ -85,7 +85,7 @@
       }
       &:before {
         @include pseudo-el-address;
-        background-image: url('../img/address.png');
+        background-image: url('../../../../img/address.png');
         @include mobile-all() {
           background-size: 35%;
         }
@@ -98,7 +98,7 @@
       }
       &:before {
         @include pseudo-el-address;
-        background-image: url('../img/phone.png');
+        background-image: url('../../../../img/phone.png');
         @include mobile-all() {
           background-size: 45%;
         }
@@ -111,7 +111,7 @@
       }
       &:before {
         @include pseudo-el-address;
-        background-image: url('../img/open.png');
+        background-image: url('../../../../img/open.png');
 
         @include mobile-all() {
           background-size: 60%;

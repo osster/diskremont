@@ -14,7 +14,7 @@ $big-box-shadow-block: 6px 6px 6px rgba(0, 0, 0, 0.16);
 $lg: 992px;
 $md: 768px;
 $sm: 576px;
-$main-arrow: url('../img/arrow.svg');
+$main-arrow: url('../../../img/arrow.svg');
 
 @function rem($pixels, $context: $main-font) {
   @return #{$pixels / $context}rem

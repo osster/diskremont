@@ -7,7 +7,9 @@
 require('./bootstrap');
 require('./template/main');
 
-window.Vue = require('vue');
+window.Vue = require('vue').default;
+
+// import Vue from 'vue';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,15 +17,15 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('form-component', require('./components/FormComponent.vue'));
-Vue.component('car-component', require('./components/CarComponent.vue'));
+Vue.component('form-component', require('./components/FormComponent.vue').default);
+Vue.component('car-component', require('./components/CarComponent.vue').default);
 
 import bFormSlider from 'vue-bootstrap-slider';
 
 Vue.use(bFormSlider);
 
 import store from './store/store';
-import hlp from 'hlp';
+// import hlp from 'hlp';
 
 var appElement = document.querySelector('#calc-app');
 
@@ -39,13 +41,13 @@ if (appElement) {
             '    </div>',
             mounted: function () {
                 var that = this;
-                if (hlp.isObject(calcConfig) && hlp.isObject(calcConfig.values)) {
+                if (calcConfig && typeof calcConfig.values === 'object') {
                     that.$store.commit('setValues', calcConfig.values);
                 }
-                if (hlp.isObject(calcConfig) && parseInt(calcConfig.moveDuration) > 0) {
+                if (calcConfig && typeof calcConfig.moveDuration === 'number' && calcConfig.moveDuration > 0) {
                     that.$store.commit('setMoveDuration', calcConfig.moveDuration);
                 }
-                if (hlp.isObject(calcConfig) && typeof calcConfig.calcFunction === 'function') {
+                if (calcConfig && typeof calcConfig.calcFunction === 'function') {
                     that.$store.commit('setCalcFunction', calcConfig.calcFunction);
                 }
             },

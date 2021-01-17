@@ -34,7 +34,7 @@
         display: inline-block;
         width: 15px;
         height: 9px;
-        background-image: url('../img/down.png');
+        background-image: url('../../../../img/down.png');
         background-repeat: no-repeat;
       }
     }
@@ -63,7 +63,7 @@
   }
 }
 .carousel-control-prev-icon {
-  background-image: url('../img/after.png');
+  background-image: url('../../../../img/after.png');
   transform: rotate(180deg);
 }
 .carousel-control-next-icon {
