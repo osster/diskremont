@@ -30,6 +30,12 @@ return [
                     base_path('vendor'),
                     base_path('node_modules'),
                     base_path('tmp'),
+                    base_path('db-dumps'),
+                    base_path('.git'),
+                    base_path('.idea'),
+                    base_path('.editorconfig'),
+                    base_path('.env'),
+                    base_path('.env_prod'),
                 ],
 
                 /*

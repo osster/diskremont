@@ -6,6 +6,9 @@
 /.idea
 /.vagrant
 /tmp
+/db-dumps
+/web
+/stats
 Homestead.json
 Homestead.yaml
 npm-debug.log
