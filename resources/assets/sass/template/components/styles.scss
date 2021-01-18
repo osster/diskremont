@@ -60,6 +60,7 @@ img {
     &:after {
       @include glare(#6c6c6c, 24%, 100%, 17deg, -55%);
       left: 15px;
+      z-index: -1;
     }
     &:hover:after {
       left: -200%;
@@ -71,6 +72,7 @@ img {
       @include glare(#d82f2f, 61%, 100%, 17deg, -58%);
       width: 72%;
       left: 15px;
+      z-index: -1;
     }
     &:hover {
       background-color: $reb-btn-color;
@@ -133,6 +135,7 @@ h1 {
 @import "main";
 @import "services";
 @import "prices";
+@import "header";
 @import "footer";
 @import "serviceKind";
 @import "gallery";

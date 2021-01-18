@@ -183,8 +183,8 @@ class HomeController extends Controller
         // Get Color Options
         $DT_calc_disk_colors = DataType::where("name", "calc_disk_colors")->with("rows")->first();
         $sectionRow = $DT_calc_disk_colors->rows->where("field", "section")->first();
-        $sectionOptions = json_decode($sectionRow->details, true);
-        $disk_color_sections_options = isset($sectionOptions["options"]) ? $sectionOptions["options"] : [];
+        $sectionOptions = $sectionRow->details;
+        $disk_color_sections_options = $sectionOptions->options ?? [];
 
         if ($service_id == 0) {
             $usluga = DiskUslugi::orderBy('sort', 'ASC')->first();

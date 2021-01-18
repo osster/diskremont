@@ -5,12 +5,24 @@
   &:after {
     @include black-img;
   }
+
+  &.price-promo-one {
+    .card-img-overlay {
+      max-width: 600px;
+    }
+    .price-promo-large-description {
+      font-size: 24px;
+    }
+    &::after {
+      max-width: 800px;
+    }
+  }
+
   .card {
     height: 100%;
-    -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: 50%;
   }
   .card-img {
     height: 100%;

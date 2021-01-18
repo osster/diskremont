@@ -1,0 +1,29 @@
+.header-soc {
+    display: flex;
+    position: absolute;
+}
+
+.soc {
+    &-viber {
+        background: url(../../../img/viber.png) no-repeat;
+        display: block;
+        height: 36px;
+        width: 36px;
+        margin-left: 15px;
+        background-size: contain;
+    }
+
+    &-watsapp {
+        background: url(../../../img/watsapp.png) no-repeat;
+        display: block;
+        height: 36px;
+        width: 36px;
+        margin-left: 15px;
+        background-size: contain;
+    }
+}
+
+.header-info-call {
+    font-size: 16px;
+    padding: 5px 30px;
+}
