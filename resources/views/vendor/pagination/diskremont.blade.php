@@ -1,7 +1,6 @@
 @if ($paginator->hasPages())
     <nav class="gal-pagination" aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
-
             {{-- Previous Page Link --}}
             @if ($paginator->onFirstPage())
                 <li class="page-item disabled">
@@ -12,7 +11,6 @@
                     <a class="page-link" href="{{ $paginator->previousPageUrl() }}" tabindex="-1"></a>
                 </li>
             @endif
-
             {{-- Pagination Elements --}}
             @foreach ($elements as $element)
                 {{-- "Three Dots" Separator --}}

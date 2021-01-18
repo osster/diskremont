@@ -1,330 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>https://disk.devel.by/</loc>
+        <loc>https://diskremont.ru/</loc>
     
     
-        <lastmod>2018-08-20T17:53:07+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/akryl.html</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:07+00:00</lastmod>
+        <lastmod>2018-09-03T14:52:50+00:00</lastmod>
     
         <changefreq>daily</changefreq>
     
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://disk.devel.by/drugie-uslugi.html</loc>
+        <loc>https://diskremont.ru/galmenu.html</loc>
     
     
-        <lastmod>2018-08-20T17:53:07+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:07+00:00</lastmod>
+        <lastmod>2018-09-03T14:52:50+00:00</lastmod>
     
         <changefreq>daily</changefreq>
     
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://disk.devel.by/galmenu.html?page=1</loc>
+        <loc>https://diskremont.ru/oshipovka-shin.html</loc>
     
     
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?page=2</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
+        <lastmod>2018-09-03T14:52:51+00:00</lastmod>
     
         <changefreq>daily</changefreq>
     
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=1</loc>
+        <loc>https://diskremont.ru/pokraska.html</loc>
     
     
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=1&amp;color_id=black</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
+        <lastmod>2018-09-03T14:52:51+00:00</lastmod>
     
         <changefreq>daily</changefreq>
     
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=1&amp;color_id=black&amp;page=2</loc>
+        <loc>https://diskremont.ru/polirovka-diskov.html</loc>
     
     
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=1&amp;color_id=grey</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
+        <lastmod>2018-09-03T14:52:51+00:00</lastmod>
     
         <changefreq>daily</changefreq>
     
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=1&amp;color_id=grey&amp;page=2</loc>
+        <loc>https://diskremont.ru/price.html</loc>
     
     
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=1&amp;page=2</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
+        <lastmod>2018-09-03T14:52:51+00:00</lastmod>
     
         <changefreq>daily</changefreq>
     
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=2</loc>
+        <loc>https://diskremont.ru/prokatka.html</loc>
     
     
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=2&amp;color_id=</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
+        <lastmod>2018-09-03T14:52:51+00:00</lastmod>
     
         <changefreq>daily</changefreq>
     
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=2&amp;page=2</loc>
+        <loc>https://diskremont.ru/sezonnoe-hranenie.html</loc>
     
     
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=3</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
+        <lastmod>2018-09-03T14:52:51+00:00</lastmod>
     
         <changefreq>daily</changefreq>
     
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=3&amp;color_id=</loc>
+        <loc>https://diskremont.ru/svarka.html</loc>
     
     
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=3&amp;page=2</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
+        <lastmod>2018-09-03T14:52:51+00:00</lastmod>
     
         <changefreq>daily</changefreq>
     
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=4</loc>
+        <loc>https://diskremont.ru/uslugi.html</loc>
     
     
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=4&amp;color_id=</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=4&amp;page=2</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=5</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=5&amp;color_id=</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=5&amp;page=2</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=6</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=6&amp;color_id=</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/galmenu.html?service_id=6&amp;page=2</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:08+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/pokraska.html</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:07+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/polirovka-diskov.html</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:07+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/price.html</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:07+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/prokatka.html</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:07+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/svarka.html</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:07+00:00</lastmod>
-    
-        <changefreq>daily</changefreq>
-    
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://disk.devel.by/uslugi.html</loc>
-    
-    
-        <lastmod>2018-08-20T17:53:07+00:00</lastmod>
+        <lastmod>2018-09-03T14:52:50+00:00</lastmod>
     
         <changefreq>daily</changefreq>
     

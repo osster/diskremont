@@ -397,7 +397,7 @@
                                                 <td style="padding-right: 0px; padding-left: 0px;" align="center">
                                         <![endif]-->
                                         <img class="center  autowidth  fullwidth" align="center" border="0"
-                                             src="http://disk.devel.by/img/promo-service-bg.jpg" alt="Image"
+                                             src="http://diskremont.ru/img/promo-service-bg.jpg" alt="Image"
                                              title="Image"
                                              style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: 0;height: auto;float: none;width: 100%;max-width: 600px"
                                              width="600">
@@ -838,7 +838,7 @@
                                                         style="word-break: break-word;border-collapse: collapse !important;vertical-align: top">
                                                         <a href="https://www.instagram.com/diskremont/" title="Facebook"
                                                            target="_blank">
-                                                            <img src="http://disk.devel.by/images/icon-instagram-social.png?25b5a35484f97facd6970ddc952d1848" alt="Instagram"
+                                                            <img src="http://diskremont.ru/images/icon-instagram-social.png?25b5a35484f97facd6970ddc952d1848" alt="Instagram"
                                                                  title="Instagram" width="32"
                                                                  style="outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: block !important;border: none;height: auto;float: none;max-width: 32px !important">
                                                         </a>

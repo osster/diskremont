@@ -311,6 +311,21 @@
     <div id="calc-app"></div>
 
 
+    @if(setting('aktsii.additional-offers-2') != '')
+    <section class="main-promo-large price-promo-large price-promo-one">
+        <div class="card bg-dark text-white" style="background-image: url(./img/banner-akcya-feb.jpg);">
+            <div class="card-img-overlay d-flex flex-column mx-auto">
+                <div class="price-promo-large-icon price-promo-large-icon-3"></div>
+                <div class="price-promo-large-description">
+                    <h3>Акция</h3>
+                    {{ setting('aktsii.additional-offers-2') }}
+                </div>
+            </div>
+        </div>
+    </section>
+    @endif
+
+
     <div class="container">
         <section class="main-description">
             <h1>
@@ -433,6 +448,7 @@
             </div>
         </div>
     </section>
+	
 @endsection
 
 @section('PAGE_SCRIPTS')
@@ -451,6 +467,6 @@
                 {!! setting('kalkulyator.formula') !!}
                     return (typeof value !== 'undefined') ? value : 0;
             }
-        }
+        }		
     </script>
 @endsection

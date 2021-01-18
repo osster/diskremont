@@ -1,8 +1,14 @@
 #mainSlider {
   position: relative;
-  margin-bottom: 0;
+  margin-bottom: 2.5rem;
   overflow: hidden;
 
+  @include tablet-all() {
+    margin-bottom: 2rem;
+  }
+  @include mobile-all() {
+    margin-bottom: 1rem;
+  }
   .swiper-slide {
     position: relative;
     display: -webkit-box;

@@ -204,7 +204,7 @@
                         <div class="form-group form-group-tel mb-2">
                             <input type="text" class="form-control" id="orderPhone" name="orderPhone" placeholder="Ваш телефон">
                         </div>
-                        <button type="submit" class="btn btn-red mb-2 "><span
+                        <button type="submit" class="btn btn-red mb-2"><span
                                 class="btn-text d-flex justify-content-center">Оформить</span></button>
                     </form>
                 </div>
@@ -506,11 +506,6 @@
                             'error'
                         );
                     } else {
-                        if (typeof yaCounter1499499 !== 'undefined') {
-                            yaCounter1499499.reachGoal("form");
-                        } else {
-                            console.error("Яндекс счётчик не определён.");
-                        }
                         swal(
                             'Спасибо за заказ!',
                             '<p>мы свяжемся с вами в ближайшее время</p>',

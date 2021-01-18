@@ -1,15 +1,17 @@
 .price-promo-large {
+  min-height: 380px;
   text-align: center;
+  color: $color_white;
   font-size: rem(18px);
   font-weight: 700;
-  //@include mobile-all() {
-  //  height: 500px;
-  //}
-  //.card-img-overlay {
-  //  @include mobile-all() {
-  //    flex-direction: column;
-  //  }
-  //}
+  @include mobile-all() {
+    height: 500px;
+  }
+  .card-img-overlay {
+    @include mobile-all() {
+      flex-direction: column;
+    }
+  }
   &:after {
     background-color: $color-red_c9;
   }
@@ -32,6 +34,10 @@
     }
   }
   &-description {
-    padding: 20px 0;
+    padding-top: 20px;
+    height: 120px;
+    max-width: 402px;
+    margin: 0 auto;
+    overflow: hidden;
   }
 }

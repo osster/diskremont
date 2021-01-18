@@ -113,11 +113,15 @@
                     "color_id" => $filterData["selectedColor"]
                 ];
                 if ($filterData["page"] > 1) {
-                    $arProps["page"] = $filterData["page"];
+                 $arProps = [
+                    "service_id" => $filterData["selectedService"],
+                    "color_id" => $filterData["selectedColor"],
+                    "page" => $filterData["page"]
+                ];
+                    //$arProps["page"] = $filterData["page"];
                 }
             @endphp
             {{ $galleryList->links("vendor.pagination.diskremont", $arProps) }}
-
         </section>
     </div>
 @endsection

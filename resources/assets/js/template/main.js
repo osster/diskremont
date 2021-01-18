@@ -66,18 +66,6 @@ $(document).ready(function () {
         }
     });
 
-    $('a[href="#contacts"]').on('click', function (e) {
-        e.preventDefault();
-        if (typeof yaCounter1499499 !== 'undefined') {
-            yaCounter1499499.reachGoal("cont");
-        } else {
-            console.error("Яндекс счётчик не определён.");
-        }
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $("#contacts").offset().top
-        }, 2000);
-    });
-
 });
 
 $(window).on('load', function () {

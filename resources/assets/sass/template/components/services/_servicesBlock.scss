@@ -7,11 +7,6 @@
     flex-wrap: wrap;
     margin-bottom: 40px;
     font-size: rem(16px);
-
-    @include mobile-all(){
-      flex-direction: column-reverse;
-    }
-
     &-text {
       text-align: right;
       overflow: hidden;
@@ -80,10 +75,6 @@
 }
 .services-blocks-info-left-img {
   flex-direction: row-reverse;
-
-  @include mobile-all(){
-    flex-direction: column-reverse;
-  }
   .services-blocks-info-text {
     text-align: left;
     &:hover {
@@ -95,9 +86,5 @@
   }
   .btn {
     justify-content: flex-start;
-
-    @include mobile-all(){
-      justify-content: flex-end;
-    }
   }
 }

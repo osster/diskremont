@@ -55,6 +55,7 @@ $main-arrow: url('../../../img/arrow.svg');
   //clip-path: polygon(0 0, $polygx 72%, $polygx 0);
   transform: rotate($degT);
   @include transition();
+  z-index: -1;
 }
 
 @mixin black-img{

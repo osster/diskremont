@@ -192,7 +192,7 @@
                                         <td class="no-sort no-click" id="bread-actions">
                                             @foreach($actions as $action)
                                                 @if (!method_exists($action, 'massAction'))
-                                                    @include('voyager::bread.partials.actions', ['action' => $action])
+                                                @include('voyager::bread.partials.actions', ['action' => $action])
                                                 @endif
                                             @endforeach
                                         </td>

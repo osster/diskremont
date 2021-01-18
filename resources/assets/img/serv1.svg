@@ -1,44 +1,44 @@
-<?xml-stylesheet type="text/css" href="../css/main.css"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="4368.033 629.237 68.905 75.139">
-  <defs>
-    <style>
-      .cls-1, .cls-2, .cls-3, .cls-6 {
-        fill: none;
-      }
-
-      .cls-1, .cls-2, .cls-3, .cls-4 {
-        stroke: currentColor;
-      }
-      .cls-1 {
-        stroke-width: 4px;
-      }
-
-      .cls-2, .cls-4 {
-        stroke-width: 2px;
-      }
-
-      .cls-3 {
-        stroke-width: 3px;
-      }
-
-      .cls-4 {
-        fill: #fff;
-      }
-      .cls-5 {
-        stroke: none;
-      }
-    </style>
-  </defs>
-  <g id="pokraska" transform="translate(3950 -36)">
-    <path id="Path_72" data-name="Path 72" class="cls-1" d="M420.79,678.386l17.753-10.432,10.8,17.57a12.487,12.487,0,0,1,.917,7.167,10.1,10.1,0,0,1-.453,1.521A12.515,12.515,0,0,1,446.367,699,13.492,13.492,0,0,1,439,700.664,11.053,11.053,0,0,1,432,697Z"/>
-    <path id="Path_73" data-name="Path 73" class="cls-2" d="M424.816,686.073H449.9"/>
-    <path id="Path_74" data-name="Path 74" class="cls-3" d="M423.039,705.741l32.356-.089,7.092,3.723v6.117l-7.092,3.989H423.039Z"/>
-    <path id="Path_75" data-name="Path 75" class="cls-3" d="M429.864,719.481,424.28,735.7l7.89,2.748,6.028-18.971"/>
-    <path id="Path_76" data-name="Path 76" class="cls-1" d="M443.6,719.924l-.089,9.751" transform="translate(-0.516 -0.676)"/>
-    <path id="Path_64" data-name="Path 64" class="cls-2" d="M4427.307,689.494l-15.629,12.724,15.629,10.969" transform="translate(-3941 5.767)"/>
-    <g id="Ellipse_33" data-name="Ellipse 33" class="cls-4" transform="translate(441 727)">
-      <circle class="cls-5" cx="2" cy="2" r="2"/>
-      <circle class="cls-6" cx="2" cy="2" r="1"/>
-    </g>
-  </g>
-</svg>
+<?xml-stylesheet type="text/css" href="../css/main.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4368.033 629.237 68.905 75.139">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-6 {
+        fill: none;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke: currentColor;
+      }
+      .cls-1 {
+        stroke-width: 4px;
+      }
+
+      .cls-2, .cls-4 {
+        stroke-width: 2px;
+      }
+
+      .cls-3 {
+        stroke-width: 3px;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+      .cls-5 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="pokraska" transform="translate(3950 -36)">
+    <path id="Path_72" data-name="Path 72" class="cls-1" d="M420.79,678.386l17.753-10.432,10.8,17.57a12.487,12.487,0,0,1,.917,7.167,10.1,10.1,0,0,1-.453,1.521A12.515,12.515,0,0,1,446.367,699,13.492,13.492,0,0,1,439,700.664,11.053,11.053,0,0,1,432,697Z"/>
+    <path id="Path_73" data-name="Path 73" class="cls-2" d="M424.816,686.073H449.9"/>
+    <path id="Path_74" data-name="Path 74" class="cls-3" d="M423.039,705.741l32.356-.089,7.092,3.723v6.117l-7.092,3.989H423.039Z"/>
+    <path id="Path_75" data-name="Path 75" class="cls-3" d="M429.864,719.481,424.28,735.7l7.89,2.748,6.028-18.971"/>
+    <path id="Path_76" data-name="Path 76" class="cls-1" d="M443.6,719.924l-.089,9.751" transform="translate(-0.516 -0.676)"/>
+    <path id="Path_64" data-name="Path 64" class="cls-2" d="M4427.307,689.494l-15.629,12.724,15.629,10.969" transform="translate(-3941 5.767)"/>
+    <g id="Ellipse_33" data-name="Ellipse 33" class="cls-4" transform="translate(441 727)">
+      <circle class="cls-5" cx="2" cy="2" r="2"/>
+      <circle class="cls-6" cx="2" cy="2" r="1"/>
+    </g>
+  </g>
+</svg>

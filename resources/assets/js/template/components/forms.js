@@ -70,11 +70,6 @@ if (callbackForm) {
                                 .addClass('text-danger')
                                 .append(message);
                         } else {
-                            if (typeof yaCounter1499499 !== 'undefined') {
-                                yaCounter1499499.reachGoal("form");
-                            } else {
-                                console.error("Яндекс счётчик не определён.");
-                            }
                             $('#callbackForm').addClass('d-none');
                             $('#callbackFormResult')
                                 .empty()

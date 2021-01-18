@@ -9,8 +9,6 @@ require('./template/main');
 
 window.Vue = require('vue').default;
 
-// import Vue from 'vue';
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -25,7 +23,6 @@ import bFormSlider from 'vue-bootstrap-slider';
 Vue.use(bFormSlider);
 
 import store from './store/store';
-// import hlp from 'hlp';
 
 var appElement = document.querySelector('#calc-app');
 

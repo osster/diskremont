@@ -143,6 +143,7 @@ a {
   padding: 15px 35px;
   cursor: pointer;
   font-size: #{$font_size}px;
+  z-index:1;
 
   &:hover {
     background-color: $color_gray_darkest;

@@ -3,9 +3,9 @@
 @section('PAGE_TITLE', setting('site.title'))
 
 @section("PAGE_STYLES")
-<style>
-    {!!  file_get_contents( public_path("/css/uslugi_detail_critical.min.css"))  !!}
-</style>
+    <style>
+        {!!  file_get_contents( public_path("/css/uslugi_detail_critical.min.css"))  !!}
+    </style>
 @endsection
 
 @section('PAGE_CONTENT')
@@ -50,6 +50,7 @@
                             @php
                                 $oneStar = false;
                                 $twoStars = false;
+                                $prokatStar = false;
                             @endphp
                             @foreach($display_price as $code)
                                 @if (isset($transp[$code]))
@@ -62,7 +63,8 @@
                                                         $oneStar = true;
                                                         break;
                                                     case "prokat":
-                                                        echo "Прокат, руб";
+                                                        echo "Прокат, руб*";
+                                                        $prokatStar = true;
                                                         break;
                                                     case "tiremount":
                                                         echo "Шиномонтаж, руб**";
@@ -93,57 +95,62 @@
                         </table>
 
                         <div class="text-center d-block d-lg-none">
-                        @foreach($display_price as $code)
-                            @if (isset($transp[$code]))
-                                <table class="table prices-table table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th colspan="2" class="h3">
-                                            @php
-                                                switch ($code) {
-                                                    case "pokraska":
-                                                        echo "Порошковая покраска, руб*";
-                                                        $oneStar = true;
-                                                        break;
-                                                    case "prokat":
-                                                        echo "Прокат, руб";
-                                                        break;
-                                                    case "tiremount":
-                                                        echo "Шиномонтаж, руб**";
-                                                        $twoStars = true;
-                                                        break;
-                                                    case "akril":
-                                                        echo "Акриловая покраска, руб*";
-                                                        $oneStar = true;
-                                                        break;
-                                                    case "grind":
-                                                        echo "Полировка дисков, руб*";
-                                                        $oneStar = true;
-                                                        break;
-                                                    case "dimond_grind":
-                                                        echo "Алмазная проточка дисков, руб*";
-                                                        $oneStar = true;
-                                                        break;
-                                                }
-                                            @endphp
-                                        </th>
-                                    </tr>
-                                    </thead>
-                                    @foreach($transp["titles"] as $k=>$v)
+                            @foreach($display_price as $code)
+                                @if (isset($transp[$code]))
+                                    <table class="table prices-table table-striped">
+                                        <thead>
                                         <tr>
-                                            <th class="w-50">{{ $v }}</th>
-                                            <td class="w-50">{{ $transp[$code][$k] }}</td>
+                                            <th colspan="2" class="h3">
+                                                @php
+                                                    switch ($code) {
+                                                        case "pokraska":
+                                                            echo "Порошковая покраска, руб*";
+                                                            $oneStar = true;
+                                                            break;
+                                                        case "prokat":
+                                                            echo "Прокат, руб*";
+                                                            $prokatStar = true;
+                                                            break;
+                                                        case "tiremount":
+                                                            echo "Шиномонтаж, руб**";
+                                                            $twoStars = true;
+                                                            break;
+                                                        case "akril":
+                                                            echo "Акриловая покраска, руб*";
+                                                            $oneStar = true;
+                                                            break;
+                                                        case "grind":
+                                                            echo "Полировка дисков, руб*";
+                                                            $oneStar = true;
+                                                            break;
+                                                        case "dimond_grind":
+                                                            echo "Алмазная проточка дисков, руб*";
+                                                            $oneStar = true;
+                                                            break;
+                                                    }
+                                                @endphp
+                                            </th>
                                         </tr>
-                                    @endforeach
-                                </table>
-                            @endif
-                        @endforeach
+                                        </thead>
+                                        @foreach($transp["titles"] as $k=>$v)
+                                            <tr>
+                                                <th class="w-50">{{ $v }}</th>
+                                                <td class="w-50">{{ $transp[$code][$k] }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </table>
+                                @endif
+                            @endforeach
                         </div>
 
                         <div class="prices-table-footer">
+							<p><span style="color: #ff0000;">Цены указаны  без  учета скидки 15% по акции, действующей до 15 февраля</span></p>
                             @if($oneStar)
                                 <p class="prices-table-footer-first-p">* В цену не входят услуги шиномонтажа</p>
                             @endif
+                                @if($prokatStar)
+                                    <p class="prices-table-footer-first-p">* Указана ориентировочная цена. Точная стоимость определяется мастером после проверки геометрии диска.</p>
+                                @endif
                             @if($twoStars)
                                 <p>** Цена за полный шиномонтажный комплекс: снятие и постановка, проверка, шиномонтаж,
                                     балансировка. Для внедорожноков цена комплекса увеличивается на 500 руб.</p>
@@ -153,6 +160,26 @@
                 </div>
 
             </section>
+
+            {{--  Только для покраски --}}
+            @if($usluga->id == 1)
+                @if(setting('aktsii.additional-offers-2') != '')
+                </div>
+                    <section class="main-promo-large price-promo-large price-promo-one">
+                        <div class="card bg-dark text-white" style="background-image: url(./img/discounts-akcyja.jpg);">
+                            <div class="card-img-overlay d-flex flex-column mx-auto">
+                                <div class="price-promo-large-icon price-promo-large-icon-3"></div>
+                                <div class="price-promo-large-description">
+                                    <h3>Акция</h3>
+                                    {{ setting('aktsii.additional-offers-2') }}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <div class="container">
+                @endif
+            @endif
+
             @php
                 $priceHTML = ob_get_contents();
                 ob_end_clean ();
@@ -209,24 +236,24 @@
 
         {{--  Только для покраски --}}
         @if($usluga->id == 1)
-        <section class="main-promo-large price-promo-large">
-            <div class="card bg-dark text-white" style="background-image: url(./img/promo-service-bg.jpg);">
-                <div class="card-img-overlay d-flex flex-column flex-md-row mx-auto">
-                    <div class="col-12 col-md-6">
-                        <div class="price-promo-large-icon price-promo-large-icon-1"></div>
-                        <div class="price-promo-large-description">На цвета чёрный/белый глянец и матовое серебро
-                            действует 25% скидка! Цвета покраски Candy рассчитываются с наценкой 50% к базовой
+            <section class="main-promo-large price-promo-large">
+                <div class="card bg-dark text-white" style="background-image: url(./img/promo-service-bg.jpg);">
+                    <div class="card-img-overlay d-flex flex-column flex-md-row mx-auto">
+                        <div class="col-12 col-md-6">
+                            <div class="price-promo-large-icon price-promo-large-icon-1"></div>
+                            <div class="price-promo-large-description">
+                                {{ setting('aktsii.additional-offers') }}
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-6">
-                        <div class="price-promo-large-icon price-promo-large-icon-2"></div>
-                        <div class="price-promo-large-description">Новая услуга - наш курьер готов в течение дня забрать
-                            Ваши диски и доставить готовые всего за 1000 рублей.
+                        <div class="col-12 col-md-6">
+                            <div class="price-promo-large-icon price-promo-large-icon-2"></div>
+                            <div class="price-promo-large-description">Новая услуга - наш курьер готов в течение дня забрать
+                                Ваши диски и доставить готовые всего за 1000 рублей.
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
         @endif
 
         @if($gallery->count() > 0)
@@ -235,19 +262,24 @@
                     <div class="main-photoalbum-wrapper text-center">
                         <h1 class="text-center">Примеры</h1>
                         <div class="wch-descr-wrapper d-flex justify-content-center">
-                            <div class="col-md-4 col-12">
-                                <video class="pr-0 pr-md-3 pb-3" controls="controls" width="100%" height="320">
+                            <div class="col-md-3 col-12">
+                                <video class="pr-0 pr-md-2 pb-3" controls="controls" width="100%" height="320">
                                     <source src="storage/disk-uslugi/video/video01.mp4" type="video/mp4">
                                 </video>
                             </div>
-                            <div class="col-md-4 col-12">
-                                <video class="pr-0 pr-md-3 pb-3" controls="controls" width="100%" height="320">
+                            <div class="col-md-3 col-12">
+                                <video class="pr-0 pr-md-2 pb-3" controls="controls" width="100%" height="320">
                                     <source src="storage/disk-uslugi/video/video02.mp4" type="video/mp4">
                                 </video>
                             </div>
-                            <div class="col-md-4 col-12">
-                                <video class="pr-0 pr-md-3 pb-3" controls="controls" width="100%" height="320">
+                            <div class="col-md-3 col-12">
+                                <video class="pr-0 pr-md-2 pb-3" controls="controls" width="100%" height="320">
                                     <source src="storage/disk-uslugi/video/video03.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="col-md-3 col-12">
+                                <video class="pr-0 pr-md-2 pb-3" controls="controls" width="100%" height="320">
+                                    <source src="storage/disk-uslugi/video/5.mp4" type="video/mp4">
                                 </video>
                             </div>
                         </div>
@@ -294,4 +326,5 @@
     -->
 
 @endsection
+
 

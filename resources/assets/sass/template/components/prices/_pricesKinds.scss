@@ -1,16 +1,19 @@
 .left-high {
   @include max-w(435px);
   box-shadow: 7px 8px 9px rgba(0, 0, 0, 0.16);
+  padding-top: 6.16vh;
+  padding-bottom: 9.83vh;
   &-header {
     @include for-black-header;
     padding: 13px 22px;
+    margin-bottom: 21px;
     &-span {
       max-width: 340px;
       &:after {
         @include btn-text-icon;
-        width: 60px;
+        width: 49px;
         height: 31px;
-        margin: 0;
+        margin-left: 8px;
         transform: rotate(90deg);
       }
     }
@@ -25,39 +28,25 @@
     }
   }
   &-body {
-    margin-bottom: 6.16vh;
+    max-width: 323px;
+    margin: 0 auto;
     &-tr {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 50px;
+      padding: 20px 10px 6px 4px;
       font-size: rem(18px);
       border-bottom: 1px solid $color_gray_light95;
       color: $color_gray_light95;
-
-      &:nth-of-type(odd) {
-        background-color: rgba(0, 0, 0, 0.05);
-      }
-      &:last-of-type{
-        border: none;
-      }
-
-      @include mobile-all(){
-        padding: 10px 20px;
-      }
     }
     &-th {
-      padding:0 8px;
-      width: 70%;
-
-      &:nth-of-type(even){
-        width: 30%;
-      }
+      padding-left: 6px;
+      padding-right: 6px;
     }
   }
 }
 .price-kind-block {
-  margin-bottom: 6.16vh;
+  margin-top: 6.16vh;
   &-header {
     @include for-black-header;
     padding: 13px 6.4%;
