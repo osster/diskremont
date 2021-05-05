@@ -1,6 +1,5 @@
 <?php
-
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Voyager\Disk;
 
 use App\Http\Controllers\Voyager\ReloadImageWorksTrait;
 use App\Http\Controllers\Voyager\VoyagerBaseController;

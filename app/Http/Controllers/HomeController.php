@@ -19,7 +19,8 @@ use TCG\Voyager\Models\DataType;
 
 class HomeController extends Controller
 {
-    private function getPrices() {
+    private function getPrices()
+    {
         $prices = CalcDiskSize::orderBy("size", "ASC")->get();
 
         $transp = [];
@@ -42,6 +43,7 @@ class HomeController extends Controller
         $minutes = 10;
 
         // Calc Data
+//        Cache::flush();
         $calcValues = Cache::remember('calc_data', $minutes, function () {
 
             $car_colors = CalcCarColor::select(["name", "value_16 as hash", "body_render_img"])->orderBy("sort", "ASC")->get()->toArray();
@@ -170,6 +172,7 @@ class HomeController extends Controller
             "color_id" => "nullable|exists:calc_disk_colors,section"
         ]);
 
+
         if ($v->fails()) {
             return redirect(route('gallery'))
                 ->withErrors($v)
@@ -183,7 +186,11 @@ class HomeController extends Controller
         // Get Color Options
         $DT_calc_disk_colors = DataType::where("name", "calc_disk_colors")->with("rows")->first();
         $sectionRow = $DT_calc_disk_colors->rows->where("field", "section")->first();
-        $sectionOptions = json_decode($sectionRow->details, true);
+
+        //fdsa225
+        //$sectionOptions = json_decode($sectionRow->details, true);
+        $sectionOptions = (array) $sectionRow->details;
+
         $disk_color_sections_options = isset($sectionOptions["options"]) ? $sectionOptions["options"] : [];
 
         if ($service_id == 0) {
@@ -241,14 +248,15 @@ class HomeController extends Controller
         return view("pages.contacts");
     }
 
-    public function sendMail(Request $request) {
+    public function sendMail(Request $request)
+    {
         $inp = $request->all();
 
         $val = Validator::make($request->all(), [
             "name" => "required|string",
             "phone" => [
                 "required",
-                function($attribute, $value, $fail) {
+                function ($attribute, $value, $fail) {
                     if (!preg_match("/\+\d\(\d{3}\)\d{3}-\d-\d{3}/", $value)) {
                         return $fail('не верный формат номера.');
                     }
@@ -275,14 +283,15 @@ class HomeController extends Controller
         }
     }
 
-    public function sendOrder(Request $request) {
+    public function sendOrder(Request $request)
+    {
         $inp = $request->all();
 
         $val = Validator::make($request->all(), [
             "client_name" => "required|string",
             "client_phone" => [
                 "required",
-                function($attribute, $value, $fail) {
+                function ($attribute, $value, $fail) {
                     if (!preg_match("/\+\d\(\d{3}\)\d{3}-\d-\d{3}/", $value)) {
                         return $fail('не верный формат номера.');
                     }
