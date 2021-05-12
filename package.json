@@ -38,7 +38,7 @@
         "lodash": "^4.17.20",
         "popper.js": "^1.16.1",
         "sweetalert2": "^7.33.1",
-        "swiper": "^4.5.1",
+        "swiper": "^6.5.1",
         "vue": "^2.6.12",
         "vue-bootstrap-slider": "^1.4.0",
         "vue-router": "^3.4.9",
